@@ -12,48 +12,50 @@
   <header class="bg-white shadow">
     <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
       <div class="flex items-center gap-3">
-        <img src="https://i.imgur.com/EsoHkMb.png" alt="Logo" class="rounded-full">
-        <h1 class="text-lg font-bold">A G H A M</h1>
+        <img src="https://i.imgur.com/EsoHkMb.png" alt="Logo" class="w-12 h-12 rounded-full shadow">
+        <h1 class="text-lg font-bold tracking-widest">A G H A M</h1>
       </div>
-      <nav class="space-x-6">
-        <a href="#" class="hover:text-blue-500">Home</a>
-        <a href="#about" class="hover:text-blue-500">About</a>
-        <a href="#services" class="hover:text-blue-500">Services</a>
-        <a href="#events" class="hover:text-blue-500">Events</a>
-        <a href="#contact" class="hover:text-blue-500">Contact</a>
+      <nav class="space-x-6 font-medium">
+        <a href="#" class="hover:text-blue-600">Home</a>
+        <a href="#about" class="hover:text-blue-600">About</a>
+        <a href="#services" class="hover:text-blue-600">Services</a>
+        <a href="#events" class="hover:text-blue-600">Events</a>
+        <a href="#prayer" class="hover:text-blue-600">Prayer</a>
+        <a href="#gallery" class="hover:text-blue-600">Gallery</a>
+        <a href="#contact" class="hover:text-blue-600">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="bg-blue-700 text-white text-center py-24">
-    <h2 class="text-4xl font-bold mb-4">Almighty God of Heaven Apostolic Ministry</h2>
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-blue-800 to-blue-500 text-white text-center py-28">
+    <h2 class="text-5xl font-extrabold mb-4">Almighty God of Heaven Apostolic Ministry</h2>
     <p class="text-lg mb-6">A place to Worship, Grow, and Serve God Together</p>
-    <button class="bg-white text-blue-700 px-6 py-3 rounded-full font-semibold">Join Us This Sunday</button>
+    <a href="#prayer" class="bg-white text-blue-700 px-8 py-3 rounded-full font-semibold shadow hover:scale-105 transition">Send Prayer Request</a>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="max-w-6xl mx-auto py-16 px-4">
-    <h3 class="text-2xl font-bold mb-6">About Us</h3>
-    <p class="text-gray-600">
+  <!-- About -->
+  <section id="about" class="max-w-6xl mx-auto py-20 px-4 text-center">
+    <h3 class="text-3xl font-bold mb-6">About Us</h3>
+    <p class="text-gray-600 text-lg leading-relaxed">
       Almighty God of Heaven Apostolic Ministry is a Christ-centered church committed to preaching the Word of God, making disciples, and building a strong faith community.
     </p>
   </section>
 
   <!-- Services -->
-  <section id="services" class="bg-gray-100 py-16">
+  <section id="services" class="bg-gray-100 py-20">
     <div class="max-w-6xl mx-auto px-4">
-      <h3 class="text-2xl font-bold mb-6">Church Services</h3>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-white p-6 rounded-xl shadow">
+      <h3 class="text-3xl font-bold mb-10 text-center">Church Services</h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
           <h4 class="font-semibold mb-2">Sunday Worship</h4>
           <p class="text-sm text-gray-500">9:00 AM</p>
         </div>
-        <div class="bg-white p-6 rounded-xl shadow">
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
           <h4 class="font-semibold mb-2">Prayer Meeting</h4>
           <p class="text-sm text-gray-500">Wednesday 6:00 PM</p>
         </div>
-        <div class="bg-white p-6 rounded-xl shadow">
+        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
           <h4 class="font-semibold mb-2">Youth Fellowship</h4>
           <p class="text-sm text-gray-500">Friday 2:00 PM</p>
         </div>
@@ -62,24 +64,47 @@
   </section>
 
   <!-- Events -->
-  <section id="events" class="max-w-6xl mx-auto py-16 px-4">
-    <h3 class="text-2xl font-bold mb-6">Upcoming Events</h3>
-    <ul class="space-y-4">
-      <li class="bg-white p-4 rounded shadow">Evangelism Outreach - April </li>
-      <li class="bg-white p-4 rounded shadow">Church Anniversary - Every 1st Sunday of August </li>
+  <section id="events" class="max-w-6xl mx-auto py-20 px-4">
+    <h3 class="text-3xl font-bold mb-10 text-center">Upcoming Events</h3>
+    <ul class="space-y-4 max-w-xl mx-auto">
+      <li class="bg-white p-4 rounded-xl shadow">Evangelism Outreach - April</li>
+      <li class="bg-white p-4 rounded-xl shadow">Church Anniversary - Every 1st Sunday of August</li>
     </ul>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="bg-gray-100 py-16">
-    <div class="max-w-6xl mx-auto px-4">
-      <h3 class="text-2xl font-bold mb-6">Contact Us</h3>
-      <p class="text-gray-600 mb-2">📍 Location: 
+  <!-- Prayer (Google Form Embed) -->
+  <section id="prayer" class="bg-white py-20">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <h3 class="text-3xl font-bold mb-6">Prayer Request</h3>
+      <p class="text-gray-500 mb-6">Submit your prayer request and we will pray for you</p>
+      <!-- Replace link below with your Google Form embed link -->
+      <iframe src="https://docs.google.com/forms/d/e/https://docs.google.com/forms/d/e/1FAIpQLSfDwFec-UhJezQ9EUuqAMCfEMJvqQRIjNoGel1Z3xL0Kac3EQ/viewform?embedded=true" class="w-full h-[700px] rounded-2xl shadow"></iframe>
+    </div>
+  </section>
 
-Blk 21-R Lot 4, Carissa Homes East 1 Bagumbayan, Teresa, Philippines, 1880
-</p>
-      <p class="text-gray-600 mb-2">📞 Phone: 0938-8484-568</p>
-      <p class="text-gray-600">📧 Email: agham.inc.ph@gmail.com</p>
+  <!-- Gallery Section -->
+  <section id="gallery" class="bg-gray-100 py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <h3 class="text-3xl font-bold mb-10 text-center">Gallery</h3>
+
+      <!-- Images -->
+      <div class="grid md:grid-cols-3 gap-6 mb-10">
+        <img src="https://i.imgur.com/UsCK7K2.jpeg" class="rounded-xl shadow">
+        <img src="https://i.imgur.com/7DpT7Ho.jpeg" class="rounded-xl shadow">
+        <img src="https://i.imgur.com/DrI7T5O.jpeg" class="rounded-xl shadow">
+      </div>
+
+      
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="bg-gray-100 py-20">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h3 class="text-3xl font-bold mb-6">Contact Us</h3>
+      <p class="text-gray-600 mb-3">📍 Blk 21-R Lot 4, Carissa Homes East 1 Bagumbayan, Teresa, Philippines, 1880</p>
+      <p class="text-gray-600 mb-3">📞 0938-8484-568</p>
+      <p class="text-gray-600">📧 agham.inc.ph@gmail.com</p>
     </div>
   </section>
 
