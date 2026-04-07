@@ -144,10 +144,7 @@ class="w-20 h-20 md:w-24 md:h-24 rounded-full logo-glow">
 <!-- Events -->
 <section id="events" class="max-w-6xl mx-auto py-20 px-4">
   <h3 class="text-3xl font-bold mb-10 text-center">Upcoming Events</h3>
-  <ul class="space-y-4 max-w-xl mx-auto">
-    <li class="bg-white p-4 rounded-xl shadow">Evangelism Outreach - April</li>
-    <li class="bg-white p-4 rounded-xl shadow">Joint Fellowship - April 12, 2026</li>
-  </ul>
+  <div id="eventsList" class="grid md:grid-cols-2 gap-6"></div>
 </section>
 
 <!-- GALLERY -->
@@ -207,10 +204,10 @@ document.getElementById("lightbox-img").src=img.src;
 
 /* ANNOUNCEMENTS FROM GOOGLE SHEET CSV */
 const SHEET_ID = "1VqSpUe-5o0Px0UPyvqkG_DvayjwWluLU3KRyV7r75ME";
-const GID = "0";
-const csvUrl = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&gid=${GID}`;
+const ANNOUNCEMENTS_GID = "0";
+const announcementsCsvUrl = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&gid=${ANNOUNCEMENTS_GID}`;
 
-fetch(csvUrl)
+fetch(announcementsCsvUrl)
   .then(response => response.text())
   .then(csv => {
     const list = document.getElementById("announcementsList");
@@ -242,9 +239,54 @@ fetch(csvUrl)
     });
   })
   .catch(error => {
-    console.error("CSV load error:", error);
+    console.error("Announcements CSV load error:", error);
     document.getElementById("announcementsList").innerHTML =
       '<p class="text-white text-center col-span-3">Unable to load announcements.</p>';
+  });
+
+/* EVENTS FROM GOOGLE SHEET CSV */
+const EVENTS_GID = "1375025455";
+const eventsCsvUrl = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&gid=${EVENTS_GID}`;
+
+fetch(eventsCsvUrl)
+  .then(response => response.text())
+  .then(csv => {
+    const list = document.getElementById("eventsList");
+    list.innerHTML = "";
+
+    const rows = csv.trim().split("\n").map(row =>
+      row.replace(/\r/g,'').split(",")
+    );
+
+    rows.forEach(row => {
+      const title = (row[0] || "").replace(/^"|"$/g, "").trim();
+      const details = (row[1] || "").replace(/^"|"$/g, "").trim();
+      const link = (row[2] || "#").replace(/^"|"$/g, "").trim();
+
+      if (!title) return;
+
+      const card = document.createElement("a");
+      card.href = link || "#";
+      card.target = "_blank";
+      card.rel = "noopener noreferrer";
+      card.className = "bg-white p-6 rounded-xl shadow hover:shadow-lg transition block";
+
+      card.innerHTML = `
+        <h4 class="font-bold text-lg mb-2">${title}</h4>
+        <p class="text-sm text-gray-600">${details}</p>
+      `;
+
+      list.appendChild(card);
+    });
+
+    if (!list.innerHTML.trim()) {
+      list.innerHTML = '<p class="text-center text-red-500 col-span-2">No events found.</p>';
+    }
+  })
+  .catch(error => {
+    console.error("Events CSV load error:", error);
+    document.getElementById("eventsList").innerHTML =
+      '<p class="text-center text-red-500 col-span-2">Unable to load events.</p>';
   });
 </script>
 
