@@ -7,7 +7,7 @@
 
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 body { font-family: 'Poppins', sans-serif; }
@@ -65,7 +65,9 @@ body { font-family: 'Poppins', sans-serif; }
 /* DAILY VERSE */
 .agham-daily-verse-section {
   padding: 70px 20px;
-  background: linear-gradient(to bottom, #eff6ff, #f8fbff);
+  background: #eaf4ff;
+  border-top: 1px solid #bfdbfe;
+  border-bottom: 1px solid #bfdbfe;
 }
 
 .agham-daily-verse-wrap {
@@ -76,11 +78,11 @@ body { font-family: 'Poppins', sans-serif; }
 .agham-daily-verse-card {
   max-width: 900px;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.98);
   border-radius: 24px;
   padding: 36px 24px;
-  box-shadow: 0 12px 35px rgba(37, 99, 235, 0.10);
-  border: 1px solid rgba(37, 99, 235, 0.08);
+  box-shadow: 0 12px 35px rgba(37, 99, 235, 0.12);
+  border: 1px solid rgba(37, 99, 235, 0.12);
   text-align: center;
 }
 
@@ -96,10 +98,12 @@ body { font-family: 'Poppins', sans-serif; }
 }
 
 .agham-daily-verse-title {
-  font-size: 2rem;
-  font-weight: 800;
+  font-family: 'Caveat', cursive;
+  font-size: 3rem;
+  font-weight: 700;
   color: #1e3a8a;
   margin-bottom: 10px;
+  line-height: 1.1;
 }
 
 .agham-daily-verse-subtitle {
@@ -109,15 +113,17 @@ body { font-family: 'Poppins', sans-serif; }
 }
 
 .agham-daily-verse-text {
-  font-size: 1.35rem;
-  line-height: 1.9;
+  font-family: 'Caveat', cursive;
+  font-size: 2.2rem;
+  line-height: 1.5;
   color: #1f2937;
-  font-weight: 500;
+  font-weight: 700;
   margin-bottom: 18px;
 }
 
 .agham-daily-verse-reference {
-  font-size: 1.1rem;
+  font-family: 'Caveat', cursive;
+  font-size: 1.8rem;
   font-weight: 700;
   color: #2563eb;
   margin-bottom: 16px;
@@ -127,9 +133,9 @@ body { font-family: 'Poppins', sans-serif; }
   max-width: 700px;
   margin: 0 auto;
   color: #4b5563;
-  font-size: 1rem;
-  line-height: 1.8;
-  font-style: italic;
+  font-family: 'Caveat', cursive;
+  font-size: 1.7rem;
+  line-height: 1.5;
 }
 
 .agham-daily-verse-actions {
@@ -170,11 +176,19 @@ body { font-family: 'Poppins', sans-serif; }
   }
 
   .agham-daily-verse-title {
-    font-size: 1.6rem;
+    font-size: 2.3rem;
   }
 
   .agham-daily-verse-text {
-    font-size: 1.1rem;
+    font-size: 1.8rem;
+  }
+
+  .agham-daily-verse-reference {
+    font-size: 1.5rem;
+  }
+
+  .agham-daily-verse-thought {
+    font-size: 1.45rem;
   }
 
   .agham-refresh-verse-btn {
