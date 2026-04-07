@@ -1,264 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AGHAM CHURCH</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AGHAM CHURCH</title>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 
-  <style>
-    body { font-family: 'Poppins', sans-serif; }
+<style>
+body { font-family: 'Poppins', sans-serif; }
 
-    /* Gradient Text */
-    .gradient-text {
-      background: linear-gradient(to right, #2563eb, #60a5fa);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+/* GLASS NAVBAR */
+#navbar {
+  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.7);
+}
 
-    /* Glow effect logo */
-    .logo-glow {
-      box-shadow: 0 0 15px rgba(37, 99, 235, 0.6);
-    }
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(to right, #2563eb, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-    /* Shrink navbar */
-    .shrink {
-      padding-top: 8px !important;
-      padding-bottom: 8px !important;
-    }
+/* Logo glow */
+.logo-glow {
+  box-shadow: 0 0 25px rgba(37, 99, 235, 0.9),
+              0 0 40px rgba(96, 165, 250, 0.6);
+}
 
-    /* Lightbox */
-    #lightbox {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0,0,0,0.9);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-    }
+/* Navbar shrink */
+.shrink {
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+}
 
-    #lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 12px;
-    }
-  </style>
+/* SLIDE animation */
+@keyframes slideRight {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+.slide-right {
+  animation: slideRight 0.8s ease;
+}
+
+/* Lightbox */
+#lightbox {
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.9);
+  display:none;
+  align-items:center;
+  justify-content:center;
+}
+#lightbox img {
+  max-width:90%;
+  max-height:90%;
+}
+</style>
 </head>
 
 <body class="bg-gray-50 text-gray-800">
 
 <!-- NAVBAR -->
-<header id="navbar" class="bg-white shadow fixed w-full z-50 transition-all duration-300">
-  <div id="navContent" class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-    
-    <div class="flex items-center gap-4">
-      <img src="https://i.imgur.com/EsoHkMb.png" 
-           class="w-16 h-16 md:w-20 md:h-20 rounded-full logo-glow transition-all duration-300">
+<header id="navbar" class="fixed w-full z-50 shadow transition-all">
+<div id="navContent" class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
 
-      <h1 class="text-xl md:text-3xl font-extrabold gradient-text">
-        AGHAM
-      </h1>
-    </div>
+<div class="flex items-center gap-4">
+<img src="https://i.imgur.com/EsoHkMb.png"
+class="w-20 h-20 md:w-24 md:h-24 rounded-full logo-glow">
 
-    <nav class="hidden md:flex space-x-6 font-medium">
-      <a href="#">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#events">Events</a>
-      <a href="#prayer">Prayer</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
-    </nav>
+<h1 class="text-2xl md:text-4xl font-extrabold gradient-text">AGHAM</h1>
+</div>
 
-    <button onclick="toggleMenu()" class="md:hidden text-2xl">☰</button>
-  </div>
+<nav class="hidden md:flex space-x-6 font-medium">
+<a href="#">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#events">Events</a>
+<a href="#prayer">Prayer</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+</nav>
 
-  <div id="mobileMenu" class="hidden md:hidden bg-white px-4 pb-4 space-y-2">
-    <a href="#">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#events">Events</a>
-    <a href="#prayer">Prayer</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
-  </div>
+<button onclick="toggleMenu()" class="md:hidden text-2xl">☰</button>
+</div>
+
+<div id="mobileMenu" class="hidden bg-white px-4 pb-4 space-y-2">
+<a href="#">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#events">Events</a>
+<a href="#prayer">Prayer</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+</div>
 </header>
 
 <!-- HERO -->
-<section class="bg-gradient-to-r from-blue-800 to-blue-500 text-white text-center pt-32 pb-20 px-4">
-  <h2 class="text-2xl md:text-5xl font-extrabold mb-4" data-aos="fade-up">
-    Almighty God of Heaven Apostolic Ministry
-  </h2>
-  <p class="text-sm md:text-lg mb-6" data-aos="fade-up">
-    A place to Worship, Grow, and Serve God Together
-  </p>
-  <a href="#prayer" class="bg-white text-blue-700 px-6 py-3 rounded-full font-semibold shadow">
-    Send Prayer Request
-  </a>
+<section class="bg-gradient-to-r from-blue-800 to-blue-500 text-white text-center pt-36 pb-20 px-4">
+<h2 class="text-3xl md:text-5xl font-extrabold mb-4" data-aos="fade-up"> Almighty God of Heaven Apostolic Ministry</h2>
+<p class="mb-6" data-aos="fade-up"> A place to Worship, Grow, and Serve God Together</p>
+<a href="#prayer" data-aos="fade-up" class="bg-white text-blue-700 px-6 py-3 rounded-full font-semibold">Send Prayer Request</a>
 </section>
 
-<!-- LIVE EVENTS -->
-<section class="py-10 bg-gradient-to-r from-blue-600 to-blue-400 text-white">
-  <div class="max-w-6xl mx-auto px-4">
-    <h3 class="text-xl md:text-2xl font-bold mb-6 text-center">
-      📢 Live Events & Announcements
-    </h3>
-
-    <div class="overflow-hidden">
-      <div class="flex gap-6 animate-scroll">
-
-        <div class="min-w-[250px] bg-white text-gray-800 p-4 rounded-xl shadow">🔥 Revival Night</div>
-        <div class="min-w-[250px] bg-white text-gray-800 p-4 rounded-xl shadow">🙏 Prayer Week</div>
-        <div class="min-w-[250px] bg-white text-gray-800 p-4 rounded-xl shadow">🎉 Anniversary</div>
-        <div class="min-w-[250px] bg-white text-gray-800 p-4 rounded-xl shadow">📖 Bible Study</div>
-
-      </div>
-    </div>
-  </div>
+<!-- ANNOUNCEMENTS -->
+<section id="announcements" class="py-10 bg-blue-600 text-white mt-10">
+  <h3 class="text-center text-xl font-bold mb-6">📢 Announcements</h3>
+  <div id="announcementsList" class="max-w-6xl mx-auto grid md:grid-cols-3 gap-4 px-4"></div>
 </section>
-
-<style>
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-.animate-scroll {
-  display: flex;
-  width: max-content;
-  animation: scroll 20s linear infinite;
-}
-</style>
 
 <!-- ABOUT -->
-<section id="about" class="max-w-6xl mx-auto py-16 px-4 text-center" data-aos="fade-up">
-  <h3 class="text-3xl font-bold mb-6">About Us</h3>
-    <p class="text-gray-600 text-lg leading-relaxed">
-      Almighty God of Heaven Apostolic Ministry is a Christ-centered church committed to preaching the Word of God, making disciples, and building a strong faith community.
-    </p>
-  </section>
+<section id="about" class="py-16 text-center max-w-4xl mx-auto px-4">
+<h3 class="text-3xl font-bold mb-4">About Us</h3>
+<p>Almighty God of Heaven Apostolic Ministry is a Christ-centered church committed to preaching the Word of God, making disciples, and building a strong faith community.</p>
+</section>
 
 <!-- Services -->
-  <section id="services" class="bg-gray-100 py-20">
-    <div class="max-w-6xl mx-auto px-4">
-      <h3 class="text-3xl font-bold mb-10 text-center">Church Services</h3>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
-          <h4 class="font-semibold mb-2">Sunday Worship</h4>
-          <p class="text-sm text-gray-500">9:00 AM</p>
-        </div>
-        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
-          <h4 class="font-semibold mb-2">Prayer Meeting</h4>
-          <p class="text-sm text-gray-500">Wednesday 6:00 PM</p>
-        </div>
-        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
-          <h4 class="font-semibold mb-2">Youth Fellowship</h4>
-          <p class="text-sm text-gray-500">Friday 2:00 PM</p>
-        </div>
+<section id="services" class="bg-gray-100 py-20">
+  <div class="max-w-6xl mx-auto px-4">
+    <h3 class="text-3xl font-bold mb-10 text-center">Church Services</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <h4 class="font-semibold mb-2">Sunday Worship</h4>
+        <p class="text-sm text-gray-500">9:00 AM</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <h4 class="font-semibold mb-2">Prayer Meeting</h4>
+        <p class="text-sm text-gray-500">Wednesday 6:00 PM</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <h4 class="font-semibold mb-2">Youth Fellowship</h4>
+        <p class="text-sm text-gray-500">Friday 2:00 PM</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
 <!-- Events -->
-  <section id="events" class="max-w-6xl mx-auto py-20 px-4">
-    <h3 class="text-3xl font-bold mb-10 text-center">Upcoming Events</h3>
-    <ul class="space-y-4 max-w-xl mx-auto">
-      <li class="bg-white p-4 rounded-xl shadow">Evangelism Outreach - April</li>
-      <li class="bg-white p-4 rounded-xl shadow">Church Anniversary - Every 1st Sunday of August</li>
-    </ul>
-  </section>
-
-<!-- PRAYER -->
-<section id="prayer" class="py-16 px-4 text-center max-w-5xl mx-auto">
-  <h3 class="text-2xl md:text-3xl font-bold mb-6">Prayer Request</h3>
-
-  <div id="successMsg" class="hidden bg-green-100 p-3 rounded mb-4">
-    🙏 Thank you! Your prayer has been submitted.
-  </div>
-
-  <button onclick="showMessage()" class="mb-4 bg-blue-600 text-white px-5 py-2 rounded">
-    I submitted already
-  </button>
-
-  <iframe 
-    src="https://docs.google.com/forms/d/e/1FAIpQLSfDwFec-UhJezQ9EUuqAMCfEMJvqQRIjNoGel1Z3xL0Kac3EQ/viewform?embedded=true"
-    width="100%" height="800" class="rounded-xl shadow">
-  </iframe>
+<section id="events" class="max-w-6xl mx-auto py-20 px-4">
+  <h3 class="text-3xl font-bold mb-10 text-center">Upcoming Events</h3>
+  <ul class="space-y-4 max-w-xl mx-auto">
+    <li class="bg-white p-4 rounded-xl shadow">Evangelism Outreach - April</li>
+    <li class="bg-white p-4 rounded-xl shadow">Joint Fellowship - April 12, 2026</li>
+  </ul>
 </section>
 
 <!-- GALLERY -->
 <section id="gallery" class="bg-gray-100 py-16">
-  <div class="max-w-6xl mx-auto px-4">
-    <h3 class="text-2xl md:text-3xl font-bold mb-10 text-center">Gallery</h3>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <img src="https://i.imgur.com/UsCK7K2.jpeg" class="gallery-img rounded-xl shadow hover:scale-105 transition">
-      <img src="https://i.imgur.com/7DpT7Ho.jpeg" class="gallery-img rounded-xl shadow hover:scale-105 transition">
-      <img src="https://i.imgur.com/DrI7T5O.jpeg" class="gallery-img rounded-xl shadow hover:scale-105 transition">
-    </div>
-  </div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
+<img src="https://i.imgur.com/UsCK7K2.jpeg" class="gallery-img rounded-xl shadow hover:scale-105 transition">
+<img src="https://i.imgur.com/7DpT7Ho.jpeg" class="gallery-img rounded-xl shadow hover:scale-105 transition">
+<img src="https://i.imgur.com/DrI7T5O.jpeg" class="gallery-img rounded-xl shadow hover:scale-105 transition">
+</div>
 </section>
 
 <!-- LIGHTBOX -->
-<div id="lightbox" onclick="closeLightbox()">
-  <img id="lightbox-img">
+<div id="lightbox" onclick="this.style.display='none'">
+<img id="lightbox-img">
 </div>
 
-<!-- Contact -->
-  <section id="contact" class="bg-gray-100 py-20">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h3 class="text-3xl font-bold mb-6">Contact Us</h3>
-      <p class="text-gray-600 mb-3">📍 Blk 21-R Lot 4, Carissa Homes East 1 Bagumbayan, Teresa, Philippines, 1880</p>
-      <p class="text-gray-600 mb-3">📞 0938-8484-568</p>
-      <p class="text-gray-600">📧 agham.inc.ph@gmail.com</p>
-    </div>
-  </section>
+<!-- PRAYER -->
+<section id="prayer" class="py-16 text-center">
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfDwFec-UhJezQ9EUuqAMCfEMJvqQRIjNoGel1Z3xL0Kac3EQ/viewform?embedded=true"
+width="100%" height="800"></iframe>
+</section>
 
-<footer class="bg-gray-900 text-white text-center py-4">
-  © 2026 AGHAM Ministry
-</footer>
+<!-- GIVING -->
+<section class="py-16 text-center bg-gray-100">
+<h3 class="text-2xl font-bold mb-4">Support the Ministry</h3>
+<p class="mb-4">GCash: <span class="font-bold text-blue-600">09XX-XXX-XXXX</span></p>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-gray-100 py-20">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h3 class="text-3xl font-bold mb-6">Contact Us</h3>
+    <p class="text-gray-600 mb-3">📍 Blk 21-R Lot 4, Carissa Homes East 1 Bagumbayan, Teresa, Philippines, 1880</p>
+    <p class="text-gray-600 mb-3">📞 0938-8484-568</p>
+    <p class="text-gray-600">📧 agham.inc.ph@gmail.com</p>
+  </div>
+</section>
+
+<script>
+function toggleMenu(){
+document.getElementById("mobileMenu").classList.toggle("hidden");
+}
+
+// navbar shrink
+window.addEventListener("scroll",()=>{
+let nav=document.getElementById("navContent");
+window.scrollY>50?nav.classList.add("shrink"):nav.classList.remove("shrink");
+});
+
+// lightbox
+document.querySelectorAll(".gallery-img").forEach(img=>{
+img.onclick=()=>{
+document.getElementById("lightbox").style.display="flex";
+document.getElementById("lightbox-img").src=img.src;
+};
+});
+
+/* ANNOUNCEMENTS FROM GOOGLE SHEET CSV */
+const SHEET_ID = "1VqSpUe-5o0Px0UPyvqkG_DvayjwWluLU3KRyV7r75ME";
+const GID = "0";
+const csvUrl = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&gid=${GID}`;
+
+fetch(csvUrl)
+  .then(response => response.text())
+  .then(csv => {
+    const list = document.getElementById("announcementsList");
+    list.innerHTML = "";
+
+    const rows = csv.trim().split("\n").map(row =>
+      row.replace(/\r/g,'').split(",")
+    );
+
+    rows.forEach(row => {
+      const title = row[0] || "";
+      const details = row[1] || "";
+      const link = row[2] || "#";
+
+      if (!title) return;
+
+      const card = document.createElement("a");
+      card.href = link || "#";
+      card.target = "_blank";
+      card.className = "bg-white text-gray-800 p-4 rounded-xl shadow slide-right block hover:shadow-lg transition";
+
+      card.innerHTML = `
+        <h4 class="font-bold mb-2">${title}</h4>
+        <p class="text-sm text-gray-600">${details}</p>
+      `;
+
+      list.appendChild(card);
+    });
+  })
+  .catch(error => {
+    console.error("CSV load error:", error);
+    document.getElementById("announcementsList").innerHTML =
+      '<p class="text-white text-center col-span-3">Unable to load announcements.</p>';
+  });
+</script>
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-AOS.init();
-
-function toggleMenu() {
-  document.getElementById("mobileMenu").classList.toggle("hidden");
-}
-
-function showMessage() {
-  document.getElementById("successMsg").classList.remove("hidden");
-}
-
-// Shrink navbar
-window.addEventListener("scroll", function() {
-  let nav = document.getElementById("navContent");
-  if (window.scrollY > 50) {
-    nav.classList.add("shrink");
-  } else {
-    nav.classList.remove("shrink");
-  }
+AOS.init({
+  duration: 1000,
+  once: true
 });
-
-// Lightbox
-document.querySelectorAll(".gallery-img").forEach(img => {
-  img.addEventListener("click", function() {
-    document.getElementById("lightbox").style.display = "flex";
-    document.getElementById("lightbox-img").src = this.src;
-  });
-});
-
-function closeLightbox() {
-  document.getElementById("lightbox").style.display = "none";
-}
 </script>
 
 </body>
