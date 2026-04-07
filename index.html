@@ -88,32 +88,57 @@ class="w-20 h-20 md:w-24 md:h-24 rounded-full logo-glow">
 <a href="#contact">Contact</a>
 </nav>
 
-<button onclick="toggleMenu()" class="md:hidden text-2xl">☰</button>
+<button onclick="toggleMenu()" class="md:hidden text-2xl text-blue-700 font-bold">☰</button>
 </div>
 </header>
 
 <!-- MOBILE OVERLAY -->
-<div id="mobileOverlay" onclick="toggleMenu()" class="hidden fixed inset-0 bg-black/40 z-40 md:hidden"></div>
+<div id="mobileOverlay" onclick="toggleMenu()" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden"></div>
 
 <!-- MOBILE SIDE MENU -->
-<div id="mobileMenu" class="fixed top-0 right-0 h-full w-72 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50 md:hidden touch-pan-y">
-  <div class="flex justify-between items-center p-5 border-b">
+<div id="mobileMenu" class="fixed top-0 right-0 h-full w-72 bg-gradient-to-b from-blue-900 via-blue-700 to-blue-500 text-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50 md:hidden touch-pan-y">
+  <div class="flex justify-between items-center p-5 border-b border-white/20">
     <div class="flex items-center gap-3">
-      <img src="https://i.imgur.com/EsoHkMb.png" class="w-12 h-12 rounded-full shadow">
-      <h2 class="text-xl font-bold text-blue-700">AGHAM</h2>
+      <img src="https://i.imgur.com/EsoHkMb.png" class="w-12 h-12 rounded-full shadow-lg border border-white/30">
+      <div>
+        <h2 class="text-xl font-bold">AGHAM</h2>
+        <p class="text-xs text-white/80">Church Menu</p>
+      </div>
     </div>
-    <button onclick="toggleMenu()" class="text-2xl">&times;</button>
+    <button onclick="toggleMenu()" class="text-2xl bg-white/10 hover:bg-white/20 rounded-full w-10 h-10 flex items-center justify-center transition">&times;</button>
   </div>
 
-  <nav class="flex flex-col p-5 space-y-4 text-lg font-medium">
-    <a href="#" onclick="toggleMenu()">Home</a>
-    <a href="#about" onclick="toggleMenu()">About</a>
-    <a href="#services" onclick="toggleMenu()">Services</a>
-    <a href="#events" onclick="toggleMenu()">Events</a>
-    <a href="#prayer" onclick="toggleMenu()">Prayer</a>
-    <a href="#gallery" onclick="toggleMenu()">Gallery</a>
-    <a href="#contact" onclick="toggleMenu()">Contact</a>
+  <div class="px-5 pt-4 pb-2">
+    <p class="text-sm text-white/80">Navigate</p>
+  </div>
+
+  <nav class="flex flex-col px-4 pb-6 space-y-2 text-lg font-medium">
+    <a href="#" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
+      <span>🏠</span><span>Home</span>
+    </a>
+    <a href="#about" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
+      <span>📖</span><span>About</span>
+    </a>
+    <a href="#services" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
+      <span>⛪</span><span>Services</span>
+    </a>
+    <a href="#events" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
+      <span>📅</span><span>Events</span>
+    </a>
+    <a href="#prayer" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
+      <span>🙏</span><span>Prayer</span>
+    </a>
+    <a href="#gallery" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
+      <span>🖼️</span><span>Gallery</span>
+    </a>
+    <a href="#contact" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
+      <span>📞</span><span>Contact</span>
+    </a>
   </nav>
+
+  <div class="absolute bottom-0 left-0 right-0 p-5 border-t border-white/20 bg-black/10">
+    <p class="text-xs text-white/80 text-center">Almighty God of Heaven Apostolic Ministry</p>
+  </div>
 </div>
 
 <!-- HERO -->
@@ -207,6 +232,20 @@ function toggleMenu(){
   overlay.classList.toggle("hidden");
 }
 
+// navbar shrink
+window.addEventListener("scroll",()=>{
+let nav=document.getElementById("navContent");
+window.scrollY>50?nav.classList.add("shrink"):nav.classList.remove("shrink");
+});
+
+// lightbox
+document.querySelectorAll(".gallery-img").forEach(img=>{
+img.onclick=()=>{
+document.getElementById("lightbox").style.display="flex";
+document.getElementById("lightbox-img").src=img.src;
+};
+});
+
 const mobileMenu = document.getElementById("mobileMenu");
 let startX = 0;
 let currentX = 0;
@@ -244,20 +283,6 @@ mobileMenu.addEventListener("touchend", () => {
   isSwiping = false;
 });
 
-// navbar shrink
-window.addEventListener("scroll",()=>{
-let nav=document.getElementById("navContent");
-window.scrollY>50?nav.classList.add("shrink"):nav.classList.remove("shrink");
-});
-
-// lightbox
-document.querySelectorAll(".gallery-img").forEach(img=>{
-img.onclick=()=>{
-document.getElementById("lightbox").style.display="flex";
-document.getElementById("lightbox-img").src=img.src;
-};
-});
-
 function parseCSVLine(line) {
   const result = [];
   let current = "";
@@ -267,10 +292,10 @@ function parseCSVLine(line) {
     const char = line[i];
     const nextChar = line[i + 1];
 
-    if (char === '\"' && inQuotes && nextChar === '\"') {
-      current += '\"';
+    if (char === '"' && inQuotes && nextChar === '"') {
+      current += '"';
       i++;
-    } else if (char === '\"') {
+    } else if (char === '"') {
       inQuotes = !inQuotes;
     } else if (char === ',' && !inQuotes) {
       result.push(current.trim());
@@ -281,7 +306,7 @@ function parseCSVLine(line) {
   }
 
   result.push(current.trim());
-  return result.map(cell => cell.replace(/^\"|\"$/g, "").trim());
+  return result.map(cell => cell.replace(/^"|"$/g, "").trim());
 }
 
 /* ANNOUNCEMENTS FROM GOOGLE SHEET CSV */
