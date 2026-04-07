@@ -56,6 +56,7 @@ body { font-family: 'Poppins', sans-serif; }
   display:none;
   align-items:center;
   justify-content:center;
+  z-index: 9999;
 }
 #lightbox img {
   max-width:90%;
@@ -89,17 +90,28 @@ class="w-20 h-20 md:w-24 md:h-24 rounded-full logo-glow">
 
 <button onclick="toggleMenu()" class="md:hidden text-2xl">☰</button>
 </div>
-
-<div id="mobileMenu" class="hidden bg-white px-4 pb-4 space-y-2">
-<a href="#">Home</a>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#events">Events</a>
-<a href="#prayer">Prayer</a>
-<a href="#gallery">Gallery</a>
-<a href="#contact">Contact</a>
-</div>
 </header>
+
+<!-- MOBILE OVERLAY -->
+<div id="mobileOverlay" onclick="toggleMenu()" class="hidden fixed inset-0 bg-black/40 z-40 md:hidden"></div>
+
+<!-- MOBILE SIDE MENU -->
+<div id="mobileMenu" class="fixed top-0 right-0 h-full w-72 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50 md:hidden">
+  <div class="flex justify-between items-center p-5 border-b">
+    <h2 class="text-xl font-bold text-blue-700">Menu</h2>
+    <button onclick="toggleMenu()" class="text-2xl">&times;</button>
+  </div>
+
+  <nav class="flex flex-col p-5 space-y-4 text-lg font-medium">
+    <a href="#" onclick="toggleMenu()">Home</a>
+    <a href="#about" onclick="toggleMenu()">About</a>
+    <a href="#services" onclick="toggleMenu()">Services</a>
+    <a href="#events" onclick="toggleMenu()">Events</a>
+    <a href="#prayer" onclick="toggleMenu()">Prayer</a>
+    <a href="#gallery" onclick="toggleMenu()">Gallery</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+  </nav>
+</div>
 
 <!-- HERO -->
 <section class="bg-gradient-to-r from-blue-800 to-blue-500 text-white text-center pt-36 pb-20 px-4">
@@ -150,9 +162,9 @@ class="w-20 h-20 md:w-24 md:h-24 rounded-full logo-glow">
 <!-- GALLERY -->
 <section id="gallery" class="bg-gray-100 py-16">
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
-<img src="https://i.imgur.com/UsCK7K2.jpeg" class="gallery-img rounded-xl shadow hover:scale-105 transition">
-<img src="https://i.imgur.com/7DpT7Ho.jpeg" class="gallery-img rounded-xl shadow hover:scale-105 transition">
-<img src="https://i.imgur.com/DrI7T5O.jpeg" class="gallery-img rounded-xl shadow hover:scale-105 transition">
+<img src="https://i.imgur.com/UsCK7K2.jpeg" class="gallery-img rounded-xl shadow hover:scale-105 transition cursor-pointer">
+<img src="https://i.imgur.com/7DpT7Ho.jpeg" class="gallery-img rounded-xl shadow hover:scale-105 transition cursor-pointer">
+<img src="https://i.imgur.com/DrI7T5O.jpeg" class="gallery-img rounded-xl shadow hover:scale-105 transition cursor-pointer">
 </div>
 </section>
 
@@ -185,7 +197,11 @@ width="100%" height="800"></iframe>
 
 <script>
 function toggleMenu(){
-document.getElementById("mobileMenu").classList.toggle("hidden");
+  const menu = document.getElementById("mobileMenu");
+  const overlay = document.getElementById("mobileOverlay");
+
+  menu.classList.toggle("translate-x-full");
+  overlay.classList.toggle("hidden");
 }
 
 // navbar shrink
@@ -211,10 +227,10 @@ function parseCSVLine(line) {
     const char = line[i];
     const nextChar = line[i + 1];
 
-    if (char === '"' && inQuotes && nextChar === '"') {
-      current += '"';
+    if (char === '\"' && inQuotes && nextChar === '\"') {
+      current += '\"';
       i++;
-    } else if (char === '"') {
+    } else if (char === '\"') {
       inQuotes = !inQuotes;
     } else if (char === ',' && !inQuotes) {
       result.push(current.trim());
@@ -225,7 +241,7 @@ function parseCSVLine(line) {
   }
 
   result.push(current.trim());
-  return result.map(cell => cell.replace(/^"|"$/g, "").trim());
+  return result.map(cell => cell.replace(/^\"|\"$/g, "").trim());
 }
 
 /* ANNOUNCEMENTS FROM GOOGLE SHEET CSV */
