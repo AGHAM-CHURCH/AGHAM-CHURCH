@@ -116,8 +116,8 @@ class="w-20 h-20 md:w-24 md:h-24 rounded-full logo-glow">
 
 <!-- ABOUT -->
 <section id="about" class="py-16 text-center max-w-4xl mx-auto px-4">
-<h3 class="text-3xl font-bold mb-4">About Us</h3>
-<p>Almighty God of Heaven Apostolic Ministry is a Christ-centered church committed to preaching the Word of God, making disciples, and building a strong faith community.</p>
+<h3 class="text-3xl font-bold mb-4" data-aos="fade-up">About Us</h3>
+<p data-aos="fade-up">Almighty God of Heaven Apostolic Ministry is a Christ-centered church committed to preaching the Word of God, making disciples, and building a strong faith community.</p>
 </section>
 
 <!-- Services -->
@@ -246,6 +246,14 @@ fetch(csvUrl)
     document.getElementById("announcementsList").innerHTML =
       '<p class="text-white text-center col-span-3">Unable to load announcements.</p>';
   });
+</script>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({
+  duration: 1000,
+  once: true
+});
 </script>
 
 </body>
