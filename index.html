@@ -61,6 +61,126 @@ body { font-family: 'Poppins', sans-serif; }
   max-width:90%;
   max-height:90%;
 }
+
+/* DAILY VERSE */
+.agham-daily-verse-section {
+  padding: 70px 20px;
+  background: linear-gradient(to bottom, #eff6ff, #f8fbff);
+}
+
+.agham-daily-verse-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.agham-daily-verse-card {
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  padding: 36px 24px;
+  box-shadow: 0 12px 35px rgba(37, 99, 235, 0.10);
+  border: 1px solid rgba(37, 99, 235, 0.08);
+  text-align: center;
+}
+
+.agham-daily-verse-badge {
+  display: inline-block;
+  background: #dbeafe;
+  color: #1d4ed8;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.agham-daily-verse-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+.agham-daily-verse-subtitle {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin-bottom: 28px;
+}
+
+.agham-daily-verse-text {
+  font-size: 1.35rem;
+  line-height: 1.9;
+  color: #1f2937;
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+
+.agham-daily-verse-reference {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 16px;
+}
+
+.agham-daily-verse-thought {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #4b5563;
+  font-size: 1rem;
+  line-height: 1.8;
+  font-style: italic;
+}
+
+.agham-daily-verse-actions {
+  margin-top: 28px;
+}
+
+.agham-refresh-verse-btn {
+  background: linear-gradient(to right, #2563eb, #60a5fa);
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.agham-refresh-verse-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+}
+
+.agham-refresh-verse-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+@media (max-width: 768px) {
+  .agham-daily-verse-section {
+    padding: 50px 16px;
+  }
+
+  .agham-daily-verse-card {
+    padding: 26px 18px;
+    border-radius: 20px;
+  }
+
+  .agham-daily-verse-title {
+    font-size: 1.6rem;
+  }
+
+  .agham-daily-verse-text {
+    font-size: 1.1rem;
+  }
+
+  .agham-refresh-verse-btn {
+    width: 100%;
+  }
+}
 </style>
 </head>
 
@@ -147,8 +267,29 @@ body { font-family: 'Poppins', sans-serif; }
   <a href="#prayer" data-aos="fade-up" class="bg-white text-blue-700 px-6 py-3 rounded-full font-semibold">Send Prayer Request</a>
 </section>
 
+<!-- DAILY VERSE -->
+<section id="daily-verse" class="agham-daily-verse-section">
+  <div class="agham-daily-verse-wrap">
+    <div class="agham-daily-verse-card" data-aos="fade-up">
+      <span class="agham-daily-verse-badge">Daily Devotional</span>
+      <h3 class="agham-daily-verse-title">Verse of the Day</h3>
+      <p class="agham-daily-verse-subtitle">A fresh Word to strengthen your faith today.</p>
+
+      <p id="aghamVerseText" class="agham-daily-verse-text">Loading today's verse...</p>
+      <p id="aghamVerseReference" class="agham-daily-verse-reference"></p>
+      <p id="aghamVerseThought" class="agham-daily-verse-thought"></p>
+
+      <div class="agham-daily-verse-actions">
+        <button id="aghamRefreshVerseBtn" class="agham-refresh-verse-btn" type="button">
+          Get Another Verse
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ANNOUNCEMENTS -->
-<section id="announcements" class="py-10 bg-blue-600 text-white mt-10">
+<section id="announcements" class="py-10 bg-blue-600 text-white">
   <h3 class="text-center text-xl font-bold mb-6">📢 Announcements</h3>
   <div id="announcementsList" class="max-w-6xl mx-auto grid md:grid-cols-3 gap-4 px-4"></div>
 </section>
@@ -451,6 +592,200 @@ fetch(eventsCsvUrl)
     document.getElementById("eventsList").innerHTML =
       '<p class="text-center text-red-500 col-span-2">Unable to load events.</p>';
   });
+
+/* DAILY VERSE */
+(function () {
+  const verseTextEl = document.getElementById("aghamVerseText");
+  const verseReferenceEl = document.getElementById("aghamVerseReference");
+  const verseThoughtEl = document.getElementById("aghamVerseThought");
+  const refreshBtn = document.getElementById("aghamRefreshVerseBtn");
+
+  if (!verseTextEl || !verseReferenceEl || !verseThoughtEl) return;
+
+  const translation = "web";
+
+  const versePool = [
+    "John 3:16",
+    "Psalm 23:1",
+    "Philippians 4:13",
+    "Proverbs 3:5-6",
+    "Jeremiah 29:11",
+    "Isaiah 41:10",
+    "Romans 8:28",
+    "Matthew 11:28",
+    "Joshua 1:9",
+    "Psalm 46:1",
+    "Lamentations 3:22-23",
+    "2 Corinthians 5:7",
+    "Hebrews 11:1",
+    "1 Peter 5:7",
+    "Psalm 34:8",
+    "Colossians 3:23",
+    "Romans 12:12",
+    "Psalm 121:1-2",
+    "James 1:5",
+    "Galatians 6:9",
+    "Micah 6:8",
+    "Psalm 27:1",
+    "John 14:27",
+    "Deuteronomy 31:6",
+    "Psalm 91:1-2",
+    "Romans 15:13",
+    "Ephesians 2:8",
+    "Hebrews 13:8",
+    "Psalm 119:105",
+    "Matthew 6:33",
+    "Isaiah 40:31"
+  ];
+
+  const fallbackThoughts = [
+    "God's Word reminds us that His promises remain true in every season of life.",
+    "Let this verse encourage your heart and guide your walk with the Lord today.",
+    "Even in uncertainty, the Lord speaks peace, strength, and direction to His people.",
+    "Take this message into prayer and allow God to refresh your spirit today.",
+    "May this Scripture draw you closer to the love, wisdom, and grace of God.",
+    "The Lord's Word is living and powerful—carry it with faith throughout your day.",
+    "May today's verse become a source of hope and courage in whatever you are facing."
+  ];
+
+  function getTodayKey() {
+    const now = new Date();
+    const y = now.getFullYear();
+    const m = String(now.getMonth() + 1).padStart(2, "0");
+    const d = String(now.getDate()).padStart(2, "0");
+    return `${y}-${m}-${d}`;
+  }
+
+  function showVerse(verse, reference, thought) {
+    verseTextEl.textContent = `"${verse}"`;
+    verseReferenceEl.textContent = reference;
+    verseThoughtEl.textContent = thought;
+  }
+
+  function getThought(reference, verse) {
+    const combined = `${reference} ${verse}`.toLowerCase();
+
+    if (combined.includes("love")) {
+      return "God's love is the foundation of our faith and the reason we can live with hope.";
+    }
+    if (combined.includes("peace")) {
+      return "May the peace of God calm your heart and lead your thoughts today.";
+    }
+    if (combined.includes("strength")) {
+      return "Whatever burden you carry today, remember that God's strength is sufficient for you.";
+    }
+    if (combined.includes("trust")) {
+      return "Trusting God means believing that His way is good even when we do not yet see the whole path.";
+    }
+    if (combined.includes("fear") || combined.includes("afraid")) {
+      return "The Lord is calling you to stand in faith, not in fear, because He is with you.";
+    }
+    if (combined.includes("pray") || combined.includes("prayer")) {
+      return "God hears every sincere prayer—come before Him with faith and confidence.";
+    }
+
+    const index = Math.abs((reference + verse).length) % fallbackThoughts.length;
+    return fallbackThoughts[index];
+  }
+
+  function saveVerseForToday(payload) {
+    try {
+      localStorage.setItem("aghamDailyVerse", JSON.stringify(payload));
+    } catch (err) {
+      console.warn("Could not save verse to localStorage:", err);
+    }
+  }
+
+  function loadSavedVerseForToday() {
+    try {
+      const raw = localStorage.getItem("aghamDailyVerse");
+      if (!raw) return null;
+
+      const data = JSON.parse(raw);
+      if (data.dateKey === getTodayKey()) {
+        return data;
+      }
+      return null;
+    } catch (err) {
+      return null;
+    }
+  }
+
+  function setButtonState(isLoading) {
+    if (!refreshBtn) return;
+    refreshBtn.disabled = isLoading;
+    refreshBtn.textContent = isLoading ? "Loading..." : "Get Another Verse";
+  }
+
+  async function fetchVerse(forceRefresh) {
+    try {
+      setButtonState(true);
+
+      if (!forceRefresh) {
+        const saved = loadSavedVerseForToday();
+        if (saved && saved.verse && saved.reference) {
+          showVerse(saved.verse, saved.reference, saved.thought || "");
+          setButtonState(false);
+          return;
+        }
+      }
+
+      const dateSeed = new Date().getFullYear() + "-" + getTodayKey();
+      let seedValue = 0;
+      for (let i = 0; i < dateSeed.length; i++) {
+        seedValue += dateSeed.charCodeAt(i);
+      }
+
+      const baseIndex = seedValue % versePool.length;
+      const chosenReference = forceRefresh
+        ? versePool[Math.floor(Math.random() * versePool.length)]
+        : versePool[baseIndex];
+
+      const endpoint = `https://bible-api.com/${encodeURIComponent(chosenReference)}?translation=${translation}`;
+      const response = await fetch(endpoint);
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch verse from API");
+      }
+
+      const data = await response.json();
+
+      if (!data || !data.text) {
+        throw new Error("Invalid verse response");
+      }
+
+      const cleanVerse = data.text.replace(/\s+/g, " ").trim();
+      const cleanReference = (data.reference || chosenReference).trim();
+      const thought = getThought(cleanReference, cleanVerse);
+
+      showVerse(cleanVerse, cleanReference, thought);
+
+      if (!forceRefresh) {
+        saveVerseForToday({
+          dateKey: getTodayKey(),
+          verse: cleanVerse,
+          reference: cleanReference,
+          thought: thought
+        });
+      }
+    } catch (error) {
+      console.error("AGHAM Daily Verse Error:", error);
+      verseTextEl.textContent = "Unable to load today's verse right now. Please try again later.";
+      verseReferenceEl.textContent = "";
+      verseThoughtEl.textContent = "God's Word remains true and faithful every day.";
+    } finally {
+      setButtonState(false);
+    }
+  }
+
+  if (refreshBtn) {
+    refreshBtn.addEventListener("click", function () {
+      fetchVerse(true);
+    });
+  }
+
+  fetchVerse(false);
+})();
 </script>
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
