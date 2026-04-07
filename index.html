@@ -96,9 +96,12 @@ class="w-20 h-20 md:w-24 md:h-24 rounded-full logo-glow">
 <div id="mobileOverlay" onclick="toggleMenu()" class="hidden fixed inset-0 bg-black/40 z-40 md:hidden"></div>
 
 <!-- MOBILE SIDE MENU -->
-<div id="mobileMenu" class="fixed top-0 right-0 h-full w-72 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50 md:hidden">
+<div id="mobileMenu" class="fixed top-0 right-0 h-full w-72 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50 md:hidden touch-pan-y">
   <div class="flex justify-between items-center p-5 border-b">
-    <h2 class="text-xl font-bold text-blue-700">Menu</h2>
+    <div class="flex items-center gap-3">
+      <img src="https://i.imgur.com/EsoHkMb.png" class="w-12 h-12 rounded-full shadow">
+      <h2 class="text-xl font-bold text-blue-700">AGHAM</h2>
+    </div>
     <button onclick="toggleMenu()" class="text-2xl">&times;</button>
   </div>
 
@@ -203,6 +206,43 @@ function toggleMenu(){
   menu.classList.toggle("translate-x-full");
   overlay.classList.toggle("hidden");
 }
+
+const mobileMenu = document.getElementById("mobileMenu");
+let startX = 0;
+let currentX = 0;
+let isSwiping = false;
+
+mobileMenu.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+  currentX = startX;
+  isSwiping = true;
+}, { passive: true });
+
+mobileMenu.addEventListener("touchmove", (e) => {
+  if (!isSwiping) return;
+
+  currentX = e.touches[0].clientX;
+  const diffX = currentX - startX;
+
+  if (diffX > 0) {
+    mobileMenu.style.transform = `translateX(${diffX}px)`;
+  }
+}, { passive: true });
+
+mobileMenu.addEventListener("touchend", () => {
+  if (!isSwiping) return;
+
+  const diffX = currentX - startX;
+  mobileMenu.style.transform = "";
+
+  if (diffX > 80 && !mobileMenu.classList.contains("translate-x-full")) {
+    toggleMenu();
+  }
+
+  startX = 0;
+  currentX = 0;
+  isSwiping = false;
+});
 
 // navbar shrink
 window.addEventListener("scroll",()=>{
