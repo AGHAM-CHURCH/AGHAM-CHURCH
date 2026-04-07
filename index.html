@@ -202,6 +202,32 @@ document.getElementById("lightbox-img").src=img.src;
 };
 });
 
+function parseCSVLine(line) {
+  const result = [];
+  let current = "";
+  let inQuotes = false;
+
+  for (let i = 0; i < line.length; i++) {
+    const char = line[i];
+    const nextChar = line[i + 1];
+
+    if (char === '"' && inQuotes && nextChar === '"') {
+      current += '"';
+      i++;
+    } else if (char === '"') {
+      inQuotes = !inQuotes;
+    } else if (char === ',' && !inQuotes) {
+      result.push(current.trim());
+      current = "";
+    } else {
+      current += char;
+    }
+  }
+
+  result.push(current.trim());
+  return result.map(cell => cell.replace(/^"|"$/g, "").trim());
+}
+
 /* ANNOUNCEMENTS FROM GOOGLE SHEET CSV */
 const SHEET_ID = "1VqSpUe-5o0Px0UPyvqkG_DvayjwWluLU3KRyV7r75ME";
 const ANNOUNCEMENTS_GID = "0";
@@ -214,20 +240,25 @@ fetch(announcementsCsvUrl)
     list.innerHTML = "";
 
     const rows = csv.trim().split("\n").map(row =>
-      row.replace(/\r/g,'').split(",")
+      parseCSVLine(row.replace(/\r/g,''))
     );
 
     rows.forEach(row => {
-      const title = (row[0] || "").replace(/^"|"$/g, "").trim();
-      const details = (row[1] || "").replace(/^"|"$/g, "").trim();
-      const link = (row[2] || "#").replace(/^"|"$/g, "").trim();
+      const title = row[0] || "";
+      const details = row[1] || "";
+      const link = row[2] || "";
 
       if (!title) return;
 
-      const card = document.createElement("a");
-      card.href = link || "#";
-      card.target = "_blank";
-      card.rel = "noopener noreferrer";
+      const hasValidLink = link.startsWith("http://") || link.startsWith("https://");
+      const card = document.createElement(hasValidLink ? "a" : "div");
+
+      if (hasValidLink) {
+        card.href = link;
+        card.target = "_blank";
+        card.rel = "noopener noreferrer";
+      }
+
       card.className = "bg-white text-gray-800 p-4 rounded-xl shadow slide-right block hover:shadow-lg transition";
 
       card.innerHTML = `
@@ -255,20 +286,25 @@ fetch(eventsCsvUrl)
     list.innerHTML = "";
 
     const rows = csv.trim().split("\n").map(row =>
-      row.replace(/\r/g,'').split(",")
+      parseCSVLine(row.replace(/\r/g,''))
     );
 
     rows.forEach(row => {
-      const title = (row[0] || "").replace(/^"|"$/g, "").trim();
-      const details = (row[1] || "").replace(/^"|"$/g, "").trim();
-      const link = (row[2] || "#").replace(/^"|"$/g, "").trim();
+      const title = row[0] || "";
+      const details = row[1] || "";
+      const link = row[2] || "";
 
       if (!title) return;
 
-      const card = document.createElement("a");
-      card.href = link || "#";
-      card.target = "_blank";
-      card.rel = "noopener noreferrer";
+      const hasValidLink = link.startsWith("http://") || link.startsWith("https://");
+      const card = document.createElement(hasValidLink ? "a" : "div");
+
+      if (hasValidLink) {
+        card.href = link;
+        card.target = "_blank";
+        card.rel = "noopener noreferrer";
+      }
+
       card.className = "bg-white p-6 rounded-xl shadow hover:shadow-lg transition block";
 
       card.innerHTML = `
