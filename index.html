@@ -7,17 +7,66 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+
+    /* Gradient Text */
+    .gradient-text {
+      background: linear-gradient(to right, #2563eb, #60a5fa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Glow effect logo */
+    .logo-glow {
+      box-shadow: 0 0 15px rgba(37, 99, 235, 0.6);
+    }
+
+    /* Shrink navbar */
+    .shrink {
+      padding-top: 8px !important;
+      padding-bottom: 8px !important;
+    }
+
+    /* Lightbox */
+    #lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.9);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+    }
+  </style>
 </head>
 
 <body class="bg-gray-50 text-gray-800">
 
 <!-- NAVBAR -->
-<header class="bg-white shadow fixed w-full z-50">
-  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+<header id="navbar" class="bg-white shadow fixed w-full z-50 transition-all duration-300">
+  <div id="navContent" class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
     
-    <div class="flex items-center gap-3">
-      <img src="https://i.imgur.com/EsoHkMb.png" class="w-10 h-10 rounded-full">
-      <h1 class="text-sm md:text-lg font-bold tracking-widest">A G H A M</h1>
+    <div class="flex items-center gap-4">
+      <img src="https://i.imgur.com/EsoHkMb.png" 
+           class="w-16 h-16 md:w-20 md:h-20 rounded-full logo-glow transition-all duration-300">
+
+      <h1 class="text-xl md:text-3xl font-extrabold gradient-text">
+        AGHAM
+      </h1>
     </div>
 
     <nav class="hidden md:flex space-x-6 font-medium">
@@ -67,21 +116,10 @@
     <div class="overflow-hidden">
       <div class="flex gap-6 animate-scroll">
 
-        <div class="min-w-[250px] bg-white text-gray-800 p-4 rounded-xl shadow">
-          🔥 Revival Night<br><span class="text-sm">Friday • 6PM</span>
-        </div>
-
-        <div class="min-w-[250px] bg-white text-gray-800 p-4 rounded-xl shadow">
-          🙏 Prayer & Fasting Week<br><span class="text-sm">This Month</span>
-        </div>
-
-        <div class="min-w-[250px] bg-white text-gray-800 p-4 rounded-xl shadow">
-          🎉 Church Anniversary<br><span class="text-sm">August</span>
-        </div>
-
-        <div class="min-w-[250px] bg-white text-gray-800 p-4 rounded-xl shadow">
-          📖 Bible Study<br><span class="text-sm">Wednesday 6PM</span>
-        </div>
+        <div class="min-w-[250px] bg-white text-gray-800 p-4 rounded-xl shadow">🔥 Revival Night</div>
+        <div class="min-w-[250px] bg-white text-gray-800 p-4 rounded-xl shadow">🙏 Prayer Week</div>
+        <div class="min-w-[250px] bg-white text-gray-800 p-4 rounded-xl shadow">🎉 Anniversary</div>
+        <div class="min-w-[250px] bg-white text-gray-800 p-4 rounded-xl shadow">📖 Bible Study</div>
 
       </div>
     </div>
@@ -102,11 +140,11 @@
 
 <!-- ABOUT -->
 <section id="about" class="max-w-6xl mx-auto py-16 px-4 text-center" data-aos="fade-up">
-  <h3 class="text-2xl md:text-3xl font-bold mb-6">About Us</h3>
-  <p class="text-gray-600">
-    Christ-centered church committed to preaching the Word of God.
-  </p>
-</section>
+  <h3 class="text-3xl font-bold mb-6">About Us</h3>
+    <p class="text-gray-600 text-lg leading-relaxed">
+      Almighty God of Heaven Apostolic Ministry is a Christ-centered church committed to preaching the Word of God, making disciples, and building a strong faith community.
+    </p>
+  </section>
 
 <!-- Services -->
   <section id="services" class="bg-gray-100 py-20">
@@ -129,36 +167,14 @@
     </div>
   </section>
 
-<!-- EVENTS -->
-<section id="events" class="max-w-6xl mx-auto py-16 px-4">
-  <h3 class="text-2xl md:text-3xl font-bold mb-6 text-center">Events</h3>
-  <div class="space-y-4 max-w-xl mx-auto">
-    <div class="bg-white p-4 rounded-xl shadow">Evangelism Outreach</div>
-    <div class="bg-white p-4 rounded-xl shadow">Church Anniversary</div>
-  </div>
-</section>
-
-<!-- 🔥 GALLERY (RESTORED + IMPROVED) -->
-<section id="gallery" class="bg-gray-100 py-16">
-  <div class="max-w-6xl mx-auto px-4">
-    <h3 class="text-2xl md:text-3xl font-bold mb-10 text-center" data-aos="fade-up">
-      Gallery
-    </h3>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-
-      <img src="https://i.imgur.com/UsCK7K2.jpeg" 
-           class="rounded-xl shadow hover:scale-105 transition duration-300" data-aos="zoom-in">
-
-      <img src="https://i.imgur.com/7DpT7Ho.jpeg" 
-           class="rounded-xl shadow hover:scale-105 transition duration-300" data-aos="zoom-in">
-
-      <img src="https://i.imgur.com/DrI7T5O.jpeg" 
-           class="rounded-xl shadow hover:scale-105 transition duration-300" data-aos="zoom-in">
-
-    </div>
-  </div>
-</section>
+<!-- Events -->
+  <section id="events" class="max-w-6xl mx-auto py-20 px-4">
+    <h3 class="text-3xl font-bold mb-10 text-center">Upcoming Events</h3>
+    <ul class="space-y-4 max-w-xl mx-auto">
+      <li class="bg-white p-4 rounded-xl shadow">Evangelism Outreach - April</li>
+      <li class="bg-white p-4 rounded-xl shadow">Church Anniversary - Every 1st Sunday of August</li>
+    </ul>
+  </section>
 
 <!-- PRAYER -->
 <section id="prayer" class="py-16 px-4 text-center max-w-5xl mx-auto">
@@ -177,6 +193,24 @@
     width="100%" height="800" class="rounded-xl shadow">
   </iframe>
 </section>
+
+<!-- GALLERY -->
+<section id="gallery" class="bg-gray-100 py-16">
+  <div class="max-w-6xl mx-auto px-4">
+    <h3 class="text-2xl md:text-3xl font-bold mb-10 text-center">Gallery</h3>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <img src="https://i.imgur.com/UsCK7K2.jpeg" class="gallery-img rounded-xl shadow hover:scale-105 transition">
+      <img src="https://i.imgur.com/7DpT7Ho.jpeg" class="gallery-img rounded-xl shadow hover:scale-105 transition">
+      <img src="https://i.imgur.com/DrI7T5O.jpeg" class="gallery-img rounded-xl shadow hover:scale-105 transition">
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img">
+</div>
 
 <!-- Contact -->
   <section id="contact" class="bg-gray-100 py-20">
@@ -202,6 +236,28 @@ function toggleMenu() {
 
 function showMessage() {
   document.getElementById("successMsg").classList.remove("hidden");
+}
+
+// Shrink navbar
+window.addEventListener("scroll", function() {
+  let nav = document.getElementById("navContent");
+  if (window.scrollY > 50) {
+    nav.classList.add("shrink");
+  } else {
+    nav.classList.remove("shrink");
+  }
+});
+
+// Lightbox
+document.querySelectorAll(".gallery-img").forEach(img => {
+  img.addEventListener("click", function() {
+    document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("lightbox-img").src = this.src;
+  });
+});
+
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
 }
 </script>
 
