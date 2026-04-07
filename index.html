@@ -65,9 +65,10 @@ body { font-family: 'Poppins', sans-serif; }
 /* DAILY VERSE */
 .agham-daily-verse-section {
   padding: 70px 20px;
-  background: #eaf4ff;
-  border-top: 1px solid #bfdbfe;
-  border-bottom: 1px solid #bfdbfe;
+  background-color: #dbeafe !important;
+  background-image: linear-gradient(180deg, #dbeafe 0%, #eff6ff 55%, #dbeafe 100%) !important;
+  border-top: 4px solid #93c5fd;
+  border-bottom: 4px solid #93c5fd;
 }
 
 .agham-daily-verse-wrap {
@@ -78,17 +79,17 @@ body { font-family: 'Poppins', sans-serif; }
 .agham-daily-verse-card {
   max-width: 900px;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.98);
+  background: #f8fbff !important;
   border-radius: 24px;
   padding: 36px 24px;
-  box-shadow: 0 12px 35px rgba(37, 99, 235, 0.12);
-  border: 1px solid rgba(37, 99, 235, 0.12);
+  box-shadow: 0 12px 35px rgba(37, 99, 235, 0.14);
+  border: 2px solid #bfdbfe;
   text-align: center;
 }
 
 .agham-daily-verse-badge {
   display: inline-block;
-  background: #dbeafe;
+  background: #bfdbfe;
   color: #1d4ed8;
   padding: 8px 14px;
   border-radius: 999px;
@@ -99,7 +100,7 @@ body { font-family: 'Poppins', sans-serif; }
 
 .agham-daily-verse-title {
   font-family: 'Caveat', cursive;
-  font-size: 3rem;
+  font-size: 3.2rem;
   font-weight: 700;
   color: #1e3a8a;
   margin-bottom: 10px;
@@ -107,14 +108,14 @@ body { font-family: 'Poppins', sans-serif; }
 }
 
 .agham-daily-verse-subtitle {
-  color: #64748b;
+  color: #475569;
   font-size: 0.95rem;
   margin-bottom: 28px;
 }
 
 .agham-daily-verse-text {
   font-family: 'Caveat', cursive;
-  font-size: 2.2rem;
+  font-size: 2.3rem;
   line-height: 1.5;
   color: #1f2937;
   font-weight: 700;
@@ -123,7 +124,7 @@ body { font-family: 'Poppins', sans-serif; }
 
 .agham-daily-verse-reference {
   font-family: 'Caveat', cursive;
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   font-weight: 700;
   color: #2563eb;
   margin-bottom: 16px;
@@ -132,9 +133,9 @@ body { font-family: 'Poppins', sans-serif; }
 .agham-daily-verse-thought {
   max-width: 700px;
   margin: 0 auto;
-  color: #4b5563;
+  color: #334155;
   font-family: 'Caveat', cursive;
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   line-height: 1.5;
 }
 
@@ -176,15 +177,15 @@ body { font-family: 'Poppins', sans-serif; }
   }
 
   .agham-daily-verse-title {
-    font-size: 2.3rem;
+    font-size: 2.4rem;
   }
 
   .agham-daily-verse-text {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
   }
 
   .agham-daily-verse-reference {
-    font-size: 1.5rem;
+    font-size: 1.55rem;
   }
 
   .agham-daily-verse-thought {
@@ -282,9 +283,9 @@ body { font-family: 'Poppins', sans-serif; }
 </section>
 
 <!-- DAILY VERSE -->
-<section id="daily-verse" class="agham-daily-verse-section">
+<section id="daily-verse" class="agham-daily-verse-section" style="background:#dbeafe; background-image:linear-gradient(180deg, #dbeafe 0%, #eff6ff 55%, #dbeafe 100%); border-top:4px solid #93c5fd; border-bottom:4px solid #93c5fd;">
   <div class="agham-daily-verse-wrap">
-    <div class="agham-daily-verse-card" data-aos="fade-up">
+    <div class="agham-daily-verse-card" data-aos="fade-up" style="background:#f8fbff; border:2px solid #bfdbfe;">
       <span class="agham-daily-verse-badge">Daily Devotional</span>
       <h3 class="agham-daily-verse-title">Verse of the Day</h3>
       <p class="agham-daily-verse-subtitle">A fresh Word to strengthen your faith today.</p>
@@ -433,13 +434,11 @@ function toggleMenu(){
   overlay.classList.toggle("hidden");
 }
 
-// navbar shrink
 window.addEventListener("scroll",()=>{
   let nav=document.getElementById("navContent");
   window.scrollY>50 ? nav.classList.add("shrink") : nav.classList.remove("shrink");
 });
 
-// lightbox
 document.querySelectorAll(".gallery-img").forEach(img=>{
   img.onclick=()=>{
     document.getElementById("lightbox").style.display="flex";
@@ -510,7 +509,6 @@ function parseCSVLine(line) {
   return result.map(cell => cell.replace(/^"|"$/g, "").trim());
 }
 
-/* ANNOUNCEMENTS FROM GOOGLE SHEET CSV */
 const SHEET_ID = "1VqSpUe-5o0Px0UPyvqkG_DvayjwWluLU3KRyV7r75ME";
 const ANNOUNCEMENTS_GID = "0";
 const announcementsCsvUrl = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&gid=${ANNOUNCEMENTS_GID}`;
@@ -557,7 +555,6 @@ fetch(announcementsCsvUrl)
       '<p class="text-white text-center col-span-3">Unable to load announcements.</p>';
   });
 
-/* EVENTS FROM GOOGLE SHEET CSV */
 const EVENTS_GID = "1375025455";
 const eventsCsvUrl = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&gid=${EVENTS_GID}`;
 
@@ -607,7 +604,6 @@ fetch(eventsCsvUrl)
       '<p class="text-center text-red-500 col-span-2">Unable to load events.</p>';
   });
 
-/* DAILY VERSE */
 (function () {
   const verseTextEl = document.getElementById("aghamVerseText");
   const verseReferenceEl = document.getElementById("aghamVerseReference");
