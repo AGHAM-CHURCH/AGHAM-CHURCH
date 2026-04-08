@@ -1,16 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AGHAM CHURCH</title>
+<title>AGHAM Church | Almighty God of Heaven Apostolic Ministry</title>
+<meta name="description" content="Official website of AGHAM - Almighty God of Heaven Apostolic Ministry. Join us for worship, events, prayer requests, announcements, and fellowship.">
+<meta name="keywords" content="AGHAM Church, Apostolic Ministry, church in Teresa Rizal, prayer request, worship service, Christian church Philippines">
+<meta name="theme-color" content="#2563eb">
+
+<meta property="og:title" content="AGHAM Church">
+<meta property="og:description" content="A place to Worship, Grow, and Serve God Together.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://i.imgur.com/EsoHkMb.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AGHAM Church">
+<meta name="twitter:description" content="A place to Worship, Grow, and Serve God Together.">
+<meta name="twitter:image" content="https://i.imgur.com/EsoHkMb.png">
 
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-body { font-family: 'Poppins', sans-serif; }
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+body.menu-open {
+  overflow: hidden;
+}
 
 /* GLASS NAVBAR */
 #navbar {
@@ -39,11 +62,11 @@ body { font-family: 'Poppins', sans-serif; }
 
 /* Slide animation */
 @keyframes slideRight {
-  from { transform: translateX(-100%); }
-  to { transform: translateX(0); }
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
 }
 .slide-right {
-  animation: slideRight 0.8s ease;
+  animation: slideRight 0.7s ease;
 }
 
 /* Lightbox */
@@ -51,15 +74,27 @@ body { font-family: 'Poppins', sans-serif; }
   position: fixed;
   top:0; left:0;
   width:100%; height:100%;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0,0,0,0.92);
   display:none;
   align-items:center;
   justify-content:center;
   z-index: 9999;
+  padding: 20px;
 }
 #lightbox img {
-  max-width:90%;
-  max-height:90%;
+  max-width: 92%;
+  max-height: 88%;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+}
+#lightbox .lightbox-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
 }
 
 /* REAL LOGO WATERMARK */
@@ -68,7 +103,6 @@ body { font-family: 'Poppins', sans-serif; }
   overflow: hidden;
   background: #ffffff;
 }
-
 .logo-watermark-bg {
   position: absolute;
   inset: 0;
@@ -78,7 +112,6 @@ body { font-family: 'Poppins', sans-serif; }
   pointer-events: none;
   z-index: 0;
 }
-
 .logo-watermark-bg img {
   width: min(420px, 62vw);
   max-width: 420px;
@@ -87,12 +120,10 @@ body { font-family: 'Poppins', sans-serif; }
   transform: scale(1.06);
   user-select: none;
 }
-
 .logo-watermark-content {
   position: relative;
   z-index: 1;
 }
-
 .logo-watermark-soft {
   position: absolute;
   inset: 0;
@@ -105,7 +136,6 @@ body { font-family: 'Poppins', sans-serif; }
   pointer-events: none;
   z-index: 0;
 }
-
 @media (max-width: 768px) {
   .logo-watermark-bg img {
     width: min(250px, 65vw);
@@ -122,12 +152,10 @@ body { font-family: 'Poppins', sans-serif; }
   border-top: 4px solid #93c5fd;
   border-bottom: 4px solid #93c5fd;
 }
-
 .agham-daily-verse-wrap {
   max-width: 1100px;
   margin: 0 auto;
 }
-
 .agham-daily-verse-card {
   max-width: 900px;
   margin: 0 auto;
@@ -138,7 +166,6 @@ body { font-family: 'Poppins', sans-serif; }
   border: 2px solid #bfdbfe;
   text-align: center;
 }
-
 .agham-daily-verse-badge {
   display: inline-block;
   background: #bfdbfe;
@@ -149,7 +176,6 @@ body { font-family: 'Poppins', sans-serif; }
   font-weight: 700;
   margin-bottom: 14px;
 }
-
 .agham-daily-verse-title {
   font-family: 'Caveat', cursive;
   font-size: 2.7rem;
@@ -158,13 +184,11 @@ body { font-family: 'Poppins', sans-serif; }
   margin-bottom: 10px;
   line-height: 1.1;
 }
-
 .agham-daily-verse-subtitle {
   color: #475569;
   font-size: 0.95rem;
   margin-bottom: 28px;
 }
-
 .agham-daily-verse-text {
   font-family: 'Caveat', cursive;
   font-size: 1.9rem;
@@ -173,7 +197,6 @@ body { font-family: 'Poppins', sans-serif; }
   font-weight: 700;
   margin-bottom: 18px;
 }
-
 .agham-daily-verse-reference {
   font-family: 'Caveat', cursive;
   font-size: 1.5rem;
@@ -181,7 +204,6 @@ body { font-family: 'Poppins', sans-serif; }
   color: #2563eb;
   margin-bottom: 16px;
 }
-
 .agham-daily-verse-thought {
   max-width: 700px;
   margin: 0 auto;
@@ -190,11 +212,9 @@ body { font-family: 'Poppins', sans-serif; }
   font-size: 1.45rem;
   line-height: 1.5;
 }
-
 .agham-daily-verse-actions {
   margin-top: 28px;
 }
-
 .agham-refresh-verse-btn {
   background: linear-gradient(to right, #2563eb, #60a5fa);
   color: white;
@@ -205,12 +225,10 @@ body { font-family: 'Poppins', sans-serif; }
   cursor: pointer;
   transition: 0.3s ease;
 }
-
 .agham-refresh-verse-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
 }
-
 .agham-refresh-verse-btn:disabled {
   opacity: 0.7;
   cursor: not-allowed;
@@ -218,32 +236,51 @@ body { font-family: 'Poppins', sans-serif; }
   box-shadow: none;
 }
 
+/* Shared card polish */
+.section-subtitle {
+  color: #64748b;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.data-card {
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
+.data-card:hover {
+  transform: translateY(-4px);
+}
+.loading-card {
+  min-height: 120px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #eff6ff 25%, #dbeafe 50%, #eff6ff 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s infinite linear;
+}
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
 @media (max-width: 768px) {
   .agham-daily-verse-section {
     padding: 50px 16px;
   }
-
   .agham-daily-verse-card {
     padding: 26px 18px;
     border-radius: 20px;
   }
-
   .agham-daily-verse-title {
     font-size: 2.1rem;
   }
-
   .agham-daily-verse-text {
     font-size: 1.6rem;
   }
-
   .agham-daily-verse-reference {
     font-size: 1.3rem;
   }
-
   .agham-daily-verse-thought {
     font-size: 1.2rem;
   }
-
   .agham-refresh-verse-btn {
     width: 100%;
   }
@@ -328,10 +365,30 @@ body { font-family: 'Poppins', sans-serif; }
 </div>
 
 <!-- HERO -->
-<section class="bg-gradient-to-r from-blue-800 to-blue-500 text-white text-center pt-36 pb-20 px-4">
-  <h2 class="text-3xl md:text-5xl font-extrabold mb-4" data-aos="fade-up">Almighty God of Heaven Apostolic Ministry</h2>
-  <p class="mb-6" data-aos="fade-up">A place to Worship, Grow, and Serve God Together</p>
-  <a href="#prayer" data-aos="fade-up" class="bg-white text-blue-700 px-6 py-3 rounded-full font-semibold">Send Prayer Request</a>
+<section class="relative overflow-hidden bg-gradient-to-r from-blue-900 via-blue-700 to-blue-500 text-white text-center pt-40 pb-24 px-4">
+  <div class="absolute inset-0 bg-black/10"></div>
+  <div class="relative max-w-4xl mx-auto">
+    <p class="inline-block bg-white/15 border border-white/20 px-4 py-2 rounded-full text-sm font-semibold mb-5" data-aos="fade-up">
+      Welcome to AGHAM
+    </p>
+
+    <h2 class="text-3xl md:text-6xl font-extrabold mb-4 leading-tight" data-aos="fade-up">
+      Almighty God of Heaven Apostolic Ministry
+    </h2>
+
+    <p class="mb-8 text-base md:text-xl text-blue-50 max-w-2xl mx-auto" data-aos="fade-up">
+      A place to worship, grow in faith, and serve God together as one church family.
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up">
+      <a href="#prayer" class="bg-white text-blue-700 px-6 py-3 rounded-full font-semibold hover:bg-blue-50 transition">
+        Send Prayer Request
+      </a>
+      <a href="#events" class="border border-white/40 bg-white/10 px-6 py-3 rounded-full font-semibold hover:bg-white/20 transition">
+        View Upcoming Events
+      </a>
+    </div>
+  </div>
 </section>
 
 <!-- DAILY VERSE -->
@@ -356,15 +413,20 @@ body { font-family: 'Poppins', sans-serif; }
 </section>
 
 <!-- ANNOUNCEMENTS -->
-<section id="announcements" class="py-10 bg-blue-600 text-white">
-  <h3 class="text-center text-xl font-bold mb-6">📢 Announcements</h3>
-  <div id="announcementsList" class="max-w-6xl mx-auto grid md:grid-cols-3 gap-4 px-4"></div>
+<section id="announcements" class="py-14 bg-blue-600 text-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <h3 class="text-center text-3xl font-bold mb-3" data-aos="fade-up">📢 Announcements</h3>
+    <p class="text-center text-blue-100 mb-8 max-w-2xl mx-auto" data-aos="fade-up">
+      Stay updated with the latest church reminders, activities, and important ministry notices.
+    </p>
+    <div id="announcementsList" class="grid md:grid-cols-3 gap-4"></div>
+  </div>
 </section>
 
 <!-- ABOUT -->
 <section id="about" class="py-16 text-center max-w-4xl mx-auto px-4 logo-watermark-section">
   <div class="logo-watermark-bg">
-    <img src="https://i.imgur.com/owaojbK.jpeg" alt="">
+    <img src="https://i.imgur.com/EsoHkMb.png" alt="">
   </div>
   <div class="logo-watermark-soft"></div>
   <div class="logo-watermark-content">
@@ -397,33 +459,44 @@ body { font-family: 'Poppins', sans-serif; }
 <!-- EVENTS -->
 <section id="events" class="py-20 px-4 logo-watermark-section">
   <div class="logo-watermark-bg">
-    <img src="https://i.imgur.com/owaojbK.jpeg" alt="">
+    <img src="https://i.imgur.com/EsoHkMb.png" alt="">
   </div>
   <div class="logo-watermark-soft"></div>
   <div class="logo-watermark-content max-w-6xl mx-auto">
-    <h3 class="text-3xl font-bold mb-10 text-center">Upcoming Events</h3>
+    <h3 class="text-3xl font-bold mb-3 text-center" data-aos="fade-up">Upcoming Events</h3>
+    <p class="section-subtitle text-center mb-10" data-aos="fade-up">
+      Join our upcoming services, fellowships, and ministry gatherings.
+    </p>
     <div id="eventsList" class="grid md:grid-cols-2 gap-6"></div>
   </div>
 </section>
 
 <!-- GALLERY -->
 <section id="gallery" class="bg-gray-100 py-16">
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
-    <img src="https://i.imgur.com/UsCK7K2.jpeg" class="gallery-img rounded-xl shadow hover:scale-105 transition cursor-pointer">
-    <img src="https://i.imgur.com/7DpT7Ho.jpeg" class="gallery-img rounded-xl shadow hover:scale-105 transition cursor-pointer">
-    <img src="https://i.imgur.com/DrI7T5O.jpeg" class="gallery-img rounded-xl shadow hover:scale-105 transition cursor-pointer">
+  <div class="max-w-6xl mx-auto px-4">
+    <h3 class="text-3xl font-bold mb-3 text-center" data-aos="fade-up">Church Gallery</h3>
+    <p class="section-subtitle text-center mb-10" data-aos="fade-up">
+      Moments of worship, fellowship, and ministry life in AGHAM Family.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <img src="https://i.imgur.com/UsCK7K2.jpeg" alt="AGHAM Church gallery photo 1" class="gallery-img rounded-xl shadow hover:scale-105 transition cursor-pointer">
+      <img src="https://i.imgur.com/7DpT7Ho.jpeg" alt="AGHAM Church gallery photo 2" class="gallery-img rounded-xl shadow hover:scale-105 transition cursor-pointer">
+      <img src="https://i.imgur.com/DrI7T5O.jpeg" alt="AGHAM Church gallery photo 3" class="gallery-img rounded-xl shadow hover:scale-105 transition cursor-pointer">
+    </div>
   </div>
 </section>
 
 <!-- LIGHTBOX -->
-<div id="lightbox" onclick="this.style.display='none'">
-  <img id="lightbox-img">
+<div id="lightbox">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img id="lightbox-img" alt="Expanded gallery image">
 </div>
 
 <!-- PRAYER -->
 <section id="prayer" class="py-16 text-center logo-watermark-section">
   <div class="logo-watermark-bg">
-    <img src="https://i.imgur.com/owaojbK.jpeg" alt="">
+    <img src="https://i.imgur.com/EsoHkMb.png" alt="">
   </div>
   <div class="logo-watermark-soft"></div>
   <div class="logo-watermark-content">
@@ -496,26 +569,75 @@ body { font-family: 'Poppins', sans-serif; }
 </footer>
 
 <script>
-function toggleMenu(){
+function setMenuState(isOpen) {
   const menu = document.getElementById("mobileMenu");
   const overlay = document.getElementById("mobileOverlay");
 
-  menu.classList.toggle("translate-x-full");
-  overlay.classList.toggle("hidden");
+  if (isOpen) {
+    menu.classList.remove("translate-x-full");
+    overlay.classList.remove("hidden");
+    document.body.classList.add("menu-open");
+  } else {
+    menu.classList.add("translate-x-full");
+    overlay.classList.add("hidden");
+    document.body.classList.remove("menu-open");
+  }
 }
 
-window.addEventListener("scroll",()=>{
-  let nav=document.getElementById("navContent");
-  window.scrollY>50 ? nav.classList.add("shrink") : nav.classList.remove("shrink");
+function toggleMenu() {
+  const menu = document.getElementById("mobileMenu");
+  const isClosed = menu.classList.contains("translate-x-full");
+  setMenuState(isClosed);
+}
+
+window.addEventListener("scroll", () => {
+  const nav = document.getElementById("navContent");
+  if (!nav) return;
+  window.scrollY > 50 ? nav.classList.add("shrink") : nav.classList.remove("shrink");
 });
 
-document.querySelectorAll(".gallery-img").forEach(img=>{
-  img.onclick=()=>{
-    document.getElementById("lightbox").style.display="flex";
-    document.getElementById("lightbox-img").src=img.src;
-  };
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    setMenuState(false);
+    closeLightbox();
+  }
 });
 
+/* LIGHTBOX */
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const lightboxClose = document.getElementById("lightboxClose");
+
+function openLightbox(src, alt = "Expanded image") {
+  if (!lightbox || !lightboxImg) return;
+  lightboxImg.src = src;
+  lightboxImg.alt = alt;
+  lightbox.style.display = "flex";
+  document.body.classList.add("menu-open");
+}
+
+function closeLightbox() {
+  if (!lightbox) return;
+  lightbox.style.display = "none";
+  lightboxImg.src = "";
+  document.body.classList.remove("menu-open");
+}
+
+document.querySelectorAll(".gallery-img").forEach((img, index) => {
+  img.addEventListener("click", () => {
+    openLightbox(img.src, img.alt || `Gallery image ${index + 1}`);
+  });
+});
+
+if (lightbox) {
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox || e.target === lightboxClose) {
+      closeLightbox();
+    }
+  });
+}
+
+/* MOBILE SWIPE */
 const mobileMenu = document.getElementById("mobileMenu");
 let startX = 0;
 let currentX = 0;
@@ -545,7 +667,7 @@ mobileMenu.addEventListener("touchend", () => {
   mobileMenu.style.transform = "";
 
   if (diffX > 80 && !mobileMenu.classList.contains("translate-x-full")) {
-    toggleMenu();
+    setMenuState(false);
   }
 
   startX = 0;
@@ -553,6 +675,7 @@ mobileMenu.addEventListener("touchend", () => {
   isSwiping = false;
 });
 
+/* CSV PARSER */
 function parseCSVLine(line) {
   const result = [];
   let current = "";
@@ -579,19 +702,84 @@ function parseCSVLine(line) {
   return result.map(cell => cell.replace(/^"|"$/g, "").trim());
 }
 
+function isValidHttpLink(url) {
+  return /^https?:\/\/.+/i.test(url || "");
+}
+
+function createTextElement(tag, text, className = "") {
+  const el = document.createElement(tag);
+  el.textContent = text;
+  if (className) el.className = className;
+  return el;
+}
+
+function renderLoadingCards(container, count, classes = "") {
+  container.innerHTML = "";
+  for (let i = 0; i < count; i++) {
+    const card = document.createElement("div");
+    card.className = `loading-card ${classes}`;
+    container.appendChild(card);
+  }
+}
+
+function renderEmptyMessage(container, message, className = "") {
+  container.innerHTML = "";
+  const msg = document.createElement("p");
+  msg.className = className;
+  msg.textContent = message;
+  container.appendChild(msg);
+}
+
+function createDataCard({ title, details, link, wrapperClass, titleClass, detailsClass, clickableBgClass }) {
+  const hasValidLink = isValidHttpLink(link);
+  const card = document.createElement(hasValidLink ? "a" : "div");
+
+  if (hasValidLink) {
+    card.href = link;
+    card.target = "_blank";
+    card.rel = "noopener noreferrer";
+  }
+
+  card.className = `${wrapperClass} ${clickableBgClass} data-card transition block`;
+
+  const titleEl = createTextElement("h4", title, titleClass);
+  const detailsEl = createTextElement("p", details, detailsClass);
+
+  card.appendChild(titleEl);
+  card.appendChild(detailsEl);
+
+  return card;
+}
+
 const SHEET_ID = "1VqSpUe-5o0Px0UPyvqkG_DvayjwWluLU3KRyV7r75ME";
 const ANNOUNCEMENTS_GID = "0";
-const announcementsCsvUrl = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&gid=${ANNOUNCEMENTS_GID}`;
+const EVENTS_GID = "1375025455";
 
+const announcementsCsvUrl = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&gid=${ANNOUNCEMENTS_GID}`;
+const eventsCsvUrl = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&gid=${EVENTS_GID}`;
+
+const announcementsList = document.getElementById("announcementsList");
+const eventsList = document.getElementById("eventsList");
+
+if (announcementsList) {
+  renderLoadingCards(announcementsList, 3, "min-h-[130px]");
+}
+
+if (eventsList) {
+  renderLoadingCards(eventsList, 2, "min-h-[140px]");
+}
+
+/* ANNOUNCEMENTS */
 fetch(announcementsCsvUrl)
   .then(response => response.text())
   .then(csv => {
-    const list = document.getElementById("announcementsList");
-    list.innerHTML = "";
+    announcementsList.innerHTML = "";
 
     const rows = csv.trim().split("\n").map(row =>
-      parseCSVLine(row.replace(/\r/g,''))
+      parseCSVLine(row.replace(/\r/g, ""))
     );
+
+    let validCount = 0;
 
     rows.forEach(row => {
       const title = row[0] || "";
@@ -599,44 +787,49 @@ fetch(announcementsCsvUrl)
       const link = row[2] || "";
 
       if (!title) return;
+      validCount++;
 
-      const hasValidLink = link.startsWith("http://") || link.startsWith("https://");
-      const card = document.createElement(hasValidLink ? "a" : "div");
+      const card = createDataCard({
+        title,
+        details,
+        link,
+        wrapperClass: "bg-white text-gray-800 p-5 rounded-2xl slide-right",
+        titleClass: "font-bold mb-2 text-lg",
+        detailsClass: "text-sm text-gray-600 leading-6",
+        clickableBgClass: "hover:shadow-lg"
+      });
 
-      if (hasValidLink) {
-        card.href = link;
-        card.target = "_blank";
-        card.rel = "noopener noreferrer";
-      }
-
-      card.className = "bg-white text-gray-800 p-4 rounded-xl shadow slide-right block hover:shadow-lg transition";
-
-      card.innerHTML = `
-        <h4 class="font-bold mb-2">${title}</h4>
-        <p class="text-sm text-gray-600">${details}</p>
-      `;
-
-      list.appendChild(card);
+      announcementsList.appendChild(card);
     });
+
+    if (!validCount) {
+      renderEmptyMessage(
+        announcementsList,
+        "No announcements available right now.",
+        "text-white text-center md:col-span-3"
+      );
+    }
   })
   .catch(error => {
     console.error("Announcements CSV load error:", error);
-    document.getElementById("announcementsList").innerHTML =
-      '<p class="text-white text-center col-span-3">Unable to load announcements.</p>';
+    renderEmptyMessage(
+      announcementsList,
+      "Unable to load announcements right now.",
+      "text-white text-center md:col-span-3"
+    );
   });
 
-const EVENTS_GID = "1375025455";
-const eventsCsvUrl = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&gid=${EVENTS_GID}`;
-
+/* EVENTS */
 fetch(eventsCsvUrl)
   .then(response => response.text())
   .then(csv => {
-    const list = document.getElementById("eventsList");
-    list.innerHTML = "";
+    eventsList.innerHTML = "";
 
     const rows = csv.trim().split("\n").map(row =>
-      parseCSVLine(row.replace(/\r/g,''))
+      parseCSVLine(row.replace(/\r/g, ""))
     );
+
+    let validCount = 0;
 
     rows.forEach(row => {
       const title = row[0] || "";
@@ -644,36 +837,39 @@ fetch(eventsCsvUrl)
       const link = row[2] || "";
 
       if (!title) return;
+      validCount++;
 
-      const hasValidLink = link.startsWith("http://") || link.startsWith("https://");
-      const card = document.createElement(hasValidLink ? "a" : "div");
+      const card = createDataCard({
+        title,
+        details,
+        link,
+        wrapperClass: "bg-white p-6 rounded-2xl",
+        titleClass: "font-bold text-xl mb-2 text-slate-800",
+        detailsClass: "text-sm text-gray-600 leading-6",
+        clickableBgClass: "hover:shadow-xl"
+      });
 
-      if (hasValidLink) {
-        card.href = link;
-        card.target = "_blank";
-        card.rel = "noopener noreferrer";
-      }
-
-      card.className = "bg-white p-6 rounded-xl shadow hover:shadow-lg transition block";
-
-      card.innerHTML = `
-        <h4 class="font-bold text-lg mb-2">${title}</h4>
-        <p class="text-sm text-gray-600">${details}</p>
-      `;
-
-      list.appendChild(card);
+      eventsList.appendChild(card);
     });
 
-    if (!list.innerHTML.trim()) {
-      list.innerHTML = '<p class="text-center text-red-500 col-span-2">No events found.</p>';
+    if (!validCount) {
+      renderEmptyMessage(
+        eventsList,
+        "No events found yet.",
+        "text-center text-red-500 md:col-span-2"
+      );
     }
   })
   .catch(error => {
     console.error("Events CSV load error:", error);
-    document.getElementById("eventsList").innerHTML =
-      '<p class="text-center text-red-500 col-span-2">Unable to load events.</p>';
+    renderEmptyMessage(
+      eventsList,
+      "Unable to load events right now.",
+      "text-center text-red-500 md:col-span-2"
+    );
   });
 
+/* DAILY VERSE */
 (function () {
   const verseTextEl = document.getElementById("aghamVerseText");
   const verseReferenceEl = document.getElementById("aghamVerseReference");
