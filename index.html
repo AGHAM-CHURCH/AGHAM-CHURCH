@@ -62,42 +62,44 @@ body { font-family: 'Poppins', sans-serif; }
   max-height:90%;
 }
 
-/* LOGO WATERMARK SECTION */
+/* REAL LOGO WATERMARK */
 .logo-watermark-section {
   position: relative;
   overflow: hidden;
-  isolation: isolate;
-  background-color: #ffffff;
+  background: #ffffff;
 }
 
-.logo-watermark-section > * {
-  position: relative;
-  z-index: 1;
-}
-
-.logo-watermark-section::before {
-  content: "";
+.logo-watermark-bg {
   position: absolute;
   inset: 0;
-  background-image: url("https://i.imgur.com/EsoHkMb.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: min(420px, 68vw);
-  opacity: 0.055;
-  filter: blur(3px) grayscale(10%);
-  transform: scale(1.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   pointer-events: none;
   z-index: 0;
 }
 
-.logo-watermark-section::after {
-  content: "";
+.logo-watermark-bg img {
+  width: min(420px, 62vw);
+  max-width: 420px;
+  opacity: 0.07;
+  filter: blur(3px) grayscale(10%);
+  transform: scale(1.06);
+  user-select: none;
+}
+
+.logo-watermark-content {
+  position: relative;
+  z-index: 1;
+}
+
+.logo-watermark-soft {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to bottom,
     rgba(255,255,255,0.92),
-    rgba(255,255,255,0.82),
+    rgba(255,255,255,0.84),
     rgba(255,255,255,0.92)
   );
   pointer-events: none;
@@ -105,9 +107,9 @@ body { font-family: 'Poppins', sans-serif; }
 }
 
 @media (max-width: 768px) {
-  .logo-watermark-section::before {
-    background-size: min(260px, 70vw);
-    opacity: 0.05;
+  .logo-watermark-bg img {
+    width: min(250px, 65vw);
+    opacity: 0.06;
     filter: blur(2px);
   }
 }
@@ -361,8 +363,14 @@ body { font-family: 'Poppins', sans-serif; }
 
 <!-- ABOUT -->
 <section id="about" class="py-16 text-center max-w-4xl mx-auto px-4 logo-watermark-section">
-  <h3 class="text-3xl font-bold mb-4" data-aos="fade-up">About Us</h3>
-  <p data-aos="fade-up">Almighty God of Heaven Apostolic Ministry is a Christ-centered church committed to preaching the Word of God, making disciples, and building a strong faith community.</p>
+  <div class="logo-watermark-bg">
+    <img src="https://i.imgur.com/EsoHkMb.png" alt="">
+  </div>
+  <div class="logo-watermark-soft"></div>
+  <div class="logo-watermark-content">
+    <h3 class="text-3xl font-bold mb-4" data-aos="fade-up">About Us</h3>
+    <p data-aos="fade-up">Almighty God of Heaven Apostolic Ministry is a Christ-centered church committed to preaching the Word of God, making disciples, and building a strong faith community.</p>
+  </div>
 </section>
 
 <!-- SERVICES -->
@@ -387,9 +395,15 @@ body { font-family: 'Poppins', sans-serif; }
 </section>
 
 <!-- EVENTS -->
-<section id="events" class="max-w-6xl mx-auto py-20 px-4 logo-watermark-section">
-  <h3 class="text-3xl font-bold mb-10 text-center">Upcoming Events</h3>
-  <div id="eventsList" class="grid md:grid-cols-2 gap-6"></div>
+<section id="events" class="py-20 px-4 logo-watermark-section">
+  <div class="logo-watermark-bg">
+    <img src="https://i.imgur.com/EsoHkMb.png" alt="">
+  </div>
+  <div class="logo-watermark-soft"></div>
+  <div class="logo-watermark-content max-w-6xl mx-auto">
+    <h3 class="text-3xl font-bold mb-10 text-center">Upcoming Events</h3>
+    <div id="eventsList" class="grid md:grid-cols-2 gap-6"></div>
+  </div>
 </section>
 
 <!-- GALLERY -->
@@ -408,8 +422,14 @@ body { font-family: 'Poppins', sans-serif; }
 
 <!-- PRAYER -->
 <section id="prayer" class="py-16 text-center logo-watermark-section">
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfDwFec-UhJezQ9EUuqAMCfEMJvqQRIjNoGel1Z3xL0Kac3EQ/viewform?embedded=true"
-  width="100%" height="800"></iframe>
+  <div class="logo-watermark-bg">
+    <img src="https://i.imgur.com/EsoHkMb.png" alt="">
+  </div>
+  <div class="logo-watermark-soft"></div>
+  <div class="logo-watermark-content">
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfDwFec-UhJezQ9EUuqAMCfEMJvqQRIjNoGel1Z3xL0Kac3EQ/viewform?embedded=true"
+    width="100%" height="800"></iframe>
+  </div>
 </section>
 
 <!-- GIVING -->
