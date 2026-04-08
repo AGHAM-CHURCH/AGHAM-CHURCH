@@ -62,54 +62,41 @@ body { font-family: 'Poppins', sans-serif; }
   max-height:90%;
 }
 
-/* REAL LOGO WATERMARK */
-.logo-watermark-section {
+/* WATERMARK LOGO */
+.watermark-section {
   position: relative;
   overflow: hidden;
-  background: #ffffff;
+  isolation: isolate;
 }
-
-.logo-watermark-bg {
+.watermark-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(430px, 72vw);
+  max-width: 430px;
+  transform: translate(-50%, -50%);
+  opacity: 0.09;
+  filter: blur(3px);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+.watermark-overlay {
   position: absolute;
   inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: rgba(255,255,255,0.78);
   pointer-events: none;
   z-index: 0;
 }
-
-.logo-watermark-bg img {
-  width: min(420px, 62vw);
-  max-width: 420px;
-  opacity: 0.07;
-  filter: blur(3px) grayscale(10%);
-  transform: scale(1.06);
-  user-select: none;
-}
-
-.logo-watermark-content {
+.watermark-content {
   position: relative;
   z-index: 1;
 }
 
-.logo-watermark-soft {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(255,255,255,0.92),
-    rgba(255,255,255,0.84),
-    rgba(255,255,255,0.92)
-  );
-  pointer-events: none;
-  z-index: 0;
-}
-
 @media (max-width: 768px) {
-  .logo-watermark-bg img {
-    width: min(250px, 65vw);
-    opacity: 0.06;
+  .watermark-logo {
+    width: min(260px, 70vw);
+    opacity: 0.08;
     filter: blur(2px);
   }
 }
@@ -335,9 +322,9 @@ body { font-family: 'Poppins', sans-serif; }
 </section>
 
 <!-- DAILY VERSE -->
-<section id="daily-verse" class="agham-daily-verse-section" style="background:#dbeafe; background-image:linear-gradient(180deg, #dbeafe 0%, #eff6ff 55%, #dbeafe 100%); border-top:4px solid #93c5fd; border-bottom:4px solid #93c5fd;">
+<section id="daily-verse" class="agham-daily-verse-section">
   <div class="agham-daily-verse-wrap">
-    <div class="agham-daily-verse-card" data-aos="fade-up" style="background:#f8fbff; border:2px solid #bfdbfe;">
+    <div class="agham-daily-verse-card" data-aos="fade-up">
       <span class="agham-daily-verse-badge">Daily Devotional</span>
       <h3 class="agham-daily-verse-title">Verse of the Day</h3>
       <p class="agham-daily-verse-subtitle">A fresh Word to strengthen your faith today.</p>
@@ -362,12 +349,10 @@ body { font-family: 'Poppins', sans-serif; }
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="py-16 text-center max-w-4xl mx-auto px-4 logo-watermark-section">
-  <div class="logo-watermark-bg">
-    <img src="https://i.imgur.com/EsoHkMb.png" alt="">
-  </div>
-  <div class="logo-watermark-soft"></div>
-  <div class="logo-watermark-content">
+<section id="about" class="py-16 text-center max-w-4xl mx-auto px-4 watermark-section bg-white">
+  <img class="watermark-logo" alt="" src="data:image/webp;base64,UklGRsyoAABXRUJQVlA4IMCoAAAQjQGdASr0AfQBPm02l0eloyKhI6EiJYgAsBIJaQAA3AA/vuS4E7xgT0Q0rA4Y6pSmfyoNPR6GJAlQ4vY+3rnw4P3jH0L3M1U9K5lY8x8Q9w8+3Y8V8t0P7P1H/fmB3w2x6k9b9p4Lk5v7M1Wn6h/VqXJ9C3S1v/1zFzM3+5F2q6c0tOeP+zvN5v7lW4cEw9+5o3X7M3p7f7HcY7nL3J8fX8g6+u2M5qk5h+V3O7X3tHc2vR6g2M8mJb9jW8s6l/1vGm0q7O2vG4b0Sx9bC6b6M3v+6u9s1rS+uM5vN7d3XWm5S8W3H8kM4yS+uXWf7aL1mH7sH3k7Qp8s+gJ3rM3gM0M+uQ7HcN7C+z5wN3eYf2n7sC6Qd+6M3Xl8n7bP4o6l2a8S2R2Q7H1F8n7cK7E6l7v8Qd6dX9k8d9m5gXxvK5M6M9u8f8v8q2+0L+6FQv4vVJvJ8f2H1m+7j2n7o6o8m9x2c8q4m7v8Y3+o9v8WcYqQ7t8h7v8R8o4Uq2Q7o8f7t8Y9S8v4d3+o4EwAA/v89ZgAA/v89ZgAA/v89ZgAA/v89ZgAA/v89ZgAA");
+  <div class="watermark-overlay"></div>
+  <div class="watermark-content">
     <h3 class="text-3xl font-bold mb-4" data-aos="fade-up">About Us</h3>
     <p data-aos="fade-up">Almighty God of Heaven Apostolic Ministry is a Christ-centered church committed to preaching the Word of God, making disciples, and building a strong faith community.</p>
   </div>
@@ -395,12 +380,10 @@ body { font-family: 'Poppins', sans-serif; }
 </section>
 
 <!-- EVENTS -->
-<section id="events" class="py-20 px-4 logo-watermark-section">
-  <div class="logo-watermark-bg">
-    <img src="https://i.imgur.com/EsoHkMb.png" alt="">
-  </div>
-  <div class="logo-watermark-soft"></div>
-  <div class="logo-watermark-content max-w-6xl mx-auto">
+<section id="events" class="py-20 px-4 watermark-section bg-white">
+  <img class="watermark-logo" alt="" src="data:image/webp;base64,UklGRsyoAABXRUJQVlA4IMCoAAAQjQGdASr0AfQBPm02l0eloyKhI6EiJYgAsBIJaQAA3AA/vuS4E7xgT0Q0rA4Y6pSmfyoNPR6GJAlQ4vY+3rnw4P3jH0L3M1U9K5lY8x8Q9w8+3Y8V8t0P7P1H/fmB3w2x6k9b9p4Lk5v7M1Wn6h/VqXJ9C3S1v/1zFzM3+5F2q6c0tOeP+zvN5v7lW4cEw9+5o3X7M3p7f7HcY7nL3J8fX8g6+u2M5qk5h+V3O7X3tHc2vR6g2M8mJb9jW8s6l/1vGm0q7O2vG4b0Sx9bC6b6M3v+6u9s1rS+uM5vN7d3XWm5S8W3H8kM4yS+uXWf7aL1mH7sH3k7Qp8s+gJ3rM3gM0M+uQ7HcN7C+z5wN3eYf2n7sC6Qd+6M3Xl8n7bP4o6l2a8S2R2Q7H1F8n7cK7E6l7v8Qd6dX9k8d9m5gXxvK5M6M9u8f8v8q2+0L+6FQv4vVJvJ8f2H1m+7j2n7o6o8m9x2c8q4m7v8Y3+o9v8WcYqQ7t8h7v8R8o4Uq2Q7o8f7t8Y9S8v4d3+o4EwAA/v89ZgAA/v89ZgAA/v89ZgAA/v89ZgAA/v89ZgAA");
+  <div class="watermark-overlay"></div>
+  <div class="watermark-content max-w-6xl mx-auto">
     <h3 class="text-3xl font-bold mb-10 text-center">Upcoming Events</h3>
     <div id="eventsList" class="grid md:grid-cols-2 gap-6"></div>
   </div>
@@ -421,12 +404,10 @@ body { font-family: 'Poppins', sans-serif; }
 </div>
 
 <!-- PRAYER -->
-<section id="prayer" class="py-16 text-center logo-watermark-section">
-  <div class="logo-watermark-bg">
-    <img src="https://i.imgur.com/EsoHkMb.png" alt="">
-  </div>
-  <div class="logo-watermark-soft"></div>
-  <div class="logo-watermark-content">
+<section id="prayer" class="py-16 text-center watermark-section bg-white">
+  <img class="watermark-logo" alt="" src="data:image/webp;base64,UklGRsyoAABXRUJQVlA4IMCoAAAQjQGdASr0AfQBPm02l0eloyKhI6EiJYgAsBIJaQAA3AA/vuS4E7xgT0Q0rA4Y6pSmfyoNPR6GJAlQ4vY+3rnw4P3jH0L3M1U9K5lY8x8Q9w8+3Y8V8t0P7P1H/fmB3w2x6k9b9p4Lk5v7M1Wn6h/VqXJ9C3S1v/1zFzM3+5F2q6c0tOeP+zvN5v7lW4cEw9+5o3X7M3p7f7HcY7nL3J8fX8g6+u2M5qk5h+V3O7X3tHc2vR6g2M8mJb9jW8s6l/1vGm0q7O2vG4b0Sx9bC6b6M3v+6u9s1rS+uM5vN7d3XWm5S8W3H8kM4yS+uXWf7aL1mH7sH3k7Qp8s+gJ3rM3gM0M+uQ7HcN7C+z5wN3eYf2n7sC6Qd+6M3Xl8n7bP4o6l2a8S2R2Q7H1F8n7cK7E6l7v8Qd6dX9k8d9m5gXxvK5M6M9u8f8v8q2+0L+6FQv4vVJvJ8f2H1m+7j2n7o6o8m9x2c8q4m7v8Y3+o9v8WcYqQ7t8h7v8R8o4Uq2Q7o8f7t8Y9S8v4d3+o4EwAA/v89ZgAA/v89ZgAA/v89ZgAA/v89ZgAA/v89ZgAA");
+  <div class="watermark-overlay"></div>
+  <div class="watermark-content">
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfDwFec-UhJezQ9EUuqAMCfEMJvqQRIjNoGel1Z3xL0Kac3EQ/viewform?embedded=true"
     width="100%" height="800"></iframe>
   </div>
@@ -504,11 +485,13 @@ function toggleMenu(){
   overlay.classList.toggle("hidden");
 }
 
+// navbar shrink
 window.addEventListener("scroll",()=>{
   let nav=document.getElementById("navContent");
   window.scrollY>50 ? nav.classList.add("shrink") : nav.classList.remove("shrink");
 });
 
+// lightbox
 document.querySelectorAll(".gallery-img").forEach(img=>{
   img.onclick=()=>{
     document.getElementById("lightbox").style.display="flex";
@@ -579,6 +562,7 @@ function parseCSVLine(line) {
   return result.map(cell => cell.replace(/^"|"$/g, "").trim());
 }
 
+/* ANNOUNCEMENTS FROM GOOGLE SHEET CSV */
 const SHEET_ID = "1VqSpUe-5o0Px0UPyvqkG_DvayjwWluLU3KRyV7r75ME";
 const ANNOUNCEMENTS_GID = "0";
 const announcementsCsvUrl = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&gid=${ANNOUNCEMENTS_GID}`;
@@ -625,6 +609,7 @@ fetch(announcementsCsvUrl)
       '<p class="text-white text-center col-span-3">Unable to load announcements.</p>';
   });
 
+/* EVENTS FROM GOOGLE SHEET CSV */
 const EVENTS_GID = "1375025455";
 const eventsCsvUrl = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&gid=${EVENTS_GID}`;
 
@@ -674,6 +659,7 @@ fetch(eventsCsvUrl)
       '<p class="text-center text-red-500 col-span-2">Unable to load events.</p>';
   });
 
+/* DAILY VERSE */
 (function () {
   const verseTextEl = document.getElementById("aghamVerseText");
   const verseReferenceEl = document.getElementById("aghamVerseReference");
