@@ -1501,17 +1501,15 @@ section[id] {
     display: block !important;
   }
 
-/* =========================================
-   FORCE LEADERSHIP MOBILE/DESKTOP VISIBILITY
-   ilagay ito sa pinakailalim ng CSS file
-========================================= */
+/* ===== LEADERSHIP FINAL FORCE FIX ===== */
+
+#leadership .leadership-desktop-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+}
 
 @media (max-width: 991px) {
   #leadership .leadership-desktop {
-    display: none !important;
-  }
-
-  #leadership .leadership-desktop * {
     display: none !important;
   }
 
@@ -1523,16 +1521,6 @@ section[id] {
     display: grid !important;
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: 14px !important;
-  }
-
-  #leadership .leader-mobile-featured {
-    display: block !important;
-  }
-
-  #leadership .leader-mobile-card {
-    display: block !important;
-    width: 100% !important;
-    min-width: 0 !important;
   }
 }
 
@@ -1836,284 +1824,282 @@ style="background:#dbeafe; background-image:linear-gradient(180deg, #dbeafe 0%, 
     </div>
 
     <!-- DESKTOP PYRAMID FINAL -->
-    <div class="leadership-desktop" style="max-width:1180px; margin:0 auto;" aria-hidden="false">
-      <!-- Top Row -->
-      <div style="display:flex; justify-content:center; margin-bottom:38px;">
-        <div
-          data-aos="fade-up"
-          style="
-            width:340px;
-            background:#ffffff;
-            border:2px solid rgba(96,165,250,0.65);
-            border-radius:26px;
-            overflow:hidden;
-            box-shadow:0 24px 48px rgba(37,99,235,0.16);
-          "
-        >
-          <div style="background:linear-gradient(180deg,#dbeafe 0%,#eff6ff 100%);">
-            <img
-              src="https://i.imgur.com/NbeBMT1.png"
-              alt="Ptr. Amador Acebuche"
-              style="display:block; width:100%; height:420px; object-fit:cover; object-position:center top;"
-            >
-          </div>
-          <div style="padding:18px 16px 20px; text-align:center;">
-            <h4 style="font-size:1.08rem; font-weight:800; line-height:1.35; color:#0f172a; margin:0 0 8px 0;">
-              Ptr. Amador Acebuche
-            </h4>
-            <p style="margin:0; color:#2563eb; font-size:0.95rem; line-height:1.6; font-weight:600;">
-              Head Pastor / President
-            </p>
-          </div>
+<div class="leadership-desktop">
+  <div class="leadership-desktop-inner">
+    <!-- Top Row -->
+    <div style="display:flex; justify-content:center; margin-bottom:38px;">
+      <div
+        data-aos="fade-up"
+        style="
+          width:340px;
+          background:#ffffff;
+          border:2px solid rgba(96,165,250,0.65);
+          border-radius:26px;
+          overflow:hidden;
+          box-shadow:0 24px 48px rgba(37,99,235,0.16);
+        "
+      >
+        <div style="background:linear-gradient(180deg,#dbeafe 0%,#eff6ff 100%);">
+          <img
+            src="https://i.imgur.com/NbeBMT1.png"
+            alt="Ptr. Amador Acebuche"
+            style="display:block; width:100%; height:420px; object-fit:cover; object-position:center top;"
+          >
         </div>
-      </div>
-
-      <!-- Second Row -->
-      <div style="display:flex; justify-content:center; gap:28px; margin-bottom:28px;">
-        <div
-          data-aos="fade-up"
-          data-aos-delay="50"
-          style="
-            width:250px;
-            background:#ffffff;
-            border:1px solid rgba(219,234,254,0.95);
-            border-radius:26px;
-            overflow:hidden;
-            box-shadow:0 14px 34px rgba(37,99,235,0.08);
-          "
-        >
-          <div style="background:linear-gradient(180deg,#dbeafe 0%,#eff6ff 100%);">
-            <img
-              src="https://i.imgur.com/NU7sUL0.png"
-              alt="Ptr. Rechie Escaros"
-              style="display:block; width:100%; height:320px; object-fit:cover; object-position:center top;"
-            >
-          </div>
-          <div style="padding:18px 16px 20px; text-align:center;">
-            <h4 style="font-size:1.02rem; font-weight:800; line-height:1.35; color:#0f172a; margin:0 0 8px 0;">
-              Ptr. Rechie Escaros
-            </h4>
-            <p style="margin:0; color:#2563eb; font-size:0.92rem; line-height:1.6; font-weight:600;">
-              Assistant to the Head Pastor / Board Vice President
-            </p>
-          </div>
-        </div>
-
-        <div
-          data-aos="fade-up"
-          data-aos-delay="100"
-          style="
-            width:250px;
-            background:#ffffff;
-            border:1px solid rgba(219,234,254,0.95);
-            border-radius:26px;
-            overflow:hidden;
-            box-shadow:0 14px 34px rgba(37,99,235,0.08);
-          "
-        >
-          <div style="background:linear-gradient(180deg,#dbeafe 0%,#eff6ff 100%);">
-            <img
-              src="https://i.imgur.com/1BtHCyd.png"
-              alt="Ptr. Rodolfo Fidelson"
-              style="display:block; width:100%; height:320px; object-fit:cover; object-position:center top;"
-            >
-          </div>
-          <div style="padding:18px 16px 20px; text-align:center;">
-            <h4 style="font-size:1.02rem; font-weight:800; line-height:1.35; color:#0f172a; margin:0 0 8px 0;">
-              Ptr. Rodolfo Fidelson
-            </h4>
-            <p style="margin:0; color:#2563eb; font-size:0.92rem; line-height:1.6; font-weight:600;">
-              Pastor
-            </p>
-          </div>
-        </div>
-
-        <div
-          data-aos="fade-up"
-          data-aos-delay="150"
-          style="
-            width:250px;
-            background:#ffffff;
-            border:1px solid rgba(219,234,254,0.95);
-            border-radius:26px;
-            overflow:hidden;
-            box-shadow:0 14px 34px rgba(37,99,235,0.08);
-          "
-        >
-          <div style="background:linear-gradient(180deg,#dbeafe 0%,#eff6ff 100%);">
-            <img
-              src="https://i.imgur.com/MgoJhhM.png"
-              alt="Ptr. Cesar Pajardo"
-              style="display:block; width:100%; height:320px; object-fit:cover; object-position:center top;"
-            >
-          </div>
-          <div style="padding:18px 16px 20px; text-align:center;">
-            <h4 style="font-size:1.02rem; font-weight:800; line-height:1.35; color:#0f172a; margin:0 0 8px 0;">
-              Ptr. Cesar Pajardo
-            </h4>
-            <p style="margin:0; color:#2563eb; font-size:0.92rem; line-height:1.6; font-weight:600;">
-              Pastor
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Third Row -->
-      <div style="display:flex; justify-content:center; gap:28px;">
-        <div
-          data-aos="fade-up"
-          data-aos-delay="50"
-          style="
-            width:250px;
-            background:#ffffff;
-            border:1px solid rgba(219,234,254,0.95);
-            border-radius:26px;
-            overflow:hidden;
-            box-shadow:0 14px 34px rgba(37,99,235,0.08);
-          "
-        >
-          <div style="background:linear-gradient(180deg,#dbeafe 0%,#eff6ff 100%);">
-            <img
-              src="https://i.imgur.com/U2omQr5.png"
-              alt="Minister Venus Acebuche"
-              style="display:block; width:100%; height:320px; object-fit:cover; object-position:center top;"
-            >
-          </div>
-          <div style="padding:18px 16px 20px; text-align:center;">
-            <h4 style="font-size:1.02rem; font-weight:800; line-height:1.35; color:#0f172a; margin:0 0 8px 0;">
-              Minister Venus Acebuche
-            </h4>
-            <p style="margin:0; color:#2563eb; font-size:0.92rem; line-height:1.6; font-weight:600;">
-              Evangelism
-            </p>
-          </div>
-        </div>
-
-        <div
-          data-aos="fade-up"
-          data-aos-delay="100"
-          style="
-            width:250px;
-            background:#ffffff;
-            border:1px solid rgba(219,234,254,0.95);
-            border-radius:26px;
-            overflow:hidden;
-            box-shadow:0 14px 34px rgba(37,99,235,0.08);
-          "
-        >
-          <div style="background:linear-gradient(180deg,#dbeafe 0%,#eff6ff 100%);">
-            <img
-              src="https://i.imgur.com/nhKKCnG.png"
-              alt="Sis. Jan Ceiyrell Escaros"
-              style="display:block; width:100%; height:320px; object-fit:cover; object-position:center top;"
-            >
-          </div>
-          <div style="padding:18px 16px 20px; text-align:center;">
-            <h4 style="font-size:1.02rem; font-weight:800; line-height:1.35; color:#0f172a; margin:0 0 8px 0;">
-              Sis. Jan Ceiyrell Escaros
-            </h4>
-            <p style="margin:0; color:#2563eb; font-size:0.92rem; line-height:1.6; font-weight:600;">
-              Board Secretary
-            </p>
-          </div>
-        </div>
-
-        <div
-          data-aos="fade-up"
-          data-aos-delay="150"
-          style="
-            width:250px;
-            background:#ffffff;
-            border:1px solid rgba(219,234,254,0.95);
-            border-radius:26px;
-            overflow:hidden;
-            box-shadow:0 14px 34px rgba(37,99,235,0.08);
-          "
-        >
-          <div style="background:linear-gradient(180deg,#dbeafe 0%,#eff6ff 100%);">
-            <img
-              src="https://i.imgur.com/cMxhq25.png"
-              alt="Sis. Maria Paz Acebuche"
-              style="display:block; width:100%; height:320px; object-fit:cover; object-position:center top;"
-            >
-          </div>
-          <div style="padding:18px 16px 20px; text-align:center;">
-            <h4 style="font-size:1.02rem; font-weight:800; line-height:1.35; color:#0f172a; margin:0 0 8px 0;">
-              Sis. Maria Paz Acebuche
-            </h4>
-            <p style="margin:0; color:#2563eb; font-size:0.92rem; line-height:1.6; font-weight:600;">
-              Board Treasurer
-            </p>
-          </div>
+        <div style="padding:18px 16px 20px; text-align:center;">
+          <h4 style="font-size:1.08rem; font-weight:800; line-height:1.35; color:#0f172a; margin:0 0 8px 0;">
+            Ptr. Amador Acebuche
+          </h4>
+          <p style="margin:0; color:#2563eb; font-size:0.95rem; line-height:1.6; font-weight:600;">
+            Head Pastor / President
+          </p>
         </div>
       </div>
     </div>
 
-    <!-- Mobile Layout -->
-    <div class="leadership-mobile">
-      <!-- Featured Leader -->
-      <div class="leader-mobile-featured" data-aos="fade-up">
-        <img src="https://i.imgur.com/NbeBMT1.png" alt="Ptr. Amador Acebuche" class="leader-mobile-featured-image">
-        <div class="leader-mobile-featured-info">
-          <h4 class="leader-mobile-featured-name">Ptr. Amador Acebuche</h4>
-          <p class="leader-mobile-featured-role">Head Pastor / President</p>
+    <!-- Second Row -->
+    <div style="display:flex; justify-content:center; gap:28px; margin-bottom:28px;">
+      <div
+        data-aos="fade-up"
+        data-aos-delay="50"
+        style="
+          width:250px;
+          background:#ffffff;
+          border:1px solid rgba(219,234,254,0.95);
+          border-radius:26px;
+          overflow:hidden;
+          box-shadow:0 14px 34px rgba(37,99,235,0.08);
+        "
+      >
+        <div style="background:linear-gradient(180deg,#dbeafe 0%,#eff6ff 100%);">
+          <img
+            src="https://i.imgur.com/NU7sUL0.png"
+            alt="Ptr. Rechie Escaros"
+            style="display:block; width:100%; height:320px; object-fit:cover; object-position:center top;"
+          >
+        </div>
+        <div style="padding:18px 16px 20px; text-align:center;">
+          <h4 style="font-size:1.02rem; font-weight:800; line-height:1.35; color:#0f172a; margin:0 0 8px 0;">
+            Ptr. Rechie Escaros
+          </h4>
+          <p style="margin:0; color:#2563eb; font-size:0.92rem; line-height:1.6; font-weight:600;">
+            Assistant to the Head Pastor / Board Vice President
+          </p>
         </div>
       </div>
 
-      <!-- Other Leaders Grid -->
-      <div class="leader-mobile-grid">
-        <div class="leader-mobile-card" data-aos="fade-up">
-          <img src="https://i.imgur.com/NU7sUL0.png" alt="Ptr. Rechie Escaros" class="leader-mobile-image">
-          <div class="leader-mobile-info">
-            <h4 class="leader-name">Ptr. Rechie Escaros</h4>
-            <p class="leader-role">Assistant to the Head Pastor / Board Vice President</p>
-          </div>
+      <div
+        data-aos="fade-up"
+        data-aos-delay="100"
+        style="
+          width:250px;
+          background:#ffffff;
+          border:1px solid rgba(219,234,254,0.95);
+          border-radius:26px;
+          overflow:hidden;
+          box-shadow:0 14px 34px rgba(37,99,235,0.08);
+        "
+      >
+        <div style="background:linear-gradient(180deg,#dbeafe 0%,#eff6ff 100%);">
+          <img
+            src="https://i.imgur.com/1BtHCyd.png"
+            alt="Ptr. Rodolfo Fidelson"
+            style="display:block; width:100%; height:320px; object-fit:cover; object-position:center top;"
+          >
         </div>
-
-        <div class="leader-mobile-card" data-aos="fade-up">
-          <img src="https://i.imgur.com/1BtHCyd.png" alt="Ptr. Rodolfo Fidelson" class="leader-mobile-image">
-          <div class="leader-mobile-info">
-            <h4 class="leader-name">Ptr. Rodolfo Fidelson</h4>
-            <p class="leader-role">Pastor</p>
-          </div>
+        <div style="padding:18px 16px 20px; text-align:center;">
+          <h4 style="font-size:1.02rem; font-weight:800; line-height:1.35; color:#0f172a; margin:0 0 8px 0;">
+            Ptr. Rodolfo Fidelson
+          </h4>
+          <p style="margin:0; color:#2563eb; font-size:0.92rem; line-height:1.6; font-weight:600;">
+            Pastor
+          </p>
         </div>
+      </div>
 
-        <div class="leader-mobile-card" data-aos="fade-up">
-          <img src="https://i.imgur.com/MgoJhhM.png" alt="Ptr. Cesar Pajardo" class="leader-mobile-image">
-          <div class="leader-mobile-info">
-            <h4 class="leader-name">Ptr. Cesar Pajardo</h4>
-            <p class="leader-role">Pastor</p>
-          </div>
+      <div
+        data-aos="fade-up"
+        data-aos-delay="150"
+        style="
+          width:250px;
+          background:#ffffff;
+          border:1px solid rgba(219,234,254,0.95);
+          border-radius:26px;
+          overflow:hidden;
+          box-shadow:0 14px 34px rgba(37,99,235,0.08);
+        "
+      >
+        <div style="background:linear-gradient(180deg,#dbeafe 0%,#eff6ff 100%);">
+          <img
+            src="https://i.imgur.com/MgoJhhM.png"
+            alt="Ptr. Cesar Pajardo"
+            style="display:block; width:100%; height:320px; object-fit:cover; object-position:center top;"
+          >
         </div>
-
-        <div class="leader-mobile-card" data-aos="fade-up">
-          <img src="https://i.imgur.com/U2omQr5.png" alt="Minister Venus Acebuche" class="leader-mobile-image">
-          <div class="leader-mobile-info">
-            <h4 class="leader-name">Minister Venus Acebuche</h4>
-            <p class="leader-role">Evangelism</p>
-          </div>
+        <div style="padding:18px 16px 20px; text-align:center;">
+          <h4 style="font-size:1.02rem; font-weight:800; line-height:1.35; color:#0f172a; margin:0 0 8px 0;">
+            Ptr. Cesar Pajardo
+          </h4>
+          <p style="margin:0; color:#2563eb; font-size:0.92rem; line-height:1.6; font-weight:600;">
+            Pastor
+          </p>
         </div>
+      </div>
+    </div>
 
-        <div class="leader-mobile-card" data-aos="fade-up">
-          <img src="https://i.imgur.com/nhKKCnG.png" alt="Sis. Jan Ceiyrell Escaros" class="leader-mobile-image">
-          <div class="leader-mobile-info">
-            <h4 class="leader-name">Sis. Jan Ceiyrell Escaros</h4>
-            <p class="leader-role">Board Secretary</p>
-          </div>
+    <!-- Third Row -->
+    <div style="display:flex; justify-content:center; gap:28px;">
+      <div
+        data-aos="fade-up"
+        data-aos-delay="50"
+        style="
+          width:250px;
+          background:#ffffff;
+          border:1px solid rgba(219,234,254,0.95);
+          border-radius:26px;
+          overflow:hidden;
+          box-shadow:0 14px 34px rgba(37,99,235,0.08);
+        "
+      >
+        <div style="background:linear-gradient(180deg,#dbeafe 0%,#eff6ff 100%);">
+          <img
+            src="https://i.imgur.com/U2omQr5.png"
+            alt="Minister Venus Acebuche"
+            style="display:block; width:100%; height:320px; object-fit:cover; object-position:center top;"
+          >
         </div>
+        <div style="padding:18px 16px 20px; text-align:center;">
+          <h4 style="font-size:1.02rem; font-weight:800; line-height:1.35; color:#0f172a; margin:0 0 8px 0;">
+            Minister Venus Acebuche
+          </h4>
+          <p style="margin:0; color:#2563eb; font-size:0.92rem; line-height:1.6; font-weight:600;">
+            Evangelism
+          </p>
+        </div>
+      </div>
 
-        <div class="leader-mobile-card" data-aos="fade-up">
-          <img src="https://i.imgur.com/cMxhq25.png" alt="Sis. Maria Paz Acebuche" class="leader-mobile-image">
-          <div class="leader-mobile-info">
-            <h4 class="leader-name">Sis. Maria Paz Acebuche</h4>
-            <p class="leader-role">Board Treasurer</p>
-          </div>
+      <div
+        data-aos="fade-up"
+        data-aos-delay="100"
+        style="
+          width:250px;
+          background:#ffffff;
+          border:1px solid rgba(219,234,254,0.95);
+          border-radius:26px;
+          overflow:hidden;
+          box-shadow:0 14px 34px rgba(37,99,235,0.08);
+        "
+      >
+        <div style="background:linear-gradient(180deg,#dbeafe 0%,#eff6ff 100%);">
+          <img
+            src="https://i.imgur.com/nhKKCnG.png"
+            alt="Sis. Jan Ceiyrell Escaros"
+            style="display:block; width:100%; height:320px; object-fit:cover; object-position:center top;"
+          >
+        </div>
+        <div style="padding:18px 16px 20px; text-align:center;">
+          <h4 style="font-size:1.02rem; font-weight:800; line-height:1.35; color:#0f172a; margin:0 0 8px 0;">
+            Sis. Jan Ceiyrell Escaros
+          </h4>
+          <p style="margin:0; color:#2563eb; font-size:0.92rem; line-height:1.6; font-weight:600;">
+            Board Secretary
+          </p>
+        </div>
+      </div>
+
+      <div
+        data-aos="fade-up"
+        data-aos-delay="150"
+        style="
+          width:250px;
+          background:#ffffff;
+          border:1px solid rgba(219,234,254,0.95);
+          border-radius:26px;
+          overflow:hidden;
+          box-shadow:0 14px 34px rgba(37,99,235,0.08);
+        "
+      >
+        <div style="background:linear-gradient(180deg,#dbeafe 0%,#eff6ff 100%);">
+          <img
+            src="https://i.imgur.com/cMxhq25.png"
+            alt="Sis. Maria Paz Acebuche"
+            style="display:block; width:100%; height:320px; object-fit:cover; object-position:center top;"
+          >
+        </div>
+        <div style="padding:18px 16px 20px; text-align:center;">
+          <h4 style="font-size:1.02rem; font-weight:800; line-height:1.35; color:#0f172a; margin:0 0 8px 0;">
+            Sis. Maria Paz Acebuche
+          </h4>
+          <p style="margin:0; color:#2563eb; font-size:0.92rem; line-height:1.6; font-weight:600;">
+            Board Treasurer
+          </p>
         </div>
       </div>
     </div>
   </div>
-</section>
+</div>
 
+<!-- Mobile Layout -->
+<div class="leadership-mobile">
+  <div class="leader-mobile-featured" data-aos="fade-up">
+    <img src="https://i.imgur.com/NbeBMT1.png" alt="Ptr. Amador Acebuche" class="leader-mobile-featured-image">
+    <div class="leader-mobile-featured-info">
+      <h4 class="leader-mobile-featured-name">Ptr. Amador Acebuche</h4>
+      <p class="leader-mobile-featured-role">Head Pastor / President</p>
+    </div>
+  </div>
+
+  <div class="leader-mobile-grid">
+    <div class="leader-mobile-card" data-aos="fade-up">
+      <img src="https://i.imgur.com/NU7sUL0.png" alt="Ptr. Rechie Escaros" class="leader-mobile-image">
+      <div class="leader-mobile-info">
+        <h4 class="leader-name">Ptr. Rechie Escaros</h4>
+        <p class="leader-role">Assistant to the Head Pastor / Board Vice President</p>
+      </div>
+    </div>
+
+    <div class="leader-mobile-card" data-aos="fade-up">
+      <img src="https://i.imgur.com/1BtHCyd.png" alt="Ptr. Rodolfo Fidelson" class="leader-mobile-image">
+      <div class="leader-mobile-info">
+        <h4 class="leader-name">Ptr. Rodolfo Fidelson</h4>
+        <p class="leader-role">Pastor</p>
+      </div>
+    </div>
+
+    <div class="leader-mobile-card" data-aos="fade-up">
+      <img src="https://i.imgur.com/MgoJhhM.png" alt="Ptr. Cesar Pajardo" class="leader-mobile-image">
+      <div class="leader-mobile-info">
+        <h4 class="leader-name">Ptr. Cesar Pajardo</h4>
+        <p class="leader-role">Pastor</p>
+      </div>
+    </div>
+
+    <div class="leader-mobile-card" data-aos="fade-up">
+      <img src="https://i.imgur.com/U2omQr5.png" alt="Minister Venus Acebuche" class="leader-mobile-image">
+      <div class="leader-mobile-info">
+        <h4 class="leader-name">Minister Venus Acebuche</h4>
+        <p class="leader-role">Evangelism</p>
+      </div>
+    </div>
+
+    <div class="leader-mobile-card" data-aos="fade-up">
+      <img src="https://i.imgur.com/nhKKCnG.png" alt="Sis. Jan Ceiyrell Escaros" class="leader-mobile-image">
+      <div class="leader-mobile-info">
+        <h4 class="leader-name">Sis. Jan Ceiyrell Escaros</h4>
+        <p class="leader-role">Board Secretary</p>
+      </div>
+    </div>
+
+    <div class="leader-mobile-card" data-aos="fade-up">
+      <img src="https://i.imgur.com/cMxhq25.png" alt="Sis. Maria Paz Acebuche" class="leader-mobile-image">
+      <div class="leader-mobile-info">
+        <h4 class="leader-name">Sis. Maria Paz Acebuche</h4>
+        <p class="leader-role">Board Treasurer</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
 
 <!-- MISSION / VISION / CORE VALUES -->
 <section id="identity" class="section-shell section-top-fade section-bottom-fade bg-white">
