@@ -864,6 +864,7 @@ section[id] {
   border-radius: 28px;
   padding: 30px 24px;
   box-shadow: 0 14px 36px rgba(37, 99, 235, 0.08);
+  position: relative;
 }
 
 .leadership-remarks-badge {
@@ -1039,6 +1040,14 @@ section[id] {
   text-align: center;
 }
 
+.opening-remarks {
+  font-family: 'Alegreya', serif;
+  white-space: pre-line;
+  font-size: 1.12rem;
+  line-height: 1.95;
+  color: #334155;
+}
+
 @media (min-width: 992px) {
   .leadership-desktop {
     display: block;
@@ -1077,19 +1086,133 @@ section[id] {
   .leadership-mobile {
     display: grid;
   }
-
-.opening-remarks {
-  font-family: 'Alegreya', serif;
-  white-space: pre-line;
-  font-size: 1.12rem;
-  line-height: 1.95;
-  color: #334155;
 }
 
 @media (max-width: 768px) {
   .opening-remarks {
     font-size: 1.03rem;
   }
+
+  /* LETTER STYLE (Opening Remarks) */
+  .leadership-remarks-card {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 28px;
+    border-radius: 24px;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    box-shadow:
+      0 12px 30px rgba(15, 23, 42, 0.08),
+      inset 0 1px 0 rgba(255,255,255,0.6);
+    position: relative;
+  }
+
+  /* subtle paper glow */
+  .leadership-remarks-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    background: radial-gradient(circle at top left, rgba(37,99,235,0.08), transparent 60%);
+    pointer-events: none;
+  }
+
+  /* inner content above glow */
+  .leadership-remarks-card * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* MOBILE LEADERSHIP */
+  .leadership-mobile {
+    display: block !important;
+    margin-top: 28px;
+  }
+
+  .leader-mobile-featured {
+    background: #ffffff;
+    border: 1px solid rgba(159, 195, 255, 0.9);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.08);
+    margin-bottom: 20px;
+  }
+
+  .leader-mobile-featured-image {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    background: #f3f4f6;
+  }
+
+  .leader-mobile-featured-info {
+    padding: 18px 16px 20px;
+    text-align: center;
+  }
+
+  .leader-mobile-featured-name {
+    margin: 0;
+    font-size: 1.45rem;
+    line-height: 1.15;
+    font-weight: 800;
+    color: #111827;
+  }
+
+  .leader-mobile-featured-role {
+    margin: 8px 0 0;
+    font-size: 0.98rem;
+    line-height: 1.45;
+    font-weight: 700;
+    color: #2563eb;
+  }
+
+  .leader-mobile-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .leader-mobile-card {
+    background: #ffffff;
+    border: 1px solid rgba(219, 234, 254, 0.95);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  }
+
+  .leader-mobile-image {
+    width: 100%;
+    height: 185px;
+    aspect-ratio: auto;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    background: #f3f4f6;
+  }
+
+  .leader-mobile-info {
+    padding: 12px 10px 14px;
+    text-align: center;
+  }
+
+  .leader-name {
+    margin: 0;
+    font-size: 0.98rem;
+    line-height: 1.25;
+    font-weight: 800;
+    color: #111827;
+  }
+
+  .leader-role {
+    margin: 7px 0 0;
+    font-size: 0.82rem;
+    line-height: 1.35;
+    font-weight: 600;
+    color: #2563eb;
+  }
+}
 
 /* LETTER STYLE (Opening Remarks) */
 .leadership-remarks-card {
@@ -1122,6 +1245,100 @@ section[id] {
 .leadership-remarks-card * {
   position: relative;
   z-index: 1;
+}
+
+/* MOBILE LEADERSHIP */
+.leadership-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .leadership-mobile {
+    display: block !important;
+    margin-top: 28px;
+  }
+
+  .leader-mobile-featured {
+    background: #ffffff;
+    border: 1px solid rgba(159, 195, 255, 0.9);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.08);
+    margin-bottom: 20px;
+  }
+
+  .leader-mobile-featured-image {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    background: #f3f4f6;
+  }
+
+  .leader-mobile-featured-info {
+    padding: 18px 16px 20px;
+    text-align: center;
+  }
+
+  .leader-mobile-featured-name {
+    margin: 0;
+    font-size: 1.45rem;
+    line-height: 1.15;
+    font-weight: 800;
+    color: #111827;
+  }
+
+  .leader-mobile-featured-role {
+    margin: 8px 0 0;
+    font-size: 0.98rem;
+    line-height: 1.45;
+    font-weight: 700;
+    color: #2563eb;
+  }
+
+  .leader-mobile-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .leader-mobile-card {
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  }
+
+  .leader-mobile-image {
+    width: 100%;
+    height: 185px;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    background: #f3f4f6;
+  }
+
+  .leader-mobile-info {
+    padding: 12px 10px 14px;
+    text-align: center;
+  }
+
+  .leader-name {
+    margin: 0;
+    font-size: 0.98rem;
+    line-height: 1.25;
+    font-weight: 800;
+    color: #111827;
+  }
+
+  .leader-role {
+    margin: 7px 0 0;
+    font-size: 0.82rem;
+    line-height: 1.35;
+    font-weight: 600;
+    color: #2563eb;
+  }
 }
 
 /* ===== FORCE FIX: Leadership Remarks Paper Background ===== */
@@ -1796,64 +2013,67 @@ May Almighty God of Heaven bless you abundantly, fill your hearts with His peace
 </div>
 
     <!-- Mobile Layout -->
-    <div class="leadership-mobile" style="display:none;">
-      <div class="leader-mobile-card" data-aos="fade-up">
-        <img src="https://i.imgur.com/zg3QQ8d.png" alt="Ptr. Amador Acebuche" class="leader-mobile-image">
-        <div class="leader-mobile-info">
-          <h4 class="leader-name">Ptr. Amador Acebuche</h4>
-          <p class="leader-role">Head Pastor / President</p>
-        </div>
-      </div>
+<div class="leadership-mobile" style="display:none;">
+  <!-- Featured Leader -->
+  <div class="leader-mobile-featured" data-aos="fade-up">
+    <img src="https://i.imgur.com/zg3QQ8d.png" alt="Ptr. Amador Acebuche" class="leader-mobile-featured-image">
+    <div class="leader-mobile-featured-info">
+      <h4 class="leader-mobile-featured-name">Ptr. Amador Acebuche</h4>
+      <p class="leader-mobile-featured-role">Head Pastor / President</p>
+    </div>
+  </div>
 
-      <div class="leader-mobile-card" data-aos="fade-up">
-        <img src="https://i.imgur.com/moEzBEA.png" alt="Ptr. Rechie Escaros" class="leader-mobile-image">
-        <div class="leader-mobile-info">
-          <h4 class="leader-name">Ptr. Rechie Escaros</h4>
-          <p class="leader-role">Assistant to the Head Pastor / Board Vice President</p>
-        </div>
+  <!-- Other Leaders Grid -->
+  <div class="leader-mobile-grid">
+    <div class="leader-mobile-card" data-aos="fade-up">
+      <img src="https://i.imgur.com/moEzBEA.png" alt="Ptr. Rechie Escaros" class="leader-mobile-image">
+      <div class="leader-mobile-info">
+        <h4 class="leader-name">Ptr. Rechie Escaros</h4>
+        <p class="leader-role">Assistant to the Head Pastor / Board Vice President</p>
       </div>
+    </div>
 
-      <div class="leader-mobile-card" data-aos="fade-up">
-        <img src="https://i.imgur.com/T8uCK5O.png" alt="Ptr. Rodolfo Fidelson" class="leader-mobile-image">
-        <div class="leader-mobile-info">
-          <h4 class="leader-name">Ptr. Rodolfo Fidelson</h4>
-          <p class="leader-role">Pastor</p>
-        </div>
+    <div class="leader-mobile-card" data-aos="fade-up">
+      <img src="https://i.imgur.com/T8uCK5O.png" alt="Ptr. Rodolfo Fidelson" class="leader-mobile-image">
+      <div class="leader-mobile-info">
+        <h4 class="leader-name">Ptr. Rodolfo Fidelson</h4>
+        <p class="leader-role">Pastor</p>
       </div>
+    </div>
 
-      <div class="leader-mobile-card" data-aos="fade-up">
-        <img src="https://i.imgur.com/ecTCnmO.png" alt="Ptr. Cesar Pajardo" class="leader-mobile-image">
-        <div class="leader-mobile-info">
-          <h4 class="leader-name">Ptr. Cesar Pajardo</h4>
-          <p class="leader-role">Pastor</p>
-        </div>
+    <div class="leader-mobile-card" data-aos="fade-up">
+      <img src="https://i.imgur.com/ecTCnmO.png" alt="Ptr. Cesar Pajardo" class="leader-mobile-image">
+      <div class="leader-mobile-info">
+        <h4 class="leader-name">Ptr. Cesar Pajardo</h4>
+        <p class="leader-role">Pastor</p>
       </div>
+    </div>
 
-      <div class="leader-mobile-card" data-aos="fade-up">
-        <img src="https://i.imgur.com/GkUc7BO.png" alt="Minister Venus Acebuche" class="leader-mobile-image">
-        <div class="leader-mobile-info">
-          <h4 class="leader-name">Minister Venus Acebuche</h4>
-          <p class="leader-role">Evangelism</p>
-        </div>
+    <div class="leader-mobile-card" data-aos="fade-up">
+      <img src="https://i.imgur.com/GkUc7BO.png" alt="Minister Venus Acebuche" class="leader-mobile-image">
+      <div class="leader-mobile-info">
+        <h4 class="leader-name">Minister Venus Acebuche</h4>
+        <p class="leader-role">Evangelism</p>
       </div>
+    </div>
 
-      <div class="leader-mobile-card" data-aos="fade-up">
-        <img src="https://i.imgur.com/7xN2lgk.png" alt="Sis. Jan Ceiyrell Escaros" class="leader-mobile-image">
-        <div class="leader-mobile-info">
-          <h4 class="leader-name">Sis. Jan Ceiyrell Escaros</h4>
-          <p class="leader-role">Board Secretary</p>
-        </div>
+    <div class="leader-mobile-card" data-aos="fade-up">
+      <img src="https://i.imgur.com/7xN2lgk.png" alt="Sis. Jan Ceiyrell Escaros" class="leader-mobile-image">
+      <div class="leader-mobile-info">
+        <h4 class="leader-name">Sis. Jan Ceiyrell Escaros</h4>
+        <p class="leader-role">Board Secretary</p>
       </div>
+    </div>
 
-      <div class="leader-mobile-card" data-aos="fade-up">
-        <img src="https://i.imgur.com/v5x8eTX.png" alt="Sis. Maria Paz Acebuche" class="leader-mobile-image">
-        <div class="leader-mobile-info">
-          <h4 class="leader-name">Sis. Maria Paz Acebuche</h4>
-          <p class="leader-role">Board Treasurer</p>
-        </div>
+    <div class="leader-mobile-card" data-aos="fade-up">
+      <img src="https://i.imgur.com/v5x8eTX.png" alt="Sis. Maria Paz Acebuche" class="leader-mobile-image">
+      <div class="leader-mobile-info">
+        <h4 class="leader-name">Sis. Maria Paz Acebuche</h4>
+        <p class="leader-role">Board Treasurer</p>
       </div>
     </div>
   </div>
+</div>
 </section>
 
 
