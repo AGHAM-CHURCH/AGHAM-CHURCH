@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AGHAM Church | Almighty God of Heaven Apostolic Ministry</title>
@@ -22,6 +21,8 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Caveat:wght@400;700&family=Alegreya:wght@400;500;700&display=swap" rel="stylesheet">
 
 <style>
 html {
@@ -846,6 +847,442 @@ section[id] {
     font-size: 1rem;
     line-height: 1.9;
   }
+
+/* =========================
+   LEADERSHIP SECTION
+========================= */
+
+.leadership-section {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+}
+
+.leadership-remarks-card {
+  max-width: 900px;
+  margin: 0 auto 56px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  border: 1px solid rgba(191, 219, 254, 0.95);
+  border-radius: 28px;
+  padding: 30px 24px;
+  box-shadow: 0 14px 36px rgba(37, 99, 235, 0.08);
+}
+
+.leadership-remarks-badge {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.leadership-remarks-title {
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.leadership-remarks-subtitle {
+  color: #64748b;
+  font-size: 0.98rem;
+  line-height: 1.8;
+  margin-bottom: 22px;
+}
+
+.leadership-remarks-body {
+  color: #334155;
+  line-height: 1.95;
+  font-size: 1rem;
+}
+
+.leadership-remarks-body p {
+  margin-bottom: 18px;
+}
+
+.leadership-signature {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.leadership-signature strong {
+  display: block;
+  color: #0f172a;
+  font-size: 1rem;
+}
+
+.leadership-signature span {
+  display: block;
+  color: #2563eb;
+  margin-top: 4px;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+.leadership-desktop {
+  display: none;
+}
+
+.leadership-row {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: nowrap;
+  margin-bottom: 28px;
+}
+
+.leadership-row:last-child {
+  margin-bottom: 0;
+}
+
+.leader-card {
+  position: relative;
+  width: 100%;
+  max-width: 260px;
+  background: #ffffff;
+  border: 1px solid rgba(219, 234, 254, 0.95);
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: 0 14px 34px rgba(37, 99, 235, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.leader-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 48px rgba(37, 99, 235, 0.14);
+  border-color: rgba(96, 165, 250, 0.95);
+}
+
+.leader-card.head-pastor {
+  max-width: 340px;
+  transform: translateY(-6px);
+  box-shadow: 0 28px 60px rgba(37, 99, 235, 0.22);
+  border: 2px solid rgba(96, 165, 250, 0.7);
+}
+
+.leader-image-wrap {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #dbeafe 0%, #eff6ff 100%);
+}
+
+.leader-image {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.leader-card:hover .leader-image {
+  transform: scale(1.05);
+}
+
+.leader-info {
+  padding: 18px 16px 20px;
+  text-align: center;
+}
+
+.leader-name {
+  font-size: 1.02rem;
+  font-weight: 800;
+  line-height: 1.35;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.leader-role {
+  color: #2563eb;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+.leadership-mobile {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.leader-mobile-card {
+  background: #ffffff;
+  border: 1px solid rgba(219, 234, 254, 0.95);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.leader-mobile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.13);
+  border-color: rgba(96, 165, 250, 0.95);
+}
+
+.leader-mobile-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.leader-mobile-card:hover .leader-mobile-image {
+  transform: scale(1.04);
+}
+
+.leader-mobile-info {
+  padding: 16px 14px 18px;
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  .leadership-desktop {
+    display: block;
+  }
+
+  .leadership-mobile {
+    display: none;
+  }
+
+  .leadership-row.top-row .leader-card {
+    max-width: 320px;
+  }
+
+  .leadership-row.second-row .leader-card,
+  .leadership-row.third-row .leader-card {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 991px) {
+  .leadership-remarks-card {
+    padding: 24px 18px;
+    border-radius: 24px;
+    margin-bottom: 36px;
+  }
+
+  .leadership-remarks-body {
+    font-size: 0.97rem;
+    line-height: 1.85;
+  }
+
+  .leadership-desktop {
+    display: none;
+  }
+
+  .leadership-mobile {
+    display: grid;
+  }
+
+.opening-remarks {
+  font-family: 'Alegreya', serif;
+  white-space: pre-line;
+  font-size: 1.12rem;
+  line-height: 1.95;
+  color: #334155;
+}
+
+@media (max-width: 768px) {
+  .opening-remarks {
+    font-size: 1.03rem;
+  }
+
+/* LETTER STYLE (Opening Remarks) */
+.leadership-remarks-card {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 28px;
+  border-radius: 24px;
+
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+
+  box-shadow: 
+    0 12px 30px rgba(15, 23, 42, 0.08),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+
+  position: relative;
+}
+
+/* subtle paper glow */
+.leadership-remarks-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  background: radial-gradient(circle at top left, rgba(37,99,235,0.08), transparent 60%);
+  pointer-events: none;
+}
+
+/* inner content above glow */
+.leadership-remarks-card * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== FORCE FIX: Leadership Remarks Paper Background ===== */
+#leadership .leadership-remarks-card {
+  max-width: 900px !important;
+  margin: 0 auto 56px !important;
+  padding: 40px 28px !important;
+  border-radius: 28px !important;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%) !important;
+  border: 1px solid rgba(226, 232, 240, 0.95) !important;
+  box-shadow:
+    0 14px 36px rgba(15, 23, 42, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+#leadership .leadership-remarks-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.08), transparent 60%);
+  pointer-events: none;
+}
+
+#leadership .leadership-remarks-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== PYRAMID STRUCTURE ===== */
+
+/* Top (Head Pastor) */
+.leadership-row.top-row {
+  margin-bottom: 36px;
+}
+
+/* Second row (3 leaders) */
+.leadership-row.second-row {
+  margin-bottom: 28px;
+}
+
+/* Third row (3 leaders) */
+.leadership-row.third-row {
+  margin-top: 4px;
+}
+
+/* Center alignment illusion */
+.leadership-row.second-row {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.leadership-row.third-row {
+  padding-left: 120px;
+  padding-right: 120px;
+}
+
+.leader-card {
+  transition: all 0.35s ease;
+}
+
+.leader-card:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+/* ===== DESKTOP PYRAMID FIX ===== */
+@media (min-width: 992px) {
+  .leadership-desktop {
+    display: block !important;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  .leadership-row {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: stretch;
+    gap: 28px;
+    flex-wrap: nowrap !important;
+  }
+
+  .leadership-row.top-row {
+    margin-bottom: 38px;
+  }
+
+  .leadership-row.second-row {
+    margin-bottom: 28px;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .leadership-row.third-row {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+
+  .leadership-row.top-row .leader-card.head-pastor {
+    width: 340px;
+    max-width: 340px;
+    border: 2px solid rgba(96, 165, 250, 0.7);
+    box-shadow: 0 28px 60px rgba(37, 99, 235, 0.18);
+  }
+
+  .leadership-row.second-row .leader-card,
+  .leadership-row.third-row .leader-card {
+    width: 250px;
+    max-width: 250px;
+  }
+
+  .leader-card {
+    background: #ffffff !important;
+    border: 1px solid rgba(219, 234, 254, 0.95) !important;
+    border-radius: 26px !important;
+    overflow: hidden !important;
+    box-shadow: 0 14px 34px rgba(37, 99, 235, 0.08) !important;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease !important;
+  }
+
+  .leader-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 24px 48px rgba(37, 99, 235, 0.14) !important;
+    border-color: rgba(96, 165, 250, 0.95) !important;
+  }
+
+  .leader-image-wrap {
+    background: linear-gradient(180deg, #dbeafe 0%, #eff6ff 100%) !important;
+  }
+
+  .leader-image {
+    width: 100% !important;
+    aspect-ratio: 3 / 4 !important;
+    object-fit: cover !important;
+    display: block;
+  }
+
+  .leader-info {
+    padding: 18px 16px 20px !important;
+    text-align: center !important;
+  }
+
+  .leader-name {
+    font-size: 1.02rem !important;
+    font-weight: 800 !important;
+    line-height: 1.35 !important;
+    color: #0f172a !important;
+    margin-bottom: 8px !important;
+  }
+
+  .leader-role {
+    color: #2563eb !important;
+    font-size: 0.92rem !important;
+    line-height: 1.6 !important;
+    font-weight: 600 !important;
+  }
+
+@media (min-width: 992px) {
+  .leadership-desktop {
+    display: block !important;
+  }
 }
 </style>
 </head>
@@ -854,7 +1291,7 @@ section[id] {
 
 <!-- NAVBAR -->
 <header id="navbar" class="fixed w-full z-50 shadow transition-all">
-  <div id="navContent" class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+  <div id="navContent" class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center gap-4">
 
     <div class="flex items-center gap-4">
       <img src="https://i.imgur.com/EsoHkMb.png"
@@ -863,17 +1300,18 @@ section[id] {
       <h1 class="text-2xl md:text-4xl font-extrabold gradient-text">AGHAM</h1>
     </div>
 
-    <nav class="hidden md:flex space-x-6 font-medium">
-      <a href="#">Home</a>
-      <a href="#about">About</a>
-<a href="#identity">Mission</a>
-      <a href="#services">Services</a>
-      <a href="#events">Events</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#prayer">Prayer</a>
-      <a href="#giving">Giving</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <nav class="hidden md:flex items-center gap-4 lg:gap-5 font-medium text-[15px] xl:text-base whitespace-nowrap ml-auto text-slate-800">
+  <a href="#" class="hover:text-blue-600 transition">Home</a>
+  <a href="#about" class="hover:text-blue-600 transition">About</a>
+  <a href="#leadership" class="hover:text-blue-600 transition">Leadership</a>
+  <a href="#identity" class="hover:text-blue-600 transition">Mission</a>
+  <a href="#services" class="hover:text-blue-600 transition">Services</a>
+  <a href="#events" class="hover:text-blue-600 transition">Events</a>
+  <a href="#gallery" class="hover:text-blue-600 transition">Gallery</a>
+  <a href="#prayer" class="hover:text-blue-600 transition">Prayer</a>
+  <a href="#giving" class="hover:text-blue-600 transition">Giving</a>
+  <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+</nav>
 
     <button onclick="toggleMenu()" class="md:hidden text-2xl text-blue-700 font-bold">☰</button>
   </div>
@@ -906,6 +1344,9 @@ section[id] {
     <a href="#about" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
       <span>📖</span><span>About</span>
     </a>
+<a href="#leadership" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
+  <span>👥</span><span>Leadership</span>
+</a>
 <a href="#identity" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
   <span>📌</span><span>Mission</span>
 </a>
@@ -1016,6 +1457,402 @@ style="background:#dbeafe; background-image:linear-gradient(180deg, #dbeafe 0%, 
     <p class="section-body-text content-readable" data-aos="fade-up">
       Almighty God of Heaven Apostolic Ministry is a Christ-centered church committed to preaching the Word of God, making disciples, and building a strong faith community.
     </p>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section id="leadership" class="section-shell leadership-section section-top-fade section-bottom-fade">
+  <div class="section-container">
+    <div class="text-center stack-heading">
+      <span class="section-kicker" data-aos="fade-up">Church Leadership</span>
+      <h3 class="section-heading" data-aos="fade-up">Meet Our Leaders</h3>
+      <p class="section-subtitle" data-aos="fade-up">
+        Servant-leaders committed to guiding the church in faith, worship, discipleship, and ministry.
+      </p>
+    </div>
+
+    <!-- Opening Remarks -->
+<div
+  class="leadership-remarks-card"
+  data-aos="fade-up"
+  style="
+    max-width: 900px;
+    margin: 0 auto 56px;
+    padding: 40px 28px;
+    border-radius: 28px;
+    background:
+  radial-gradient(circle at 20% 18%, rgba(191, 167, 111, 0.10) 0%, transparent 22%),
+  radial-gradient(circle at 82% 26%, rgba(160, 120, 70, 0.07) 0%, transparent 20%),
+  radial-gradient(circle at 30% 78%, rgba(184, 155, 110, 0.08) 0%, transparent 24%),
+  linear-gradient(180deg, #fffdf7 0%, #f8f3e8 100%);
+    border: 1px solid rgba(226, 232, 240, 0.95);
+    box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08), inset 0 1px 0 rgba(255,255,255,0.72);
+    position: relative;
+    overflow: hidden;
+  "
+>
+  <div
+  style="
+    position: absolute;
+    inset: 0;
+    border-radius: 28px;
+    background:
+      /* parchment grain */
+      repeating-linear-gradient(
+        0deg,
+        rgba(120, 92, 52, 0.018) 0px,
+        rgba(120, 92, 52, 0.018) 1px,
+        transparent 1px,
+        transparent 7px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        rgba(120, 92, 52, 0.012) 0px,
+        rgba(120, 92, 52, 0.012) 1px,
+        transparent 1px,
+        transparent 9px
+      ),
+
+      /* soft paper stain */
+      radial-gradient(circle at top left, rgba(179, 137, 74, 0.10), transparent 55%),
+
+      /* 🔥 NEW: darker parchment edges */
+      radial-gradient(circle at center, transparent 60%, rgba(120, 85, 40, 0.18) 100%),
+      radial-gradient(circle at center, transparent 75%, rgba(80, 60, 30, 0.12) 100%);
+    
+    opacity: 0.9;
+    pointer-events: none;
+  "
+></div>
+
+  <h4 class="leadership-remarks-title"
+    style="font-family: 'Alegreya', serif; margin-top: 24px; margin-bottom: 20px;">
+    A Message from Our Head Pastor
+  </h4>
+
+  
+    <div
+  class="leadership-remarks-body"
+  style="font-family: 'Alegreya', serif; font-size: 1.12rem; line-height: 1.9; letter-spacing: 0.2px; margin-top: 18px; color:#1f2937;"
+>
+<strong style="display:block; margin-bottom:18px;">
+Beloved brothers and sisters in the Church of Almighty God of Heaven,
+</strong>
+
+<p style="margin-bottom:16px;">
+Grace and peace be multiplied unto you. It is with a heart full of gratitude and humility that I extend this message to each of you. As we gather in faith, whether in spirit or in person, let us remember the divine purpose that unites us and the sacred calling we share.
+</p>
+
+<p style="margin-bottom:16px;">
+In these times, we are constantly reminded of the enduring presence and boundless love of Almighty God. His wisdom guides us, His strength sustains us, and His light illuminates our path forward. Let us continue to seek His divine will in all our endeavors, trusting in His perfect plan for our lives and for His kingdom.
+</p>
+
+<p style="margin-bottom:16px;">
+I encourage each of you to grow deeper in your personal walk with God, to nourish your spirits through prayer and meditation, and to uphold the virtues of love, compassion, and understanding in your daily interactions. Let our lives be a testament to the transformative power of His grace.
+</p>
+
+<p style="margin-bottom:16px;">
+May our community continue to be a beacon of hope, a sanctuary of truth, and a family united by unwavering faith. Let us lift one another up, share in each other's joys and burdens, and always strive to embody the teachings that bring us closer to our Heavenly Father.
+</p>
+
+<p style="margin-bottom:16px;">
+May Almighty God of Heaven bless you abundantly, fill your hearts with His peace, and grant you renewed strength and purpose.
+</p>
+
+    <div style="margin-top:26px;">
+      <p style="font-style: italic; margin-bottom:12px;">
+        In His unfailing love,
+      </p>
+
+      <p style="font-weight:700; margin-bottom:2px;">
+        Ptr. Amador Acebuche
+      </p>
+
+      <p style="color:#2563eb; font-weight:600;">
+        Head Pastor
+      </p>
+
+      <p style="font-size:0.95rem; color:#64748b; margin-top:4px;">
+        Church of Almighty God of Heaven Apostolic Ministry, Inc.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<!-- DESKTOP PYRAMID FINAL -->
+<div class="leadership-desktop" style="display:block; max-width:1180px; margin:0 auto;">
+  
+  <!-- Top Row -->
+  <div style="display:flex; justify-content:center; margin-bottom:38px;">
+    <div
+      data-aos="fade-up"
+      style="
+        width:340px;
+        background:#ffffff;
+        border:2px solid rgba(96,165,250,0.65);
+        border-radius:26px;
+        overflow:hidden;
+        box-shadow:0 24px 48px rgba(37,99,235,0.16);
+      "
+    >
+      <div style="background:linear-gradient(180deg,#dbeafe 0%,#eff6ff 100%);">
+        <img
+          src="https://i.imgur.com/NbeBMT1.png"
+          alt="Ptr. Amador Acebuche"
+          style="display:block; width:100%; height:420px; object-fit:cover; object-position:center top;"
+        >
+      </div>
+      <div style="padding:18px 16px 20px; text-align:center;">
+        <h4 style="font-size:1.08rem; font-weight:800; line-height:1.35; color:#0f172a; margin:0 0 8px 0;">
+          Ptr. Amador Acebuche
+        </h4>
+        <p style="margin:0; color:#2563eb; font-size:0.95rem; line-height:1.6; font-weight:600;">
+          Head Pastor / President
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Second Row -->
+  <div style="display:flex; justify-content:center; gap:28px; margin-bottom:28px;">
+    <div
+      data-aos="fade-up"
+      data-aos-delay="50"
+      style="
+        width:250px;
+        background:#ffffff;
+        border:1px solid rgba(219,234,254,0.95);
+        border-radius:26px;
+        overflow:hidden;
+        box-shadow:0 14px 34px rgba(37,99,235,0.08);
+      "
+    >
+      <div style="background:linear-gradient(180deg,#dbeafe 0%,#eff6ff 100%);">
+        <img
+          src="https://i.imgur.com/NU7sUL0.png"
+          alt="Ptr. Rechie Escaros"
+          style="display:block; width:100%; height:320px; object-fit:cover; object-position:center top;"
+        >
+      </div>
+      <div style="padding:18px 16px 20px; text-align:center;">
+        <h4 style="font-size:1.02rem; font-weight:800; line-height:1.35; color:#0f172a; margin:0 0 8px 0;">
+          Ptr. Rechie Escaros
+        </h4>
+        <p style="margin:0; color:#2563eb; font-size:0.92rem; line-height:1.6; font-weight:600;">
+          Assistant to the Head Pastor / Board Vice President
+        </p>
+      </div>
+    </div>
+
+    <div
+      data-aos="fade-up"
+      data-aos-delay="100"
+      style="
+        width:250px;
+        background:#ffffff;
+        border:1px solid rgba(219,234,254,0.95);
+        border-radius:26px;
+        overflow:hidden;
+        box-shadow:0 14px 34px rgba(37,99,235,0.08);
+      "
+    >
+      <div style="background:linear-gradient(180deg,#dbeafe 0%,#eff6ff 100%);">
+        <img
+          src="https://i.imgur.com/T8uCK5O.png"
+          alt="Ptr. Rodolfo Fidelson"
+          style="display:block; width:100%; height:320px; object-fit:cover; object-position:center top;"
+        >
+      </div>
+      <div style="padding:18px 16px 20px; text-align:center;">
+        <h4 style="font-size:1.02rem; font-weight:800; line-height:1.35; color:#0f172a; margin:0 0 8px 0;">
+          Ptr. Rodolfo Fidelson
+        </h4>
+        <p style="margin:0; color:#2563eb; font-size:0.92rem; line-height:1.6; font-weight:600;">
+          Pastor
+        </p>
+      </div>
+    </div>
+
+    <div
+      data-aos="fade-up"
+      data-aos-delay="150"
+      style="
+        width:250px;
+        background:#ffffff;
+        border:1px solid rgba(219,234,254,0.95);
+        border-radius:26px;
+        overflow:hidden;
+        box-shadow:0 14px 34px rgba(37,99,235,0.08);
+      "
+    >
+      <div style="background:linear-gradient(180deg,#dbeafe 0%,#eff6ff 100%);">
+        <img
+          src="https://i.imgur.com/MgoJhhM.png"
+          alt="Ptr. Cesar Pajardo"
+          style="display:block; width:100%; height:320px; object-fit:cover; object-position:center top;"
+        >
+      </div>
+      <div style="padding:18px 16px 20px; text-align:center;">
+        <h4 style="font-size:1.02rem; font-weight:800; line-height:1.35; color:#0f172a; margin:0 0 8px 0;">
+          Ptr. Cesar Pajardo
+        </h4>
+        <p style="margin:0; color:#2563eb; font-size:0.92rem; line-height:1.6; font-weight:600;">
+          Pastor
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Third Row -->
+  <div style="display:flex; justify-content:center; gap:28px;">
+    <div
+      data-aos="fade-up"
+      data-aos-delay="50"
+      style="
+        width:250px;
+        background:#ffffff;
+        border:1px solid rgba(219,234,254,0.95);
+        border-radius:26px;
+        overflow:hidden;
+        box-shadow:0 14px 34px rgba(37,99,235,0.08);
+      "
+    >
+      <div style="background:linear-gradient(180deg,#dbeafe 0%,#eff6ff 100%);">
+        <img
+          src="https://i.imgur.com/U2omQr5.png"
+          alt="Minister Venus Acebuche"
+          style="display:block; width:100%; height:320px; object-fit:cover; object-position:center top;"
+        >
+      </div>
+      <div style="padding:18px 16px 20px; text-align:center;">
+        <h4 style="font-size:1.02rem; font-weight:800; line-height:1.35; color:#0f172a; margin:0 0 8px 0;">
+          Minister Venus Acebuche
+        </h4>
+        <p style="margin:0; color:#2563eb; font-size:0.92rem; line-height:1.6; font-weight:600;">
+          Evangelism
+        </p>
+      </div>
+    </div>
+
+    <div
+      data-aos="fade-up"
+      data-aos-delay="100"
+      style="
+        width:250px;
+        background:#ffffff;
+        border:1px solid rgba(219,234,254,0.95);
+        border-radius:26px;
+        overflow:hidden;
+        box-shadow:0 14px 34px rgba(37,99,235,0.08);
+      "
+    >
+      <div style="background:linear-gradient(180deg,#dbeafe 0%,#eff6ff 100%);">
+        <img
+          src="https://i.imgur.com/nhKKCnG.png"
+          alt="Sis. Jan Ceiyrell Escaros"
+          style="display:block; width:100%; height:320px; object-fit:cover; object-position:center top;"
+        >
+      </div>
+      <div style="padding:18px 16px 20px; text-align:center;">
+        <h4 style="font-size:1.02rem; font-weight:800; line-height:1.35; color:#0f172a; margin:0 0 8px 0;">
+          Sis. Jan Ceiyrell Escaros
+        </h4>
+        <p style="margin:0; color:#2563eb; font-size:0.92rem; line-height:1.6; font-weight:600;">
+          Board Secretary
+        </p>
+      </div>
+    </div>
+
+    <div
+      data-aos="fade-up"
+      data-aos-delay="150"
+      style="
+        width:250px;
+        background:#ffffff;
+        border:1px solid rgba(219,234,254,0.95);
+        border-radius:26px;
+        overflow:hidden;
+        box-shadow:0 14px 34px rgba(37,99,235,0.08);
+      "
+    >
+      <div style="background:linear-gradient(180deg,#dbeafe 0%,#eff6ff 100%);">
+        <img
+          src="https://i.imgur.com/cMxhq25.png"
+          alt="Sis. Maria Paz Acebuche"
+          style="display:block; width:100%; height:320px; object-fit:cover; object-position:center top;"
+        >
+      </div>
+      <div style="padding:18px 16px 20px; text-align:center;">
+        <h4 style="font-size:1.02rem; font-weight:800; line-height:1.35; color:#0f172a; margin:0 0 8px 0;">
+          Sis. Maria Paz Acebuche
+        </h4>
+        <p style="margin:0; color:#2563eb; font-size:0.92rem; line-height:1.6; font-weight:600;">
+          Board Treasurer
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Mobile Layout -->
+    <div class="leadership-mobile" style="display:none;">
+      <div class="leader-mobile-card" data-aos="fade-up">
+        <img src="https://i.imgur.com/zg3QQ8d.png" alt="Ptr. Amador Acebuche" class="leader-mobile-image">
+        <div class="leader-mobile-info">
+          <h4 class="leader-name">Ptr. Amador Acebuche</h4>
+          <p class="leader-role">Head Pastor / President</p>
+        </div>
+      </div>
+
+      <div class="leader-mobile-card" data-aos="fade-up">
+        <img src="https://i.imgur.com/moEzBEA.png" alt="Ptr. Rechie Escaros" class="leader-mobile-image">
+        <div class="leader-mobile-info">
+          <h4 class="leader-name">Ptr. Rechie Escaros</h4>
+          <p class="leader-role">Assistant to the Head Pastor / Board Vice President</p>
+        </div>
+      </div>
+
+      <div class="leader-mobile-card" data-aos="fade-up">
+        <img src="https://i.imgur.com/T8uCK5O.png" alt="Ptr. Rodolfo Fidelson" class="leader-mobile-image">
+        <div class="leader-mobile-info">
+          <h4 class="leader-name">Ptr. Rodolfo Fidelson</h4>
+          <p class="leader-role">Pastor</p>
+        </div>
+      </div>
+
+      <div class="leader-mobile-card" data-aos="fade-up">
+        <img src="https://i.imgur.com/ecTCnmO.png" alt="Ptr. Cesar Pajardo" class="leader-mobile-image">
+        <div class="leader-mobile-info">
+          <h4 class="leader-name">Ptr. Cesar Pajardo</h4>
+          <p class="leader-role">Pastor</p>
+        </div>
+      </div>
+
+      <div class="leader-mobile-card" data-aos="fade-up">
+        <img src="https://i.imgur.com/GkUc7BO.png" alt="Minister Venus Acebuche" class="leader-mobile-image">
+        <div class="leader-mobile-info">
+          <h4 class="leader-name">Minister Venus Acebuche</h4>
+          <p class="leader-role">Evangelism</p>
+        </div>
+      </div>
+
+      <div class="leader-mobile-card" data-aos="fade-up">
+        <img src="https://i.imgur.com/7xN2lgk.png" alt="Sis. Jan Ceiyrell Escaros" class="leader-mobile-image">
+        <div class="leader-mobile-info">
+          <h4 class="leader-name">Sis. Jan Ceiyrell Escaros</h4>
+          <p class="leader-role">Board Secretary</p>
+        </div>
+      </div>
+
+      <div class="leader-mobile-card" data-aos="fade-up">
+        <img src="https://i.imgur.com/v5x8eTX.png" alt="Sis. Maria Paz Acebuche" class="leader-mobile-image">
+        <div class="leader-mobile-info">
+          <h4 class="leader-name">Sis. Maria Paz Acebuche</h4>
+          <p class="leader-role">Board Treasurer</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
