@@ -731,38 +731,38 @@ section[id] {
 
 .identity-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
+  grid-template-columns: 1fr;
+  gap: 20px;
   align-items: stretch;
 }
 
 .identity-card {
   background: #ffffff;
-  border: 1px solid rgba(219, 234, 254, 0.9);
+  border: 1px solid rgba(219, 234, 254, 0.95);
   border-radius: 24px;
-  padding: 28px 24px;
-  box-shadow: 0 14px 32px rgba(37, 99, 235, 0.08);
+  padding: 24px 20px;
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  height: 100%;
+  text-align: center;
 }
 
 .identity-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 22px 42px rgba(37, 99, 235, 0.12);
-  border-color: rgba(147, 197, 253, 0.95);
+  border-color: rgba(96, 165, 250, 0.95);
 }
 
 .identity-icon {
-  width: 62px;
-  height: 62px;
+  width: 68px;
+  height: 68px;
   margin: 0 auto 18px;
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, #dbeafe, #eff6ff);
-  font-size: 1.8rem;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
+  font-size: 1.9rem;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.85), 0 8px 18px rgba(37, 99, 235, 0.08);
 }
 
 .identity-label {
@@ -782,18 +782,18 @@ section[id] {
   font-size: 1.3rem;
   font-weight: 800;
   color: #0f172a;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   line-height: 1.3;
 }
 
 .identity-text {
   color: #475569;
-  line-height: 1.85;
+  line-height: 1.8;
   font-size: 0.98rem;
 }
 
 .core-values-list {
-  margin-top: 14px;
+  margin-top: 16px;
   display: grid;
   gap: 10px;
   text-align: left;
@@ -803,16 +803,16 @@ section[id] {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  padding: 10px 12px;
+  padding: 12px 14px;
   border-radius: 14px;
   background: #f8fafc;
-  border: 1px solid rgba(226, 232, 240, 0.85);
+  border: 1px solid rgba(226, 232, 240, 0.9);
 }
 
 .core-value-bullet {
   color: #2563eb;
   font-weight: 800;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .core-value-text {
@@ -821,9 +821,30 @@ section[id] {
   font-size: 0.95rem;
 }
 
-@media (max-width: 992px) {
+@media (min-width: 992px) {
   .identity-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+  }
+
+  .identity-card {
+    min-height: 100%;
+    padding: 34px 28px;
+    text-align: left;
+    border-radius: 28px;
+  }
+
+  .identity-icon {
+    margin: 0 0 20px 0;
+  }
+
+  .identity-title {
+    font-size: 1.4rem;
+  }
+
+  .identity-text {
+    font-size: 1rem;
+    line-height: 1.9;
   }
 }
 </style>
@@ -848,8 +869,9 @@ section[id] {
 <a href="#identity">Mission</a>
       <a href="#services">Services</a>
       <a href="#events">Events</a>
-      <a href="#prayer">Prayer</a>
       <a href="#gallery">Gallery</a>
+      <a href="#prayer">Prayer</a>
+      <a href="#giving">Giving</a>
       <a href="#contact">Contact</a>
     </nav>
 
@@ -893,12 +915,15 @@ section[id] {
     <a href="#events" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
       <span>📅</span><span>Events</span>
     </a>
+<a href="#gallery" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
+      <span>🖼️</span><span>Gallery</span>
+    </a>
     <a href="#prayer" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
       <span>🙏</span><span>Prayer</span>
     </a>
-    <a href="#gallery" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
-      <span>🖼️</span><span>Gallery</span>
-    </a>
+<a href="#giving" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
+  <span>💳</span><span>Giving</span>
+</a>
     <a href="#contact" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
       <span>📞</span><span>Contact</span>
     </a>
@@ -996,57 +1021,100 @@ style="background:#dbeafe; background-image:linear-gradient(180deg, #dbeafe 0%, 
 
 
 <!-- MISSION / VISION / CORE VALUES -->
-<section id="identity" class="section-shell identity-section section-top-fade section-bottom-fade">
+<section id="identity" class="section-shell section-top-fade section-bottom-fade bg-white">
   <div class="section-container">
     <div class="text-center stack-heading">
       <span class="section-kicker" data-aos="fade-up">Our Identity</span>
-      <h3 class="section-heading" data-aos="fade-up">Mission, Vision & Core Values</h3>
+      <h3 class="section-heading" data-aos="fade-up">Mission, Vision &amp; Core Values</h3>
       <p class="section-subtitle" data-aos="fade-up">
         The foundation that guides AGHAM Church in worship, discipleship, ministry, and service.
       </p>
       <div class="heading-accent-line" data-aos="fade-up"></div>
     </div>
 
-    <div class="identity-grid">
-      <div class="identity-card text-center" data-aos="fade-up">
-        <div class="identity-icon">🎯</div>
-        <span class="identity-label">Mission</span>
-        <h4 class="identity-title">Our Mission</h4>
-        <p class="identity-text">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch mt-10">
+      <!-- Mission -->
+      <div
+        class="bg-white rounded-[28px] border border-blue-100 shadow-[0_14px_34px_rgba(37,99,235,0.08)] p-6 lg:p-8 text-center lg:text-left transition hover:-translate-y-2 hover:shadow-[0_24px_48px_rgba(37,99,235,0.14)]"
+        data-aos="fade-up"
+      >
+        <div class="w-[68px] h-[68px] mx-auto lg:mx-0 mb-5 rounded-[22px] flex items-center justify-center bg-gradient-to-br from-blue-100 to-blue-50 text-[1.9rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.85),0_8px_18px_rgba(37,99,235,0.08)]">
+          🎯
+        </div>
+
+        <span class="inline-block mb-3 px-3 py-1.5 rounded-full bg-blue-50 text-blue-600 text-xs font-extrabold uppercase tracking-wide">
+          Mission
+        </span>
+
+        <h4 class="text-[1.35rem] font-extrabold text-slate-900 mb-3 leading-tight">
+          Our Mission
+        </h4>
+
+        <p class="text-slate-600 leading-8 text-[1rem]">
           To preach the Word of God, make disciples, strengthen families, and reach communities with the Gospel of Jesus Christ.
         </p>
       </div>
 
-      <div class="identity-card text-center" data-aos="fade-up" data-aos-delay="100">
-        <div class="identity-icon">✨</div>
-        <span class="identity-label">Vision</span>
-        <h4 class="identity-title">Our Vision</h4>
-        <p class="identity-text">
+      <!-- Vision -->
+      <div
+        class="bg-white rounded-[28px] border border-blue-100 shadow-[0_14px_34px_rgba(37,99,235,0.08)] p-6 lg:p-8 text-center lg:text-left transition hover:-translate-y-2 hover:shadow-[0_24px_48px_rgba(37,99,235,0.14)]"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        <div class="w-[68px] h-[68px] mx-auto lg:mx-0 mb-5 rounded-[22px] flex items-center justify-center bg-gradient-to-br from-blue-100 to-blue-50 text-[1.9rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.85),0_8px_18px_rgba(37,99,235,0.08)]">
+          ✨
+        </div>
+
+        <span class="inline-block mb-3 px-3 py-1.5 rounded-full bg-blue-50 text-blue-600 text-xs font-extrabold uppercase tracking-wide">
+          Vision
+        </span>
+
+        <h4 class="text-[1.35rem] font-extrabold text-slate-900 mb-3 leading-tight">
+          Our Vision
+        </h4>
+
+        <p class="text-slate-600 leading-8 text-[1rem]">
           To be a Christ-centered church that leads people into a life of worship, spiritual growth, and faithful service to God.
         </p>
       </div>
 
-      <div class="identity-card text-center" data-aos="fade-up" data-aos-delay="200">
-        <div class="identity-icon">💙</div>
-        <span class="identity-label">Core Values</span>
-        <h4 class="identity-title">What We Value</h4>
+      <!-- Core Values -->
+      <div
+        class="bg-white rounded-[28px] border border-blue-100 shadow-[0_14px_34px_rgba(37,99,235,0.08)] p-6 lg:p-8 text-center lg:text-left transition hover:-translate-y-2 hover:shadow-[0_24px_48px_rgba(37,99,235,0.14)]"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        <div class="w-[68px] h-[68px] mx-auto lg:mx-0 mb-5 rounded-[22px] flex items-center justify-center bg-gradient-to-br from-blue-100 to-blue-50 text-[1.9rem] shadow-[inset_0_1px_0_rgba(255,255,255,0.85),0_8px_18px_rgba(37,99,235,0.08)]">
+          💙
+        </div>
 
-        <div class="core-values-list">
-          <div class="core-value-item">
-            <span class="core-value-bullet">•</span>
-            <span class="core-value-text">Biblical truth and sound doctrine</span>
+        <span class="inline-block mb-3 px-3 py-1.5 rounded-full bg-blue-50 text-blue-600 text-xs font-extrabold uppercase tracking-wide">
+          Core Values
+        </span>
+
+        <h4 class="text-[1.35rem] font-extrabold text-slate-900 mb-4 leading-tight">
+          What We Value
+        </h4>
+
+        <div class="grid gap-3 text-left">
+          <div class="flex items-start gap-3 p-3 rounded-2xl bg-slate-50 border border-slate-200">
+            <span class="text-blue-600 font-extrabold">•</span>
+            <span class="text-slate-700 leading-7 text-[0.96rem]">Biblical truth and sound doctrine</span>
           </div>
-          <div class="core-value-item">
-            <span class="core-value-bullet">•</span>
-            <span class="core-value-text">Prayer, worship, and dependence on God</span>
+
+          <div class="flex items-start gap-3 p-3 rounded-2xl bg-slate-50 border border-slate-200">
+            <span class="text-blue-600 font-extrabold">•</span>
+            <span class="text-slate-700 leading-7 text-[0.96rem]">Prayer, worship, and dependence on God</span>
           </div>
-          <div class="core-value-item">
-            <span class="core-value-bullet">•</span>
-            <span class="core-value-text">Love, unity, and service in the church family</span>
+
+          <div class="flex items-start gap-3 p-3 rounded-2xl bg-slate-50 border border-slate-200">
+            <span class="text-blue-600 font-extrabold">•</span>
+            <span class="text-slate-700 leading-7 text-[0.96rem]">Love, unity, and service in the church family</span>
           </div>
-          <div class="core-value-item">
-            <span class="core-value-bullet">•</span>
-            <span class="core-value-text">Evangelism, discipleship, and community outreach</span>
+
+          <div class="flex items-start gap-3 p-3 rounded-2xl bg-slate-50 border border-slate-200">
+            <span class="text-blue-600 font-extrabold">•</span>
+            <span class="text-slate-700 leading-7 text-[0.96rem]">Evangelism, discipleship, and community outreach</span>
           </div>
         </div>
       </div>
@@ -1166,7 +1234,7 @@ style="background:#dbeafe; background-image:linear-gradient(180deg, #dbeafe 0%, 
 </section>
 
 <!-- GIVING -->
-<section class="section-shell bg-gray-100 text-center section-top-fade section-bottom-fade">
+<section id="giving" class="section-shell bg-gray-100 text-center section-top-fade section-bottom-fade">
   <style>
     .giving-card {
   max-width: 560px;
