@@ -720,6 +720,111 @@ section[id] {
   section[id] {
     scroll-margin-top: 92px;
   }
+
+/* =========================
+   MISSION / VISION / CORE VALUES
+========================= */
+
+.identity-section {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+}
+
+.identity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  align-items: stretch;
+}
+
+.identity-card {
+  background: #ffffff;
+  border: 1px solid rgba(219, 234, 254, 0.9);
+  border-radius: 24px;
+  padding: 28px 24px;
+  box-shadow: 0 14px 32px rgba(37, 99, 235, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  height: 100%;
+}
+
+.identity-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 42px rgba(37, 99, 235, 0.12);
+  border-color: rgba(147, 197, 253, 0.95);
+}
+
+.identity-icon {
+  width: 62px;
+  height: 62px;
+  margin: 0 auto 18px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #dbeafe, #eff6ff);
+  font-size: 1.8rem;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
+}
+
+.identity-label {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.identity-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.identity-text {
+  color: #475569;
+  line-height: 1.85;
+  font-size: 0.98rem;
+}
+
+.core-values-list {
+  margin-top: 14px;
+  display: grid;
+  gap: 10px;
+  text-align: left;
+}
+
+.core-value-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: #f8fafc;
+  border: 1px solid rgba(226, 232, 240, 0.85);
+}
+
+.core-value-bullet {
+  color: #2563eb;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.core-value-text {
+  color: #334155;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 992px) {
+  .identity-grid {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
 </head>
@@ -740,6 +845,7 @@ section[id] {
     <nav class="hidden md:flex space-x-6 font-medium">
       <a href="#">Home</a>
       <a href="#about">About</a>
+<a href="#identity">Mission</a>
       <a href="#services">Services</a>
       <a href="#events">Events</a>
       <a href="#prayer">Prayer</a>
@@ -778,6 +884,9 @@ section[id] {
     <a href="#about" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
       <span>📖</span><span>About</span>
     </a>
+<a href="#identity" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
+  <span>📌</span><span>Mission</span>
+</a>
     <a href="#services" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
       <span>⛪</span><span>Services</span>
     </a>
@@ -882,6 +991,66 @@ style="background:#dbeafe; background-image:linear-gradient(180deg, #dbeafe 0%, 
     <p class="section-body-text content-readable" data-aos="fade-up">
       Almighty God of Heaven Apostolic Ministry is a Christ-centered church committed to preaching the Word of God, making disciples, and building a strong faith community.
     </p>
+  </div>
+</section>
+
+
+<!-- MISSION / VISION / CORE VALUES -->
+<section id="identity" class="section-shell identity-section section-top-fade section-bottom-fade">
+  <div class="section-container">
+    <div class="text-center stack-heading">
+      <span class="section-kicker" data-aos="fade-up">Our Identity</span>
+      <h3 class="section-heading" data-aos="fade-up">Mission, Vision & Core Values</h3>
+      <p class="section-subtitle" data-aos="fade-up">
+        The foundation that guides AGHAM Church in worship, discipleship, ministry, and service.
+      </p>
+      <div class="heading-accent-line" data-aos="fade-up"></div>
+    </div>
+
+    <div class="identity-grid">
+      <div class="identity-card text-center" data-aos="fade-up">
+        <div class="identity-icon">🎯</div>
+        <span class="identity-label">Mission</span>
+        <h4 class="identity-title">Our Mission</h4>
+        <p class="identity-text">
+          To preach the Word of God, make disciples, strengthen families, and reach communities with the Gospel of Jesus Christ.
+        </p>
+      </div>
+
+      <div class="identity-card text-center" data-aos="fade-up" data-aos-delay="100">
+        <div class="identity-icon">✨</div>
+        <span class="identity-label">Vision</span>
+        <h4 class="identity-title">Our Vision</h4>
+        <p class="identity-text">
+          To be a Christ-centered church that leads people into a life of worship, spiritual growth, and faithful service to God.
+        </p>
+      </div>
+
+      <div class="identity-card text-center" data-aos="fade-up" data-aos-delay="200">
+        <div class="identity-icon">💙</div>
+        <span class="identity-label">Core Values</span>
+        <h4 class="identity-title">What We Value</h4>
+
+        <div class="core-values-list">
+          <div class="core-value-item">
+            <span class="core-value-bullet">•</span>
+            <span class="core-value-text">Biblical truth and sound doctrine</span>
+          </div>
+          <div class="core-value-item">
+            <span class="core-value-bullet">•</span>
+            <span class="core-value-text">Prayer, worship, and dependence on God</span>
+          </div>
+          <div class="core-value-item">
+            <span class="core-value-bullet">•</span>
+            <span class="core-value-text">Love, unity, and service in the church family</span>
+          </div>
+          <div class="core-value-item">
+            <span class="core-value-bullet">•</span>
+            <span class="core-value-text">Evangelism, discipleship, and community outreach</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
