@@ -1597,6 +1597,49 @@ section[id] {
   .leadership-mobile {
     display: none !important;
   }
+
+/* ===== MOBILE NAV UNIVERSAL FIX ===== */
+@media (max-width: 767px) {
+  #mobileMenu {
+    height: 100dvh;
+    overflow: hidden;
+  }
+
+  #mobileMenu .mobile-nav-links {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 96px;
+  }
+
+  #mobileMenu .mobile-menu-footer {
+    flex-shrink: 0;
+  }
+}
+
+/* ===== SHORT SCREEN FIX ===== */
+@media (max-width: 767px) and (max-height: 720px) {
+  #mobileMenu {
+    width: min(18rem, 88vw);
+  }
+
+  #mobileMenu .mobile-nav-links {
+    space-y: 0.25rem;
+    padding-bottom: 88px;
+  }
+
+  #mobileMenu .mobile-nav-links a {
+    padding-top: 0.65rem !important;
+    padding-bottom: 0.65rem !important;
+    font-size: 1rem !important;
+  }
+
+  #mobileMenu .mobile-menu-footer {
+    padding: 12px 16px !important;
+  }
+
+  #mobileMenu .mobile-menu-footer p {
+    font-size: 0.75rem !important;
+  }
 }
 </style>
 </head>
@@ -1635,7 +1678,7 @@ section[id] {
 <div id="mobileOverlay" onclick="toggleMenu()" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden"></div>
 
 <!-- MOBILE SIDE MENU -->
-<div id="mobileMenu" class="fixed top-0 right-0 h-full w-72 bg-gradient-to-b from-blue-900 via-blue-700 to-blue-500 text-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50 md:hidden touch-pan-y">
+<div id="mobileMenu" class="fixed top-0 right-0 h-full w-72 bg-gradient-to-b from-blue-900 via-blue-700 to-blue-500 text-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50 md:hidden touch-pan-y flex flex-col">
   <div class="flex justify-between items-center p-5 border-b border-white/20">
     <div class="flex items-center gap-3">
       <img src="https://i.imgur.com/EsoHkMb.png" class="w-12 h-12 rounded-full shadow-lg border border-white/30">
@@ -1651,7 +1694,7 @@ section[id] {
     <p class="text-sm text-white/80">Navigate</p>
   </div>
 
-  <nav class="flex flex-col px-4 pb-6 space-y-2 text-lg font-medium">
+  <nav class="mobile-nav-links flex-1 overflow-y-auto px-4 pb-24 space-y-2 text-lg font-medium">
     <a href="#" onclick="toggleMenu()" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/15 active:bg-white/20 transition">
       <span>🏠</span><span>Home</span>
     </a>
@@ -1684,9 +1727,9 @@ section[id] {
     </a>
   </nav>
 
-  <div class="absolute bottom-0 left-0 right-0 p-5 border-t border-white/20 bg-black/10">
-    <p class="text-xs text-white/80 text-center">Almighty God of Heaven Apostolic Ministry</p>
-  </div>
+  <div class="mobile-menu-footer p-5 border-t border-white/20 bg-black/10 mt-auto">
+  <p class="text-xs text-white/80 text-center">Almighty God of Heaven Apostolic Ministry</p>
+</div>
 </div>
 
 <main class="page-flow">
