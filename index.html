@@ -1512,6 +1512,91 @@ section[id] {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: 14px !important;
   }
+
+/* ===== FINAL LEADERSHIP VISIBILITY FIX ===== */
+
+.leadership-desktop {
+  display: none !important;
+}
+
+.leadership-mobile {
+  display: block !important;
+}
+
+.leader-mobile-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 14px !important;
+}
+
+@media (min-width: 992px) {
+  .leadership-desktop {
+    display: block !important;
+  }
+
+  .leadership-mobile {
+    display: none !important;
+  }
+
+/* ===== FINAL FINAL LEADERSHIP VISIBILITY LOCK ===== */
+
+.leadership-mobile {
+  display: none !important;
+}
+
+.leadership-desktop {
+  display: none !important;
+}
+
+@media (max-width: 991px) {
+  .leadership-desktop {
+    display: none !important;
+  }
+
+  .leadership-mobile {
+    display: block !important;
+  }
+
+  .leader-mobile-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .leadership-desktop {
+    display: block !important;
+  }
+
+  .leadership-mobile {
+    display: none !important;
+  }
+
+@media (max-width: 991px) {
+  .leadership-mobile {
+    display: block !important;
+  }
+
+  .leadership-desktop {
+    display: none !important;
+  }
+
+  .leader-mobile-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .leadership-desktop {
+    display: block !important;
+  }
+
+  .leadership-mobile {
+    display: none !important;
+  }
 }
 </style>
 </head>
@@ -1804,7 +1889,7 @@ style="background:#dbeafe; background-image:linear-gradient(180deg, #dbeafe 0%, 
     </div>
 
     <!-- DESKTOP PYRAMID FINAL -->
-<div id="leadershipDesktop" class="leadership-desktop">
+<div class="leadership-desktop">
   <div class="leadership-desktop-inner">
     <!-- Top Row -->
     <div style="display:flex; justify-content:center; margin-bottom:38px;">
@@ -1823,6 +1908,8 @@ style="background:#dbeafe; background-image:linear-gradient(180deg, #dbeafe 0%, 
           <img
             src="https://i.imgur.com/NbeBMT1.png"
             alt="Ptr. Amador Acebuche"
+            loading="lazy"
+            decoding="async"
             style="display:block; width:100%; height:420px; object-fit:cover; object-position:center top;"
           >
         </div>
@@ -1855,6 +1942,8 @@ style="background:#dbeafe; background-image:linear-gradient(180deg, #dbeafe 0%, 
           <img
             src="https://i.imgur.com/NU7sUL0.png"
             alt="Ptr. Rechie Escaros"
+            loading="lazy"
+            decoding="async"
             style="display:block; width:100%; height:320px; object-fit:cover; object-position:center top;"
           >
         </div>
@@ -1884,6 +1973,8 @@ style="background:#dbeafe; background-image:linear-gradient(180deg, #dbeafe 0%, 
           <img
             src="https://i.imgur.com/1BtHCyd.png"
             alt="Ptr. Rodolfo Fidelson"
+            loading="lazy"
+            decoding="async"
             style="display:block; width:100%; height:320px; object-fit:cover; object-position:center top;"
           >
         </div>
@@ -1913,6 +2004,8 @@ style="background:#dbeafe; background-image:linear-gradient(180deg, #dbeafe 0%, 
           <img
             src="https://i.imgur.com/MgoJhhM.png"
             alt="Ptr. Cesar Pajardo"
+            loading="lazy"
+            decoding="async"
             style="display:block; width:100%; height:320px; object-fit:cover; object-position:center top;"
           >
         </div>
@@ -1945,6 +2038,8 @@ style="background:#dbeafe; background-image:linear-gradient(180deg, #dbeafe 0%, 
           <img
             src="https://i.imgur.com/U2omQr5.png"
             alt="Minister Venus Acebuche"
+            loading="lazy"
+            decoding="async"
             style="display:block; width:100%; height:320px; object-fit:cover; object-position:center top;"
           >
         </div>
@@ -1974,6 +2069,8 @@ style="background:#dbeafe; background-image:linear-gradient(180deg, #dbeafe 0%, 
           <img
             src="https://i.imgur.com/nhKKCnG.png"
             alt="Sis. Jan Ceiyrell Escaros"
+            loading="lazy"
+            decoding="async"
             style="display:block; width:100%; height:320px; object-fit:cover; object-position:center top;"
           >
         </div>
@@ -2003,6 +2100,8 @@ style="background:#dbeafe; background-image:linear-gradient(180deg, #dbeafe 0%, 
           <img
             src="https://i.imgur.com/cMxhq25.png"
             alt="Sis. Maria Paz Acebuche"
+            loading="lazy"
+            decoding="async"
             style="display:block; width:100%; height:320px; object-fit:cover; object-position:center top;"
           >
         </div>
@@ -2020,9 +2119,15 @@ style="background:#dbeafe; background-image:linear-gradient(180deg, #dbeafe 0%, 
 </div>
 
 <!-- Mobile Layout -->
-<div id="leadershipMobile" class="leadership-mobile">
+<div class="leadership-mobile" style="display:none;">
   <div class="leader-mobile-featured" data-aos="fade-up">
-    <img src="https://i.imgur.com/NbeBMT1.png" alt="Ptr. Amador Acebuche" class="leader-mobile-featured-image">
+    <img
+      src="https://i.imgur.com/NbeBMT1.png"
+      alt="Ptr. Amador Acebuche"
+      class="leader-mobile-featured-image"
+      loading="lazy"
+      decoding="async"
+    >
     <div class="leader-mobile-featured-info">
       <h4 class="leader-mobile-featured-name">Ptr. Amador Acebuche</h4>
       <p class="leader-mobile-featured-role">Head Pastor / President</p>
@@ -2031,7 +2136,13 @@ style="background:#dbeafe; background-image:linear-gradient(180deg, #dbeafe 0%, 
 
   <div class="leader-mobile-grid">
     <div class="leader-mobile-card" data-aos="fade-up">
-      <img src="https://i.imgur.com/NU7sUL0.png" alt="Ptr. Rechie Escaros" class="leader-mobile-image">
+      <img
+        src="https://i.imgur.com/NU7sUL0.png"
+        alt="Ptr. Rechie Escaros"
+        class="leader-mobile-image"
+        loading="lazy"
+        decoding="async"
+      >
       <div class="leader-mobile-info">
         <h4 class="leader-name">Ptr. Rechie Escaros</h4>
         <p class="leader-role">Assistant to the Head Pastor / Board Vice President</p>
@@ -2039,7 +2150,13 @@ style="background:#dbeafe; background-image:linear-gradient(180deg, #dbeafe 0%, 
     </div>
 
     <div class="leader-mobile-card" data-aos="fade-up">
-      <img src="https://i.imgur.com/1BtHCyd.png" alt="Ptr. Rodolfo Fidelson" class="leader-mobile-image">
+      <img
+        src="https://i.imgur.com/1BtHCyd.png"
+        alt="Ptr. Rodolfo Fidelson"
+        class="leader-mobile-image"
+        loading="lazy"
+        decoding="async"
+      >
       <div class="leader-mobile-info">
         <h4 class="leader-name">Ptr. Rodolfo Fidelson</h4>
         <p class="leader-role">Pastor</p>
@@ -2047,7 +2164,13 @@ style="background:#dbeafe; background-image:linear-gradient(180deg, #dbeafe 0%, 
     </div>
 
     <div class="leader-mobile-card" data-aos="fade-up">
-      <img src="https://i.imgur.com/MgoJhhM.png" alt="Ptr. Cesar Pajardo" class="leader-mobile-image">
+      <img
+        src="https://i.imgur.com/MgoJhhM.png"
+        alt="Ptr. Cesar Pajardo"
+        class="leader-mobile-image"
+        loading="lazy"
+        decoding="async"
+      >
       <div class="leader-mobile-info">
         <h4 class="leader-name">Ptr. Cesar Pajardo</h4>
         <p class="leader-role">Pastor</p>
@@ -2055,7 +2178,13 @@ style="background:#dbeafe; background-image:linear-gradient(180deg, #dbeafe 0%, 
     </div>
 
     <div class="leader-mobile-card" data-aos="fade-up">
-      <img src="https://i.imgur.com/U2omQr5.png" alt="Minister Venus Acebuche" class="leader-mobile-image">
+      <img
+        src="https://i.imgur.com/U2omQr5.png"
+        alt="Minister Venus Acebuche"
+        class="leader-mobile-image"
+        loading="lazy"
+        decoding="async"
+      >
       <div class="leader-mobile-info">
         <h4 class="leader-name">Minister Venus Acebuche</h4>
         <p class="leader-role">Evangelism</p>
@@ -2063,7 +2192,13 @@ style="background:#dbeafe; background-image:linear-gradient(180deg, #dbeafe 0%, 
     </div>
 
     <div class="leader-mobile-card" data-aos="fade-up">
-      <img src="https://i.imgur.com/nhKKCnG.png" alt="Sis. Jan Ceiyrell Escaros" class="leader-mobile-image">
+      <img
+        src="https://i.imgur.com/nhKKCnG.png"
+        alt="Sis. Jan Ceiyrell Escaros"
+        class="leader-mobile-image"
+        loading="lazy"
+        decoding="async"
+      >
       <div class="leader-mobile-info">
         <h4 class="leader-name">Sis. Jan Ceiyrell Escaros</h4>
         <p class="leader-role">Board Secretary</p>
@@ -2071,7 +2206,13 @@ style="background:#dbeafe; background-image:linear-gradient(180deg, #dbeafe 0%, 
     </div>
 
     <div class="leader-mobile-card" data-aos="fade-up">
-      <img src="https://i.imgur.com/cMxhq25.png" alt="Sis. Maria Paz Acebuche" class="leader-mobile-image">
+      <img
+        src="https://i.imgur.com/cMxhq25.png"
+        alt="Sis. Maria Paz Acebuche"
+        class="leader-mobile-image"
+        loading="lazy"
+        decoding="async"
+      >
       <div class="leader-mobile-info">
         <h4 class="leader-name">Sis. Maria Paz Acebuche</h4>
         <p class="leader-role">Board Treasurer</p>
@@ -3017,28 +3158,6 @@ AOS.init({
   duration: 1000,
   once: true
 });
-</script>
-
-<script>
-function syncLeadershipLayout() {
-  const desktop = document.getElementById("leadershipDesktop");
-  const mobile = document.getElementById("leadershipMobile");
-
-  if (!desktop || !mobile) return;
-
-  const isMobile = window.innerWidth <= 991;
-
-  if (isMobile) {
-    desktop.style.display = "none";
-    mobile.style.display = "block";
-  } else {
-    desktop.style.display = "block";
-    mobile.style.display = "none";
-  }
-}
-
-window.addEventListener("load", syncLeadershipLayout);
-window.addEventListener("resize", syncLeadershipLayout);
 </script>
 
 </body>
