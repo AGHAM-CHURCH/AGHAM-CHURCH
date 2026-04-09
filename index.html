@@ -2752,18 +2752,19 @@ document.querySelectorAll(".gallery-img").forEach((img, index) => {
 });
 
 /* MOBILE LEADERSHIP LIGHTBOX */
-document.querySelectorAll("#leadership .leader-mobile-image").forEach((img, index) => {
-  img.addEventListener("click", () => {
-    openLightbox(img.src, img.alt || `Leadership image ${index + 1}`);
+window.addEventListener("load", () => {
+  const leadershipImages = document.querySelectorAll(
+    '#leadership .leader-mobile-image, .leadership-mobile .leader-mobile-image'
+  );
+
+  leadershipImages.forEach((img, index) => {
+    img.style.cursor = "pointer";
+
+    img.addEventListener("click", function () {
+      openLightbox(this.src, this.alt || `Leadership image ${index + 1}`);
+    });
   });
 });
-
-if (lightbox) {
-  lightbox.addEventListener("click", (e) => {
-    if (e.target === lightbox || e.target === lightboxClose) {
-      closeLightbox();
-    }
-  });
 }
 
 /* MOBILE SWIPE */
