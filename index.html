@@ -1520,6 +1520,54 @@ section[id] {
 #backToTopBtn:hover {
   background: #1d4ed8;
 }
+
+/* FLOATING MESSENGER BUTTON */
+.messenger-float {
+  position: fixed;
+  right: 20px;
+  bottom: 86px; /* above back-to-top */
+  width: 58px;
+  height: 58px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #0084ff, #1da1ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 24px rgba(0, 132, 255, 0.35);
+  z-index: 999;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.messenger-float:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 16px 30px rgba(0, 132, 255, 0.45);
+}
+
+.messenger-float img {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .messenger-float {
+    right: 16px;
+    bottom: 84px;
+    width: 54px;
+    height: 54px;
+  }
+
+  .messenger-float img {
+    width: 26px;
+    height: 26px;
+  }
+
+.messenger-float {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  z-index: 9999; /* IMPORTANT taasan */
+}
 </style>
 </head>
 
@@ -3349,6 +3397,29 @@ AOS.init({
     });
   }
 </script>
+
+<a href="https://m.me/aghamincph"
+   target="_blank"
+   rel="noopener noreferrer"
+   style="
+     position: fixed;
+     bottom: 90px;
+     right: 20px;
+     width: 60px;
+     height: 60px;
+     background: #0084ff;
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     box-shadow: 0 10px 25px rgba(0,132,255,0.4);
+     z-index: 9999;
+     text-decoration: none;
+   ">
+  <img src="https://img.icons8.com/ios-filled/100/ffffff/facebook-messenger.png"
+       alt="Messenger"
+       style="width:28px; height:28px; display:block;">
+</a>
 
 </body>
 </html>
