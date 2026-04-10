@@ -1568,6 +1568,53 @@ section[id] {
   right: 20px;
   z-index: 9999; /* IMPORTANT taasan */
 }
+
+/* FINAL LOW-RISK POLISH */
+.section-top-fade::before,
+.section-bottom-fade::after {
+  opacity: 0.9;
+}
+
+.section-shell {
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .section-shell {
+    scroll-margin-top: 105px;
+  }
+}
+
+/* Softer visual flow between sections */
+.bg-gray-100.section-top-fade::before,
+.bg-white.section-top-fade::before,
+.logo-watermark-section.section-top-fade::before,
+.leadership-section.section-top-fade::before {
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(148, 163, 184, 0.22),
+    transparent
+  );
+}
+
+.bg-gray-100.section-bottom-fade::after,
+.bg-white.section-bottom-fade::after,
+.logo-watermark-section.section-bottom-fade::after,
+.leadership-section.section-bottom-fade::after {
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(148, 163, 184, 0.18),
+    transparent
+  );
+}
+
+/* Slightly better content breathing room */
+.section-container {
+  position: relative;
+  z-index: 1;
+}
 </style>
 </head>
 
