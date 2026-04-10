@@ -1499,6 +1499,26 @@ section[id] {
   .leadership-mobile {
     display: none !important;
   }
+
+#backToTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 998;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+#backToTopBtn:hover {
+  background: #1d4ed8;
 }
 </style>
 </head>
@@ -3306,6 +3326,28 @@ AOS.init({
   duration: 1000,
   once: true
 });
+</script>
+
+<!-- BACK TO TOP BUTTON -->
+<button id="backToTopBtn" onclick="scrollToTop()">↑</button>
+
+<script>
+  const backToTopBtn = document.getElementById("backToTopBtn");
+
+  window.addEventListener("scroll", function () {
+    if (document.documentElement.scrollTop > 200) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  });
+
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "auto"
+    });
+  }
 </script>
 
 </body>
