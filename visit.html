@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plan Your Visit | AGHAM Church</title>
+  <meta name="description" content="Plan your visit to AGHAM Church. View our Sunday worship time, location, and contact details." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+    }
+
+    .section-shell {
+      position: relative;
+      padding-top: 90px;
+      padding-bottom: 90px;
+    }
+
+    .section-container {
+      width: min(1120px, calc(100% - 24px));
+      margin-inline: auto;
+    }
+
+    .hero-soft-glow {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .hero-soft-glow::before,
+    .hero-soft-glow::after {
+      content: "";
+      position: absolute;
+      border-radius: 9999px;
+      filter: blur(70px);
+      opacity: 0.45;
+    }
+
+    .hero-soft-glow::before {
+      width: 320px;
+      height: 320px;
+      background: rgba(59, 130, 246, 0.18);
+      top: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .hero-soft-glow::after {
+      width: 260px;
+      height: 260px;
+      background: rgba(14, 165, 233, 0.16);
+      bottom: 20px;
+      right: 5%;
+    }
+
+    .page-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 16px;
+      border-radius: 9999px;
+      background: rgba(239, 246, 255, 0.95);
+      color: #1d4ed8;
+      border: 1px solid rgba(191, 219, 254, 1);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .back-home-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      border-radius: 9999px;
+      background: white;
+      color: #1e3a8a;
+      font-weight: 600;
+      border: 1px solid rgba(191, 219, 254, 0.9);
+      box-shadow: 0 10px 30px rgba(37, 99, 235, 0.10);
+      transition: all 0.3s ease;
+    }
+
+    .back-home-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 38px rgba(37, 99, 235, 0.16);
+    }
+
+    .info-card {
+      border-radius: 28px;
+      background: linear-gradient(135deg, #ffffff, #eff6ff);
+      border: 1px solid rgba(191, 219, 254, 0.8);
+      box-shadow: 0 18px 45px rgba(37, 99, 235, 0.10);
+    }
+
+    .visit-card {
+      border-radius: 24px;
+      background: white;
+      border: 1px solid rgba(226, 232, 240, 0.95);
+      box-shadow: 0 16px 35px rgba(15, 23, 42, 0.06);
+      transition: all 0.3s ease;
+    }
+
+    .visit-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 40px rgba(37, 99, 235, 0.10);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO / PAGE INTRO -->
+  <section class="section-shell overflow-hidden">
+    <div class="hero-soft-glow"></div>
+
+    <div class="section-container relative z-10 text-center">
+      <span class="page-badge" data-aos="fade-up">Plan Your Visit</span>
+
+      <h1 class="mt-5 text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight" data-aos="fade-up" data-aos-delay="100">
+        We’d Love to Welcome You to AGHAM Church
+      </h1>
+
+      <p class="mt-5 max-w-3xl mx-auto text-base md:text-lg text-slate-600 leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+        Whether this is your first time visiting, you are looking for a church family,
+        or you simply want to know what to expect, we would be glad to help you feel at home.
+      </p>
+
+      <div class="mt-8" data-aos="fade-up" data-aos-delay="300">
+        <a href="index.html" class="back-home-btn">← Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE INFO STRIP -->
+  <section class="relative px-4 pb-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="rounded-[28px] bg-gradient-to-r from-slate-900 via-blue-900 to-blue-700 text-white shadow-[0_18px_45px_rgba(15,23,42,0.20)] border border-white/10 overflow-hidden" data-aos="fade-up">
+        <div class="grid md:grid-cols-4 gap-0">
+
+          <div class="px-6 py-6 md:px-7 md:py-7 border-b md:border-b-0 md:border-r border-white/10">
+            <p class="text-[11px] uppercase tracking-[0.22em] text-blue-200 font-semibold mb-2">
+              Worship Service
+            </p>
+            <h3 class="text-lg md:text-xl font-bold text-white">
+              Sunday Worship
+            </h3>
+            <p class="mt-1 text-sm text-blue-100 leading-relaxed">
+              Join us in prayer, praise, and hearing God’s Word together.
+            </p>
+          </div>
+
+          <div class="px-6 py-6 md:px-7 md:py-7 border-b md:border-b-0 md:border-r border-white/10">
+            <p class="text-[11px] uppercase tracking-[0.22em] text-blue-200 font-semibold mb-2">
+              Time
+            </p>
+            <h3 class="text-lg md:text-xl font-bold text-white">
+              9:00 AM
+            </h3>
+            <p class="mt-1 text-sm text-blue-100 leading-relaxed">
+              Arrive a little early to settle in and connect with the church family.
+            </p>
+          </div>
+
+          <div class="px-6 py-6 md:px-7 md:py-7 border-b md:border-b-0 md:border-r border-white/10">
+            <p class="text-[11px] uppercase tracking-[0.22em] text-blue-200 font-semibold mb-2">
+              Location
+            </p>
+            <a href="https://maps.app.goo.gl/Qgs7uammyMeASLnZ9"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="text-lg md:text-xl font-bold text-white underline hover:text-blue-200 transition duration-300">
+              Teresa, Rizal
+            </a>
+            <p class="mt-1 text-sm text-blue-100 leading-relaxed">
+              Worship with us in Spirit and in truth as we lift up the Name of Jesus and grow together in faith.
+            </p>
+          </div>
+
+          <div class="px-6 py-6 md:px-7 md:py-7 flex flex-col justify-center">
+            <p class="text-[11px] uppercase tracking-[0.22em] text-blue-200 font-semibold mb-2">
+              Connect
+            </p>
+            <a href="https://www.facebook.com/aghamincph"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="inline-flex items-center justify-center px-5 py-3 rounded-full bg-white text-blue-800 font-semibold hover:scale-[1.03] transition duration-300 shadow-lg">
+              Message Us
+            </a>
+            <p class="mt-2 text-sm text-blue-100 leading-relaxed">
+              Reach out for questions, prayer, or visit details.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXTRA USEFUL INFO -->
+  <section class="px-4 pb-20">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <div class="visit-card p-7" data-aos="fade-up">
+          <div class="text-3xl mb-4">🙏</div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">What to Expect</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Expect a warm welcome, heartfelt worship, prayer, and a message from God’s Word.
+            We want every guest to feel encouraged and at peace.
+          </p>
+        </div>
+
+        <div class="visit-card p-7" data-aos="fade-up" data-aos-delay="100">
+          <div class="text-3xl mb-4">👨‍👩‍👧‍👦</div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Come as You Are</h3>
+          <p class="text-slate-600 leading-relaxed">
+            You do not need to worry about being perfectly dressed or knowing everything in advance.
+            You are welcome here just as you are.
+          </p>
+        </div>
+
+        <div class="visit-card p-7" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-3xl mb-4">💬</div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Need Help?</h3>
+          <p class="text-slate-600 leading-relaxed">
+            If you have questions before visiting, message us on Facebook and we will gladly help you
+            with directions, service details, or prayer concerns.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 900,
+      once: true
+    });
+  </script>
+</body>
+</html>
