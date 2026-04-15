@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plan Your Visit | AGHAM Church</title>
+  <meta name="description" content="Plan your visit to AGHAM Church. View our Sunday worship time, location, and contact details." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #eff6ff 0%, #e0f2fe 50%, #f8fafc 100%);
+      color: #0f172a;
+      overflow-x: hidden;
+      margin: 0;
+    }
+
+    .section-shell {
+      position: relative;
+      padding-top: 90px;
+      padding-bottom: 90px;
+    }
+
+    .section-container {
+      width: min(1120px, calc(100% - 24px));
+      margin-inline: auto;
+    }
+
+    .hero-soft-glow {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .hero-soft-glow::before,
+    .hero-soft-glow::after {
+      content: "";
+      position: absolute;
+      border-radius: 9999px;
+      filter: blur(70px);
+      opacity: 0.45;
+    }
+
+    .hero-soft-glow::before {
+      width: 320px;
+      height: 320px;
+      background: rgba(59, 130, 246, 0.18);
+      top: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .hero-soft-glow::after {
+      width: 260px;
+      height: 260px;
+      background: rgba(14, 165, 233, 0.16);
+      bottom: 20px;
+      right: 5%;
+    }
+
+    .page-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 16px;
+      border-radius: 9999px;
+      background: rgba(239, 246, 255, 0.95);
+      color: #1d4ed8;
+      border: 1px solid rgba(191, 219, 254, 1);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .back-home-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      border-radius: 9999px;
+      background: white;
+      color: #1e3a8a;
+      font-weight: 600;
+      border: 1px solid rgba(191, 219, 254, 0.9);
+      box-shadow: 0 10px 30px rgba(37, 99, 235, 0.10);
+      transition: all 0.3s ease;
+    }
+
+    .back-home-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 38px rgba(37, 99, 235, 0.16);
+    }
+
+    .info-card {
+      border-radius: 28px;
+      background: linear-gradient(135deg, #ffffff, #eff6ff);
+      border: 1px solid rgba(191, 219, 254, 0.8);
+      box-shadow: 0 18px 45px rgba(37, 99, 235, 0.10);
+    }
+
+    .visit-card {
+      border-radius: 24px;
+      background: white;
+      border: 1px solid rgba(226, 232, 240, 0.95);
+      box-shadow: 0 16px 35px rgba(15, 23, 42, 0.06);
+      transition: all 0.3s ease;
+    }
+
+    .visit-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 40px rgba(37, 99, 235, 0.10);
+    }
+
+    /* NAVBAR SYSTEM */
+    #navbar {
+      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.75);
+      position: fixed;
+      width: 100%;
+      z-index: 9999;
+    }
+
+    .logo-glow {
+      box-shadow: 0 0 25px rgba(37, 99, 235, 0.8);
+    }
+
+    .gradient-text {
+      background: linear-gradient(to right, #2563eb, #60a5fa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-link {
+      transition: color 0.25s ease;
+    }
+
+    .nav-link:hover {
+      color: #2563eb;
+    }
+
+    .nav-link-active {
+      color: #2563eb !important;
+      font-weight: 700;
+    }
+
+    .nav-dropdown {
+      position: relative;
+    }
+
+    .nav-dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 220px;
+      background: rgba(255,255,255,0.98);
+      border: 1px solid rgba(226, 232, 240, 0.95);
+      border-radius: 18px;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.14);
+      padding: 8px 0;
+      z-index: 10000;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+      pointer-events: none;
+    }
+
+    .nav-dropdown:hover .nav-dropdown-menu,
+    .nav-dropdown:focus-within .nav-dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .nav-dropdown-bridge {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      width: 100%;
+      height: 14px;
+    }
+
+    .nav-dropdown-link {
+      display: block;
+      padding: 12px 18px;
+      font-size: 0.95rem;
+      color: #1f2937;
+      white-space: nowrap;
+      transition: background 0.22s ease, color 0.22s ease;
+    }
+
+    .nav-dropdown-link:hover {
+      background: #eff6ff;
+      color: #2563eb;
+    }
+
+    /* FOOTER STANDARD */
+    .footer-link {
+      transition: color 0.3s ease, opacity 0.3s ease;
+    }
+
+    .footer-link:hover,
+    .footer-link:focus-visible,
+    .footer-link-active {
+      color: #60a5fa !important;
+    }
+
+    .footer-social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    }
+
+    .footer-social-btn:hover {
+      transform: translateY(-2px) scale(1.03);
+    }
+
+    /* FLOATING BUTTONS STANDARD */
+    #backToTopBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 998;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 52px;
+      height: 52px;
+      font-size: 20px;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+
+    #backToTopBtn:hover {
+      background: #1d4ed8;
+      transform: translateY(-3px);
+    }
+
+    .messenger-float {
+      position: fixed;
+      right: 20px;
+      bottom: 86px;
+      width: 58px;
+      height: 58px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #0084ff, #1da1ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 24px rgba(0, 132, 255, 0.35);
+      z-index: 999;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .messenger-float:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 16px 30px rgba(0, 132, 255, 0.45);
+    }
+
+    .messenger-float img {
+      width: 28px;
+      height: 28px;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .messenger-float {
+        right: 16px;
+        bottom: 84px;
+        width: 54px;
+        height: 54px;
+      }
+
+      .messenger-float img {
+        width: 26px;
+        height: 26px;
+      }
+    }
+  
+    /* ========================================
+       MOBILE NAV STANDARD - SOFT GLASS
+    ======================================== */
+    .mobile-menu-toggle {
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      border: 1px solid rgba(37, 99, 235, 0.14);
+      background: rgba(255,255,255,0.78);
+      color: #1d4ed8;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.45rem;
+      line-height: 1;
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.12);
+      transition: transform 0.18s ease-out, background 0.18s ease-out, border-color 0.18s ease-out;
+    }
+
+    .mobile-menu-toggle:hover,
+    .mobile-menu-toggle:active {
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.92);
+      border-color: rgba(37, 99, 235, 0.22);
+    }
+
+    .mobile-menu-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 6, 23, 0.48);
+      backdrop-filter: blur(3px);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.2s ease-out, visibility 0.2s ease-out;
+      z-index: 10018;
+    }
+
+    .mobile-menu-overlay.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .mobile-menu-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: min(84vw, 360px);
+      height: 100vh;
+      color: #ffffff;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.015) 22%, rgba(255,255,255,0) 45%),
+        linear-gradient(160deg, #163f8f 0%, #1d4ed8 40%, #2563eb 72%, #1e40af 100%);
+      box-shadow: -12px 0 28px rgba(15, 23, 42, 0.26);
+      border-left: 1px solid rgba(255,255,255,0.16);
+      border-top-left-radius: 28px;
+      border-bottom-left-radius: 28px;
+      transform: translate3d(108%, 0, 0);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      will-change: transform;
+      transition: transform 0.26s ease-out, opacity 0.2s ease-out, visibility 0.2s ease-out;
+      z-index: 10019;
+      overflow: hidden;
+    }
+
+    .mobile-menu-drawer.active {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .mobile-menu-sheen {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,0.22), transparent 32%),
+        linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0) 26%);
+      pointer-events: none;
+    }
+
+    .mobile-menu-inner {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: max(16px, env(safe-area-inset-top)) 18px calc(22px + env(safe-area-inset-bottom));
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+
+    .mobile-menu-close {
+      align-self: flex-end;
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.1);
+      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.85rem;
+      line-height: 1;
+      transition: background 0.18s ease-out, transform 0.18s ease-out, border-color 0.18s ease-out;
+    }
+
+    .mobile-menu-close:hover,
+    .mobile-menu-close:active {
+      background: rgba(255,255,255,0.18);
+      border-color: rgba(255,255,255,0.28);
+      transform: translateY(-1px);
+    }
+
+    .mobile-menu-brand {
+      text-align: center;
+      padding: 6px 8px 16px;
+    }
+
+    .mobile-menu-brand img {
+      width: 58px;
+      height: 58px;
+      border-radius: 999px;
+      margin: 0 auto 12px;
+      border: 1px solid rgba(255,255,255,0.28);
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.22);
+    }
+
+    .mobile-menu-brand h2 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .mobile-menu-brand p {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.82);
+      letter-spacing: 0.04em;
+    }
+
+    .mobile-menu-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 6px;
+      flex: 0 0 auto;
+      min-height: auto;
+      overflow: visible;
+      padding-right: 2px;
+    }
+
+    .mobile-accordion,
+    .mobile-standalone-link {
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.08);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.07);
+      overflow: hidden;
+    }
+
+    .mobile-accordion-toggle,
+    .mobile-standalone-link {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 15px 18px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #ffffff;
+      transition: background 0.18s ease-out, transform 0.18s ease-out, border-color 0.18s ease-out;
+    }
+
+    .mobile-accordion-toggle:hover,
+    .mobile-accordion-toggle:active,
+    .mobile-standalone-link:hover,
+    .mobile-standalone-link:active {
+      background: rgba(255,255,255,0.13);
+    }
+
+    .mobile-chevron {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.86);
+      transition: transform 0.18s ease-out;
+      flex-shrink: 0;
+    }
+
+    .mobile-accordion.open .mobile-chevron {
+      transform: rotate(180deg);
+    }
+
+    .mobile-accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      will-change: max-height, opacity;
+      transition: max-height 0.22s ease-out, opacity 0.16s ease-out;
+    }
+
+    .mobile-accordion.open .mobile-accordion-content {
+      max-height: 220px;
+      opacity: 1;
+    }
+
+    .mobile-accordion-content a {
+      display: block;
+      margin: 0 10px 8px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      color: rgba(255,255,255,0.86);
+      font-size: 0.93rem;
+      line-height: 1.45;
+      background: rgba(255,255,255,0.05);
+      transition: background 0.16s ease-out, color 0.16s ease-out;
+    }
+
+    .mobile-accordion.open .mobile-accordion-content a:first-child {
+      margin-top: 2px;
+    }
+
+    .mobile-accordion-content a:hover,
+    .mobile-accordion-content a:active {
+      background: rgba(255,255,255,0.11);
+      color: #ffffff;
+      transform: translateX(2px);
+    }
+
+    .mobile-standalone-link {
+      justify-content: flex-start;
+      margin-top: 2px;
+      background: rgba(255,255,255,0.11);
+    }
+
+    .mobile-standalone-link + .mobile-standalone-link {
+      margin-top: -2px;
+    }
+
+    .mobile-menu-footer {
+      text-align: center;
+      font-size: 0.76rem;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.74);
+      padding-top: 16px;
+      padding-bottom: 6px;
+      margin-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    @media (max-width: 380px) {
+      .mobile-menu-inner {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .mobile-accordion-toggle,
+      .mobile-standalone-link {
+        padding: 14px 15px;
+        font-size: 0.97rem;
+      }
+
+      .mobile-accordion-content a {
+        font-size: 0.9rem;
+        padding: 10px 12px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .mobile-menu-overlay,
+      .mobile-menu-drawer {
+        display: none !important;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header id="navbar" class="fixed top-0 left-0 w-full border-b border-gray-100 overflow-visible">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center overflow-visible">
+
+      <a href="index.html" class="flex items-center gap-4">
+        <img
+          src="https://i.imgur.com/EsoHkMb.png"
+          alt="AGHAM Church Logo"
+          class="w-16 h-16 rounded-full logo-glow"
+        >
+        <h1 class="text-2xl font-extrabold gradient-text">AGHAM</h1>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 font-medium text-slate-800">
+
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="index.html#identity" class="nav-link">Mission</a>
+
+        <!-- SERVICES -->
+        <div class="nav-dropdown">
+          <button type="button" class="flex items-center gap-2 nav-link cursor-pointer">
+            <span>Services</span>
+            <span>▼</span>
+          </button>
+          <div class="nav-dropdown-bridge"></div>
+          <div class="nav-dropdown-menu">
+            <a href="services.html#services" class="nav-dropdown-link">Worship Schedule</a>
+            <a href="services.html#events" class="nav-dropdown-link">Events</a>
+          </div>
+        </div>
+
+        <!-- MINISTRY -->
+        <div class="nav-dropdown">
+          <button type="button" class="flex items-center gap-2 nav-link cursor-pointer">
+            <span>Ministry</span>
+            <span>▼</span>
+          </button>
+          <div class="nav-dropdown-bridge"></div>
+          <div class="nav-dropdown-menu">
+            <a href="leadership.html" class="nav-dropdown-link">Leadership</a>
+            <a href="leadership.html#gallery" class="nav-dropdown-link">Gallery</a>
+          </div>
+        </div>
+
+        <a href="prayer.html" class="nav-link">Prayer</a>
+        <a href="giving.html" class="nav-link">Giving</a>
+        <a href="visit.html" class="nav-link-active">Visit</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+
+      </nav>
+
+      <button id="mobileMenuToggle" type="button" class="mobile-menu-toggle md:hidden" aria-label="Open menu">
+        ☰
+      </button>
+
+    </div>
+  </header>
+
+  <!-- MOBILE MENU OVERLAY -->
+  <div id="mobileMenuOverlay" class="mobile-menu-overlay md:hidden"></div>
+
+  <!-- MOBILE MENU DRAWER -->
+  <aside id="mobileMenuDrawer" class="mobile-menu-drawer md:hidden" aria-hidden="true">
+    <div class="mobile-menu-sheen"></div>
+    <div class="mobile-menu-inner">
+      <button id="mobileMenuClose" class="mobile-menu-close" type="button" aria-label="Close menu">&times;</button>
+
+      <div class="mobile-menu-brand">
+        <img src="https://i.imgur.com/EsoHkMb.png" alt="AGHAM Church Logo">
+        <h2>Welcome to AGHAM</h2>
+        <p>Worship • Grow • Serve</p>
+      </div>
+
+      <nav class="mobile-menu-links" aria-label="Mobile menu">
+        <div class="mobile-accordion">
+          <button class="mobile-accordion-toggle" type="button">
+            <span>Home</span>
+            <span class="mobile-chevron">⌄</span>
+          </button>
+          <div class="mobile-accordion-content">
+            <a href="index.html#about">Who We Are</a>
+            <a href="index.html#identity">Mission / Vision / Core Values</a>
+            <a href="index.html#announcements">Announcement</a>
+            <a href="index.html#contact">Contact</a>
+          </div>
+        </div>
+
+        <div class="mobile-accordion">
+          <button class="mobile-accordion-toggle" type="button">
+            <span>Services</span>
+            <span class="mobile-chevron">⌄</span>
+          </button>
+          <div class="mobile-accordion-content">
+            <a href="services.html#services">Worship Schedule</a>
+            <a href="services.html#events">Events</a>
+          </div>
+        </div>
+
+        <div class="mobile-accordion">
+          <button class="mobile-accordion-toggle" type="button">
+            <span>Ministry</span>
+            <span class="mobile-chevron">⌄</span>
+          </button>
+          <div class="mobile-accordion-content">
+            <a href="leadership.html">Leadership</a>
+            <a href="leadership.html#gallery">Gallery</a>
+          </div>
+        </div>
+
+        <a href="prayer.html" class="mobile-standalone-link">Prayer</a>
+        <a href="giving.html" class="mobile-standalone-link">Giving</a>
+      </nav>
+
+      <div class="mobile-menu-footer">
+        © 2026 AGHAM. All rights reserved.
+      </div>
+    </div>
+  </aside>
+
+  <!-- HERO / PAGE INTRO -->
+  <section class="section-shell overflow-hidden backdrop-blur-[2px] pt-[140px] md:pt-[160px]">
+    <div class="hero-soft-glow"></div>
+
+    <div class="section-container relative z-10 text-center">
+      <span class="page-badge" data-aos="fade-up">Plan Your Visit</span>
+
+      <h1 class="mt-5 text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight" data-aos="fade-up" data-aos-delay="100">
+        We’d Love to Welcome You to AGHAM CHURCH
+      </h1>
+
+      <p class="mt-5 max-w-3xl mx-auto text-base md:text-lg text-slate-600 leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+        Here you can find the essential details for your visit—from service time and location
+        to what you can expect when you worship with us at AGHAM Church.
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICE INFO STRIP -->
+  <section class="relative px-4 pt-8 pb-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="rounded-[28px] bg-gradient-to-r from-slate-900 via-blue-900 to-blue-700 text-white shadow-[0_18px_45px_rgba(15,23,42,0.20)] border border-white/10 overflow-hidden" data-aos="fade-up">
+        <div class="grid md:grid-cols-4 gap-0">
+
+          <div class="px-6 py-6 md:px-7 md:py-7 border-b md:border-b-0 md:border-r border-white/10">
+            <p class="text-[11px] uppercase tracking-[0.22em] text-blue-200 font-semibold mb-2">
+              Worship Service
+            </p>
+            <h3 class="text-lg md:text-xl font-bold text-white">
+              Sunday Worship
+            </h3>
+            <p class="mt-1 text-sm text-blue-100 leading-relaxed">
+              Join us in prayer, praise, and hearing God’s Word together.
+            </p>
+          </div>
+
+          <div class="px-6 py-6 md:px-7 md:py-7 border-b md:border-b-0 md:border-r border-white/10">
+            <p class="text-[11px] uppercase tracking-[0.22em] text-blue-200 font-semibold mb-2">
+              Time
+            </p>
+            <h3 class="text-lg md:text-xl font-bold text-white">
+              9:00 AM
+            </h3>
+            <p class="mt-1 text-sm text-blue-100 leading-relaxed">
+              Arrive a little early to settle in and connect with the church family.
+            </p>
+          </div>
+
+          <div class="px-6 py-6 md:px-7 md:py-7 border-b md:border-b-0 md:border-r border-white/10">
+            <p class="text-[11px] uppercase tracking-[0.22em] text-blue-200 font-semibold mb-2">
+              Location
+            </p>
+            <a href="https://maps.app.goo.gl/Qgs7uammyMeASLnZ9"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="text-lg md:text-xl font-bold text-white underline hover:text-blue-200 transition duration-300">
+              Teresa, Rizal
+            </a>
+            <p class="mt-1 text-sm text-blue-100 leading-relaxed">
+              Worship with us in Spirit and in truth as we lift up the Name of Jesus and grow together in faith.
+            </p>
+          </div>
+
+          <div class="px-6 py-6 md:px-7 md:py-7 flex flex-col justify-center">
+            <p class="text-[11px] uppercase tracking-[0.22em] text-blue-200 font-semibold mb-2">
+              Connect
+            </p>
+            <a href="https://www.facebook.com/aghamincph"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="inline-flex items-center justify-center px-5 py-3 rounded-full bg-white text-blue-800 font-semibold hover:scale-[1.03] transition duration-300 shadow-lg">
+              Message Us
+            </a>
+            <p class="mt-2 text-sm text-blue-100 leading-relaxed">
+              Reach out for questions, prayer, or visit details.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT TO EXPECT -->
+  <section class="bg-white/70 backdrop-blur-md pt-16 pb-20 px-4 rounded-[32px] mx-4">
+    <div class="max-w-5xl mx-auto text-center">
+
+      <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
+        What to Expect
+      </h2>
+
+      <p class="text-base md:text-lg text-slate-600 leading-relaxed mb-12 max-w-3xl mx-auto">
+        When you visit AGHAM Church, you will experience a welcoming and Spirit-filled atmosphere where people gather to worship, grow in faith, and connect as one family in Christ.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <div class="rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition duration-300" data-aos="fade-up">
+          <div class="text-3xl mb-4">🙏</div>
+          <h3 class="font-bold text-lg text-slate-900 mb-2">Worship & Prayer</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            A time of worship, prayer, and lifting up the Name of Jesus together.
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition duration-300" data-aos="fade-up" data-aos-delay="100">
+          <div class="text-3xl mb-4">📖</div>
+          <h3 class="font-bold text-lg text-slate-900 mb-2">The Word</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Biblical teaching that strengthens faith and helps guide your daily walk with God.
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition duration-300" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-3xl mb-4">🤝</div>
+          <h3 class="font-bold text-lg text-slate-900 mb-2">Fellowship</h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            A warm and friendly environment where you can connect and grow with others.
+          </p>
+        </div>
+
+      </div>
+
+      <p class="mt-14 text-sm text-slate-500" data-aos="fade-up">
+        You don’t have to be perfect—just come as you are.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- EXTRA USEFUL INFO -->
+  <section class="px-4 pt-6 pb-16">
+    <div class="max-w-5xl mx-auto">
+      <div class="rounded-[28px] bg-white/70 backdrop-blur-md border border-white/60 shadow-[0_14px_35px_rgba(37,99,235,0.08)] p-6 md:p-8">
+        <div class="grid md:grid-cols-2 gap-6">
+
+          <div class="visit-card p-7 text-center" data-aos="fade-up">
+            <div class="text-3xl mb-4">👨‍👩‍👧‍👦</div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Come as You Are</h3>
+            <p class="text-slate-600 leading-relaxed">
+              You do not need to worry about dressing a certain way or knowing everything beforehand.
+              We would be glad to welcome you just as you are.
+            </p>
+          </div>
+
+          <div class="visit-card p-7 text-center" data-aos="fade-up" data-aos-delay="100">
+            <div class="text-3xl mb-4">💬</div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">Need Help?</h3>
+            <p class="text-slate-600 leading-relaxed">
+              If you have questions before your visit, feel free to message us on Facebook.
+              We will gladly help you with directions, service details, or prayer needs.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLOATING MESSENGER BUTTON -->
+  <a
+    href="https://m.me/aghamincph"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="messenger-float"
+    aria-label="Message us on Messenger"
+  >
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Facebook_Messenger_logo_2020.svg" alt="Messenger Icon">
+  </a>
+
+  <!-- BACK TO TOP -->
+  <button id="backToTopBtn" onclick="scrollToTop()" aria-label="Back to top">↑</button>
+
+  <!-- FOOTER STANDARD -->
+  <footer class="bg-gray-950 text-white pt-16 pb-6">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-3 gap-10 md:gap-12 text-left">
+
+        <div>
+          <div class="flex items-center gap-4 justify-start">
+            <img src="https://i.imgur.com/EsoHkMb.png"
+                 class="w-16 h-16 rounded-full shadow-[0_10px_30px_rgba(37,99,235,0.22)] border border-white/10"
+                 alt="AGHAM Church Logo">
+            <div>
+              <h2 class="text-xl font-extrabold tracking-tight text-white">AGHAM CHURCH</h2>
+              <p class="text-sm text-blue-300 font-medium">Apostolic Ministry</p>
+            </div>
+          </div>
+
+          <p class="text-sm leading-7 text-gray-400 mt-5 max-w-md">
+            Almighty God of Heaven Apostolic Ministry is dedicated to spreading the Gospel,
+            making disciples, and building a strong faith community centered on Christ.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-base font-bold text-white mb-4">Quick Links</h3>
+          <ul class="space-y-2.5 text-sm text-gray-400">
+            <li><a href="index.html#about" class="footer-link">About</a></li>
+            <li><a href="visit.html" class="footer-link footer-link-active">Visit</a></li>
+            <li><a href="services.html" class="footer-link">Services</a></li>
+            <li><a href="leadership.html" class="footer-link">Leadership</a></li>
+            <li><a href="index.html#contact" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-base font-bold text-white mb-4">Contact</h3>
+
+          <div class="space-y-2.5 text-sm text-gray-400">
+            <p>📍 Teresa, Rizal</p>
+            <p>📞 0938-8484-568</p>
+            <p>📧 agham.inc.ph@gmail.com</p>
+          </div>
+
+          <div class="flex flex-wrap justify-start gap-3 text-sm mt-6 mb-3">
+            <a href="https://www.facebook.com/aghamincph"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="footer-social-btn bg-white text-blue-900 border border-white shadow-md hover:bg-blue-50 hover:shadow-[0_10px_24px_rgba(255,255,255,0.14)]">
+              <span>Facebook</span>
+            </a>
+
+            <a href="index.html"
+               class="footer-social-btn bg-white/10 text-white border border-white/15 hover:bg-white/15">
+              <span>Back to Home</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-10 pt-5 border-t border-white/10 text-left text-xs text-gray-500">
+        © 2026 AGHAM Church. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 900,
+      once: true
+    });
+
+    window.addEventListener('scroll', function () {
+      const backToTopBtn = document.getElementById('backToTopBtn');
+
+      if (window.scrollY > 300) {
+        backToTopBtn.style.display = 'block';
+      } else {
+        backToTopBtn.style.display = 'none';
+      }
+    });
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+  <script>
+    (function () {
+      const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+      const mobileMenuClose = document.getElementById('mobileMenuClose');
+      const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+      const mobileMenuDrawer = document.getElementById('mobileMenuDrawer');
+      const accordionItems = Array.from(document.querySelectorAll('.mobile-accordion'));
+      const closeOnLinks = Array.from(document.querySelectorAll('.mobile-accordion-content a, .mobile-standalone-link'));
+
+      if (!mobileMenuToggle || !mobileMenuClose || !mobileMenuOverlay || !mobileMenuDrawer) return;
+
+      function setMobileMenuState(isOpen) {
+        mobileMenuOverlay.classList.toggle('active', isOpen);
+        mobileMenuDrawer.classList.toggle('active', isOpen);
+        mobileMenuDrawer.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+        document.body.classList.toggle('menu-open', isOpen);
+      }
+
+      function closeAllAccordions(exceptItem = null) {
+        accordionItems.forEach((item) => {
+          if (item !== exceptItem) item.classList.remove('open');
+        });
+      }
+
+      mobileMenuToggle.addEventListener('click', function () {
+        setMobileMenuState(true);
+      });
+
+      mobileMenuClose.addEventListener('click', function () {
+        setMobileMenuState(false);
+      });
+
+      mobileMenuOverlay.addEventListener('click', function () {
+        setMobileMenuState(false);
+      });
+
+      closeOnLinks.forEach((link) => {
+        link.addEventListener('click', function () {
+          setMobileMenuState(false);
+        });
+      });
+
+      accordionItems.forEach((item) => {
+        const toggle = item.querySelector('.mobile-accordion-toggle');
+        if (!toggle) return;
+
+        toggle.addEventListener('click', function () {
+          const willOpen = !item.classList.contains('open');
+          closeAllAccordions(item);
+          item.classList.toggle('open', willOpen);
+        });
+      });
+
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+          setMobileMenuState(false);
+        }
+      });
+
+      let startX = 0;
+      let currentX = 0;
+      let isSwiping = false;
+
+      mobileMenuDrawer.addEventListener('touchstart', function (event) {
+        startX = event.touches[0].clientX;
+        currentX = startX;
+        isSwiping = true;
+      }, { passive: true });
+
+      mobileMenuDrawer.addEventListener('touchmove', function (event) {
+        if (!isSwiping || !mobileMenuDrawer.classList.contains('active')) return;
+        currentX = event.touches[0].clientX;
+        const diffX = currentX - startX;
+        if (diffX > 0) {
+          mobileMenuDrawer.style.transform = `translate3d(${diffX}px, 0, 0)`;
+        }
+      }, { passive: true });
+
+      mobileMenuDrawer.addEventListener('touchend', function () {
+        if (!isSwiping) return;
+        const diffX = currentX - startX;
+        mobileMenuDrawer.style.transform = '';
+        if (diffX > 80 && mobileMenuDrawer.classList.contains('active')) {
+          setMobileMenuState(false);
+        }
+        startX = 0;
+        currentX = 0;
+        isSwiping = false;
+      });
+    })();
+  </script>
+
+</body>
+</html>
